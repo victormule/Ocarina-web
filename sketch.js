@@ -1,7 +1,12 @@
-let img;
+let img;// Declare variable 'img'.
 let img2;
 let img3;
-let img4;// Declare variable 'img'.
+let img4;
+let img5;
+let img6;
+let img7;
+let img8;
+
 let Img5;//Tree
 let bg;
 let sky;
@@ -26,6 +31,10 @@ function setup() {
   img2 = loadImage('assets/PlayerL.gif');
   img3 = loadImage('assets/PlayerR.gif');
   img4 = loadImage('assets/PlayerU.gif');
+  img5 = loadImage('assets/player.png');
+  img6 = loadImage('assets/playerL.png');
+  img7 = loadImage('assets/playerR.png');
+  img8 = loadImage('assets/playerU.png');
   Img5 = loadImage('assets/Tree.png');
   createCanvas(960, 1150);
 
@@ -36,14 +45,14 @@ function draw() {
   image(sky,o,u);
   image(sea,o,t);
   background(bg);
-  image(img1, x , y);
+  image(img5, x , y);
   image(Img5,0,0);
   if(a==2){
   clear()
   image(sky,o,u);
   image(sea,o,t);
   background(bg);
-  image(img2, x , y);
+  image(img6, x , y);
   image(Img5,0,0);
   }
   if(a==3){
@@ -51,7 +60,7 @@ function draw() {
   image(sky,o,u); 
   image(sea,o,t);  
   background(bg);
-  image(img3, x , y);
+  image(img7, x , y);
    image(Img5,0,0);
   }
   if(a==4){
@@ -59,7 +68,7 @@ function draw() {
   image(sky,o,u);
   image(sea,o,t);
   background(bg);
-  image(img4, x , y);
+  image(img8, x , y);
   image(Img5,0,0);  
   }
 
