@@ -21,7 +21,6 @@ let y = 590;
 let a = 1;
 
 
-
 function setup() {
   // The background image must be the same size as the parameters
   // into the createCanvas() method. In this program, the size of
@@ -43,6 +42,7 @@ function setup() {
 
 }
 
+  
 function draw() {
   if(mapping==1){
   if(a==1){
@@ -365,4 +365,10 @@ mapping=1
 
 
             
-}}
+  }
+
+
+  
+  
+}
+
