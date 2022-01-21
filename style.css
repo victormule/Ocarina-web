@@ -13,10 +13,10 @@ height:100vh;
   justify-content:center;
   
 }
-.Hdp{
+.charge{
   width: 150px;
   height: 40px;
-  z-index:2;
   background-color: orange;
   position: absolute;
+  z-index:2;
 }
