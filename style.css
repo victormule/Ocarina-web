@@ -16,7 +16,6 @@ height:100vh;
 .charge{
   width: 150px;
   height: 40px;
-  background-color: orange;
   position: absolute;
   z-index:2;
 }
