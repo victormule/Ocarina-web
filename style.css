@@ -5,7 +5,7 @@ html{
   flex-direction:column-r;
   align-items: center;
   justify-content:center;
-  position: relative;
+  
 }
 body{
   width:100vw ;
@@ -15,7 +15,7 @@ body{
   align-items: center;
   justify-content:center;
   overflow: hidden;
-  position: relative;
+ 
   
 }
 .charge{
