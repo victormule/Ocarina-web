@@ -20,7 +20,7 @@ let x = 260;
 let y = 590;
 let a = 1;
 let M = 0;
-let N =-400;
+let N =-350;
 
 
 function setup() {
@@ -524,7 +524,7 @@ if (x >=70 && x<=248 && y >= 668 && y <= 864){
       
       if ( x >=255 && x<=270 && y >= 680 && y <= 770){
  y=744
- N=0      
+ N=-350     
  mapping = 2
 }
      
