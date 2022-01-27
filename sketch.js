@@ -20,7 +20,7 @@ let x = 260;
 let y = 590;
 let a = 1;
 let M = 0;
-let N =-350;
+let N =-300;
 
 
 function setup() {
