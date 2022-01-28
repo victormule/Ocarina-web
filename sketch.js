@@ -23,10 +23,13 @@ let y = 590;
 let a = 1;
 let M = 0;
 let N =-420;
+let font 
+fontsize = 28;
 
 
 
 function preload() {
+  font = loadFont('font/pkmndp.ttf');
   song = loadSound('assets/littleroot.mp3');
   bg = loadImage('assets/plaine.gif');
   ch = loadImage("assets/chambre.png")
@@ -45,7 +48,9 @@ function preload() {
 }
 
 function setup() {
-
+textFont(font);
+textSize(fontsize);
+textAlign(CENTER, CENTER);
 } 
 
   
@@ -142,7 +147,7 @@ if (keyIsDown(LEFT_ARROW)){
     N -=5;
 } 
    
-
+console.log(x,y);
     //---CADRE LIMITE---//
 if (x <=64) {
   x+=5
@@ -730,8 +735,13 @@ if ( y>=770 && y<=806 && x>=334 && x<=372){
      ///panneau1 Affichage///
     
    if ( y>=782 && y<=818 && x>=318 && x<=388){
-  image(img9,0,y+150); 
-}    
+  image(img9,0,y+150);  
+  fill(255,150);
+  text("Observez, étudiez et attrapez des Pokémon", 484,y+ 226);
+  text("sauvages durant une période révolue de ", 484,y+ 252);
+  text("l'Histoire du Japon, afin de compléter le ", 484,y+ 278);  
+  text("tout premier Pokédex de la région.", 484,y+ 304);  
+   }    
 
     
     
@@ -928,6 +938,24 @@ if (x >=70 && x<=248 && y >= 668 && y <= 864){
  y+=5
  N -=5;
  } 
+    
+    //
+    
+        if (y>=928 && y<=960 && x>=240 && x<=272) {
+ y-=5
+ N +=5;
+ }   
+    if (y>=934 && y<=960 && x>=234 && x<=272){
+ x-=5
+ }      
+     if (y>=934 && y<=960 && x>=240 && x<=278){
+ x+=5
+ }     
+     if (y>=934 && y<=966 && x>=240 && x<=272) {
+ y+=5
+ N -=5;
+ } 
+    //
     
     
     //-------enclo--------//
