@@ -142,7 +142,7 @@ if (keyIsDown(LEFT_ARROW)){
     N -=5;
 } 
    
-console.log(x,y);
+
     //---CADRE LIMITE---//
 if (x <=64) {
   x+=5
