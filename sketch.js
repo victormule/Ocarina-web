@@ -28,7 +28,7 @@ let N =-420;
 
 function preload() {
   song = loadSound('assets/littleroot.mp3');
-  bg = loadImage('assets/plaine.png');
+  bg = loadImage('assets/plaine.gif');
   ch = loadImage("assets/chambre.png")
   sky = loadImage('assets/skyy.gif')
   sea = loadImage("assets/skyWater.png")
