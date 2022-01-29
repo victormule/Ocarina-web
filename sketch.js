@@ -30,7 +30,7 @@ let x = 260;
 let y = 590;
 let a = 1;
 let M = 0;
-let N =-420;
+let N =-400;
 let font 
 fontsize = 28;
 
@@ -1072,7 +1072,7 @@ if (x >=70 && x<=248 && y >= 668 && y <= 864){
     
       if ( x >=255 && x<=264 && y >= 680 && y <= 770){
  y=744 
- N=-420      
+ N=-400      
 song.playMode('sustain');
 song.pause();        
  mapping = 2
@@ -1188,7 +1188,8 @@ if (x <=98) {
 
  if (y>=752) {
  y=780
- x=256     
+ x=256
+ N=-440 
  song.loop(); 
  song.playMode('restart');  
  song.play();   
