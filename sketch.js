@@ -30,7 +30,7 @@ let x = 260;
 let y = 590;
 let a = 1;
 let M = 0;
-let N =-400;
+let N =-446;
 let font 
 fontsize = 28;
 
@@ -1072,7 +1072,7 @@ if (x >=70 && x<=248 && y >= 668 && y <= 864){
     
       if ( x >=255 && x<=264 && y >= 680 && y <= 770){
  y=744 
- N=-400      
+ N=-410      
 song.playMode('sustain');
 song.pause();        
  mapping = 2
@@ -1100,35 +1100,55 @@ song.pause();
   if(mapping==2){  
   if(a==1 ){
   clear()
-  noTint()   
+  noTint()  
   background(ch);
   image(img5, x , y);
+  tint(FR);  
+  image(flagFR,0,y-350);
+  tint(EN);    
+  image(flagEN,60,1000); 
   }
   if(a==2){
   clear()
-  noTint()    
+  noTint()  
   background(ch);
   image(img6, x , y);
+  tint(FR);  
+  image(flagFR,0,y-350);
+  tint(EN);    
+  image(flagEN,60,400);   
   }
   if(a==3){
-  clear()  
-  noTint()   
+  clear() 
+  noTint()  
   background(ch);
   image(img7, x , y);
+  tint(FR);  
+  image(flagFR,0,y-350);
+  tint(EN);    
+  image(flagEN,60,400);   
   }
   if(a==4){
-  noTint()   
   clear()
+  noTint()    
   background(ch);
-  image(img8, x , y); 
+  image(img8, x , y);
+  tint(FR);  
+  image(flagFR,0,y-350);
+  tint(EN);    
+  image(flagEN,60,400);   
   }
 
 
   if (keyIsDown(LEFT_ARROW)){
-    clear();
-    noTint()  
-    background(ch);
-    image(img2, x , y); 
+  clear();
+  noTint()  
+  background(ch);
+  image(img2, x , y);
+  tint(FR);  
+  image(flagFR,0,y-350);
+  tint(EN);    
+  image(flagEN,60,400); 
     x -= 5 ;
     a = 2;
 
@@ -1136,29 +1156,41 @@ song.pause();
 
   
   if (keyIsDown(RIGHT_ARROW)) {
-    clear();
-    noTint()  
-    background(ch);
-    image(img3, x , y);
+  clear();
+  noTint()  
+  background(ch);
+  image(img3, x , y);
+  tint(FR);  
+  image(flagFR,0,y-350);
+  tint(EN);    
+  image(flagEN,60,300); 
     x += 5;
     a = 3;
 
 }
 
   if (keyIsDown(UP_ARROW)) {
-    clear();
-    noTint()  
-    background(ch);
-    image(img4, x , y);
+  clear();
+  noTint()  
+  background(ch);
+  image(img4, x , y);
+  tint(FR);  
+  image(flagFR,0,y-350);
+  tint(EN);    
+  image(flagEN,60,300); 
     y -= 5;
     a = 4;
 }
 
   if (keyIsDown(DOWN_ARROW)) {
-    clear();
-    noTint()  
-    background(ch);
-    image(img1, x , y);
+  clear();
+  noTint()  
+  background(ch);
+  image(img1, x , y);
+  tint(FR);  
+  image(flagFR,0,y-350);
+  tint(EN);    
+  image(flagEN,60,300); 
     y += 5;
     a = 1;
 } 
@@ -1188,8 +1220,8 @@ if (x <=98) {
 
  if (y>=752) {
  y=780
- x=256
- N=-440 
+ x=256 
+ N=-446  
  song.loop(); 
  song.playMode('restart');  
  song.play();   
@@ -1212,3 +1244,4 @@ function mousePressed() {
   }
 }
  
+
