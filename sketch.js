@@ -82,9 +82,9 @@ function draw() {
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);  
-  image(flagFR,0,y-344);
+  image(flagFR,0,y-342);
   tint(EN);    
-  image(flagEN,60,y-344); 
+  image(flagEN,60,y-342); 
   }  
   if(a==2){
   clear()
@@ -96,9 +96,9 @@ function draw() {
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
-  image(flagFR,0,y-344);
+  image(flagFR,0,y-342);
   tint(EN);
-  image(flagEN,60,y-344); 
+  image(flagEN,60,y-342); 
   }
   if(a==3){
   clear()
@@ -110,9 +110,9 @@ function draw() {
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
-  image(flagFR,0,y-344);
+  image(flagFR,0,y-342);
   tint(EN);
-  image(flagEN,60,y-344);   
+  image(flagEN,60,y-342);   
   }
   if(a==4){
   clear()
@@ -124,9 +124,9 @@ function draw() {
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
-  image(flagFR,0,y-344);
+  image(flagFR,0,y-342);
   tint(EN);  
-  image(flagEN,60,y-344);   
+  image(flagEN,60,y-342);   
   }
 
 
@@ -142,9 +142,9 @@ if (keyIsDown(LEFT_ARROW)){
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
-  image(flagFR,0,y-344);
+  image(flagFR,0,y-342);
   tint(EN);
-  image(flagEN,60,y-344); 
+  image(flagEN,60,y-342); 
   x -= 5 ;
   a = 2;
 
@@ -161,9 +161,9 @@ if (keyIsDown(LEFT_ARROW)){
     image(Img5,0,0);
     image(img10,600,856) 
     tint(FR);
-    image(flagFR,0,y-344);
+    image(flagFR,0,y-342);
     tint(EN);
-    image(flagEN,60,y-344); 
+    image(flagEN,60,y-342); 
     x += 5;
     a = 3;
 
@@ -179,9 +179,9 @@ if (keyIsDown(LEFT_ARROW)){
     image(Img5,0,0);
     image(img10,600,856);
     tint(FR);
-    image(flagFR,0,y-344);
+    image(flagFR,0,y-342);
     tint(EN);
-    image(flagEN,60,y-344); 
+    image(flagEN,60,y-342); 
     y -= 5;
     u -=1.5;
     t -=2;
@@ -199,9 +199,9 @@ if (keyIsDown(LEFT_ARROW)){
     image(Img5,0,0);
     image(img10,600,856);
     tint(FR);
-    image(flagFR,0,y-344);
+    image(flagFR,0,y-342);
     tint(EN);
-    image(flagEN,60,y-344); 
+    image(flagEN,60,y-342); 
     y += 5;
     u +=1.5;
     t +=2;
@@ -1193,6 +1193,23 @@ song.pause();
     y += 5;
     a = 1;
 } 
+  fill(255,150);
+     if (FR==255){
+  text("bienvenu sur le site officiel de", 700,450);
+  text("POKEMON OCARINA OF TIME", 700,480);
+  text("Si tu veux en savoir d'avantage ", 700,510);  
+  text("sur le jeu, utilises les touches flèches", 700,540);  
+  text("du clavier pour sortir de la chambre", 700,570);
+  text(" et explorer ce nouveau monde !", 700,600);     
+   }  
+        if (EN==255){
+   text("Welcome in the official web site ", 700,450);
+  text("POKEMON OCARINA OF TIME", 700,480);
+  text("If you want now more about ", 700,510);  
+  text("this game, use the Arrow key", 700,540);  
+  text("for exit of the bedroom", 700,570);
+  text(" and exploring this new world!", 700,600);     
+   }  
 
     
   //---MAP 1---//
@@ -1253,4 +1270,3 @@ function mousePressed() {
   }} 
 }
  
-
