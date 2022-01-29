@@ -30,7 +30,7 @@ let x = 260;
 let y = 590;
 let a = 1;
 let M = 0;
-let N =-446;
+let N =-400;
 let font 
 fontsize = 28;
 
@@ -82,9 +82,9 @@ function draw() {
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);  
-  image(flagFR,0,y-350);
+  image(flagFR,0,y-346);
   tint(EN);    
-  image(flagEN,60,y-350); 
+  image(flagEN,60,y-346); 
   }  
   if(a==2){
   clear()
@@ -96,9 +96,9 @@ function draw() {
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
-  image(flagFR,0,y-350);
+  image(flagFR,0,y-346);
   tint(EN);
-  image(flagEN,60,y-350); 
+  image(flagEN,60,y-346); 
   }
   if(a==3){
   clear()
@@ -110,9 +110,9 @@ function draw() {
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
-  image(flagFR,0,y-350);
+  image(flagFR,0,y-346);
   tint(EN);
-  image(flagEN,60,y-350);   
+  image(flagEN,60,y-346);   
   }
   if(a==4){
   clear()
@@ -124,9 +124,9 @@ function draw() {
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
-  image(flagFR,0,y-350);
+  image(flagFR,0,y-346);
   tint(EN);  
-  image(flagEN,60,y-350);   
+  image(flagEN,60,y-346);   
   }
 
 
@@ -142,9 +142,9 @@ if (keyIsDown(LEFT_ARROW)){
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
-  image(flagFR,0,y-350);
+  image(flagFR,0,y-346);
   tint(EN);
-  image(flagEN,60,y-350); 
+  image(flagEN,60,y-346); 
   x -= 5 ;
   a = 2;
 
@@ -161,9 +161,9 @@ if (keyIsDown(LEFT_ARROW)){
     image(Img5,0,0);
     image(img10,600,856) 
     tint(FR);
-    image(flagFR,0,y-350);
+    image(flagFR,0,y-346);
     tint(EN);
-    image(flagEN,60,y-350); 
+    image(flagEN,60,y-346); 
     x += 5;
     a = 3;
 
@@ -179,9 +179,9 @@ if (keyIsDown(LEFT_ARROW)){
     image(Img5,0,0);
     image(img10,600,856);
     tint(FR);
-    image(flagFR,0,y-350);
+    image(flagFR,0,y-346);
     tint(EN);
-    image(flagEN,60,y-350); 
+    image(flagEN,60,y-346); 
     y -= 5;
     u -=1.5;
     t -=2;
@@ -199,9 +199,9 @@ if (keyIsDown(LEFT_ARROW)){
     image(Img5,0,0);
     image(img10,600,856);
     tint(FR);
-    image(flagFR,0,y-350);
+    image(flagFR,0,y-346);
     tint(EN);
-    image(flagEN,60,y-350); 
+    image(flagEN,60,y-346); 
     y += 5;
     u +=1.5;
     t +=2;
@@ -1072,7 +1072,7 @@ if (x >=70 && x<=248 && y >= 668 && y <= 864){
     
       if ( x >=255 && x<=264 && y >= 680 && y <= 770){
  y=744 
- N=-410      
+ N=-400      
 song.playMode('sustain');
 song.pause();        
  mapping = 2
@@ -1104,9 +1104,9 @@ song.pause();
   background(ch);
   image(img5, x , y);
   tint(FR);  
-  image(flagFR,0,y-350);
+  image(flagFR,0,394);
   tint(EN);    
-  image(flagEN,60,1000); 
+  image(flagEN,60,394); 
   }
   if(a==2){
   clear()
@@ -1114,9 +1114,9 @@ song.pause();
   background(ch);
   image(img6, x , y);
   tint(FR);  
-  image(flagFR,0,y-350);
+  image(flagFR,0,394);
   tint(EN);    
-  image(flagEN,60,400);   
+  image(flagEN,60,394);   
   }
   if(a==3){
   clear() 
@@ -1124,9 +1124,9 @@ song.pause();
   background(ch);
   image(img7, x , y);
   tint(FR);  
-  image(flagFR,0,y-350);
+  image(flagFR,0,394);
   tint(EN);    
-  image(flagEN,60,400);   
+  image(flagEN,60,394);   
   }
   if(a==4){
   clear()
@@ -1134,9 +1134,9 @@ song.pause();
   background(ch);
   image(img8, x , y);
   tint(FR);  
-  image(flagFR,0,y-350);
+  image(flagFR,0,394);
   tint(EN);    
-  image(flagEN,60,400);   
+  image(flagEN,60,394);   
   }
 
 
@@ -1146,9 +1146,9 @@ song.pause();
   background(ch);
   image(img2, x , y);
   tint(FR);  
-  image(flagFR,0,y-350);
+  image(flagFR,0,394);
   tint(EN);    
-  image(flagEN,60,400); 
+  image(flagEN,60,394); 
     x -= 5 ;
     a = 2;
 
@@ -1161,9 +1161,9 @@ song.pause();
   background(ch);
   image(img3, x , y);
   tint(FR);  
-  image(flagFR,0,y-350);
+  image(flagFR,0,394);
   tint(EN);    
-  image(flagEN,60,300); 
+  image(flagEN,60,394); 
     x += 5;
     a = 3;
 
@@ -1175,9 +1175,9 @@ song.pause();
   background(ch);
   image(img4, x , y);
   tint(FR);  
-  image(flagFR,0,y-350);
+  image(flagFR,0,394);
   tint(EN);    
-  image(flagEN,60,300); 
+  image(flagEN,60,394); 
     y -= 5;
     a = 4;
 }
@@ -1188,9 +1188,9 @@ song.pause();
   background(ch);
   image(img1, x , y);
   tint(FR);  
-  image(flagFR,0,y-350);
+  image(flagFR,0,394);
   tint(EN);    
-  image(flagEN,60,300); 
+  image(flagEN,60,394); 
     y += 5;
     a = 1;
 } 
@@ -1244,4 +1244,3 @@ function mousePressed() {
   }
 }
  
-
