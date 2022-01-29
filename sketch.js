@@ -1100,20 +1100,24 @@ song.pause();
   if(mapping==2){  
   if(a==1 ){
   clear()
+  noTint()   
   background(ch);
   image(img5, x , y);
   }
   if(a==2){
   clear()
+  noTint()    
   background(ch);
   image(img6, x , y);
   }
   if(a==3){
   clear()  
+  noTint()   
   background(ch);
   image(img7, x , y);
   }
   if(a==4){
+  noTint()   
   clear()
   background(ch);
   image(img8, x , y); 
@@ -1122,6 +1126,7 @@ song.pause();
 
   if (keyIsDown(LEFT_ARROW)){
     clear();
+    noTint()  
     background(ch);
     image(img2, x , y); 
     x -= 5 ;
@@ -1132,6 +1137,7 @@ song.pause();
   
   if (keyIsDown(RIGHT_ARROW)) {
     clear();
+    noTint()  
     background(ch);
     image(img3, x , y);
     x += 5;
@@ -1141,6 +1147,7 @@ song.pause();
 
   if (keyIsDown(UP_ARROW)) {
     clear();
+    noTint()  
     background(ch);
     image(img4, x , y);
     y -= 5;
@@ -1149,6 +1156,7 @@ song.pause();
 
   if (keyIsDown(DOWN_ARROW)) {
     clear();
+    noTint()  
     background(ch);
     image(img1, x , y);
     y += 5;
