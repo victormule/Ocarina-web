@@ -82,9 +82,9 @@ function draw() {
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);  
-  image(flagFR,0,y-346);
+  image(flagFR,0,y-344);
   tint(EN);    
-  image(flagEN,60,y-346); 
+  image(flagEN,60,y-344); 
   }  
   if(a==2){
   clear()
@@ -96,9 +96,9 @@ function draw() {
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
-  image(flagFR,0,y-346);
+  image(flagFR,0,y-344);
   tint(EN);
-  image(flagEN,60,y-346); 
+  image(flagEN,60,y-344); 
   }
   if(a==3){
   clear()
@@ -110,9 +110,9 @@ function draw() {
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
-  image(flagFR,0,y-346);
+  image(flagFR,0,y-344);
   tint(EN);
-  image(flagEN,60,y-346);   
+  image(flagEN,60,y-344);   
   }
   if(a==4){
   clear()
@@ -124,9 +124,9 @@ function draw() {
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
-  image(flagFR,0,y-346);
+  image(flagFR,0,y-344);
   tint(EN);  
-  image(flagEN,60,y-346);   
+  image(flagEN,60,y-344);   
   }
 
 
@@ -142,9 +142,9 @@ if (keyIsDown(LEFT_ARROW)){
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
-  image(flagFR,0,y-346);
+  image(flagFR,0,y-344);
   tint(EN);
-  image(flagEN,60,y-346); 
+  image(flagEN,60,y-344); 
   x -= 5 ;
   a = 2;
 
@@ -161,9 +161,9 @@ if (keyIsDown(LEFT_ARROW)){
     image(Img5,0,0);
     image(img10,600,856) 
     tint(FR);
-    image(flagFR,0,y-346);
+    image(flagFR,0,y-344);
     tint(EN);
-    image(flagEN,60,y-346); 
+    image(flagEN,60,y-344); 
     x += 5;
     a = 3;
 
@@ -179,9 +179,9 @@ if (keyIsDown(LEFT_ARROW)){
     image(Img5,0,0);
     image(img10,600,856);
     tint(FR);
-    image(flagFR,0,y-346);
+    image(flagFR,0,y-344);
     tint(EN);
-    image(flagEN,60,y-346); 
+    image(flagEN,60,y-344); 
     y -= 5;
     u -=1.5;
     t -=2;
@@ -199,16 +199,16 @@ if (keyIsDown(LEFT_ARROW)){
     image(Img5,0,0);
     image(img10,600,856);
     tint(FR);
-    image(flagFR,0,y-346);
+    image(flagFR,0,y-344);
     tint(EN);
-    image(flagEN,60,y-346); 
+    image(flagEN,60,y-344); 
     y += 5;
     u +=1.5;
     t +=2;
     a = 1;
     N -=5;
 } 
-   
+
 
     //---CADRE LIMITE---//
 if (x <=64) {
@@ -1096,7 +1096,6 @@ song.pause();
     
     
     
- 
   if(mapping==2){  
   if(a==1 ){
   clear()
@@ -1104,9 +1103,9 @@ song.pause();
   background(ch);
   image(img5, x , y);
   tint(FR);  
-  image(flagFR,0,394);
+  image(flagFR,0,392);
   tint(EN);    
-  image(flagEN,60,394); 
+  image(flagEN,60,392); 
   }
   if(a==2){
   clear()
@@ -1114,9 +1113,9 @@ song.pause();
   background(ch);
   image(img6, x , y);
   tint(FR);  
-  image(flagFR,0,394);
+  image(flagFR,0,392);
   tint(EN);    
-  image(flagEN,60,394);   
+  image(flagEN,60,392);   
   }
   if(a==3){
   clear() 
@@ -1124,9 +1123,9 @@ song.pause();
   background(ch);
   image(img7, x , y);
   tint(FR);  
-  image(flagFR,0,394);
+  image(flagFR,0,392);
   tint(EN);    
-  image(flagEN,60,394);   
+  image(flagEN,60,392);   
   }
   if(a==4){
   clear()
@@ -1134,9 +1133,9 @@ song.pause();
   background(ch);
   image(img8, x , y);
   tint(FR);  
-  image(flagFR,0,394);
+  image(flagFR,0,392);
   tint(EN);    
-  image(flagEN,60,394);   
+  image(flagEN,60,392);   
   }
 
 
@@ -1146,9 +1145,9 @@ song.pause();
   background(ch);
   image(img2, x , y);
   tint(FR);  
-  image(flagFR,0,394);
+  image(flagFR,0,392);
   tint(EN);    
-  image(flagEN,60,394); 
+  image(flagEN,60,392); 
     x -= 5 ;
     a = 2;
 
@@ -1161,9 +1160,9 @@ song.pause();
   background(ch);
   image(img3, x , y);
   tint(FR);  
-  image(flagFR,0,394);
+  image(flagFR,0,392);
   tint(EN);    
-  image(flagEN,60,394); 
+  image(flagEN,60,392); 
     x += 5;
     a = 3;
 
@@ -1175,9 +1174,9 @@ song.pause();
   background(ch);
   image(img4, x , y);
   tint(FR);  
-  image(flagFR,0,394);
+  image(flagFR,0,392);
   tint(EN);    
-  image(flagEN,60,394); 
+  image(flagEN,60,392); 
     y -= 5;
     a = 4;
 }
@@ -1188,9 +1187,9 @@ song.pause();
   background(ch);
   image(img1, x , y);
   tint(FR);  
-  image(flagFR,0,394);
+  image(flagFR,0,392);
   tint(EN);    
-  image(flagEN,60,394); 
+  image(flagEN,60,392); 
     y += 5;
     a = 1;
 } 
@@ -1234,6 +1233,7 @@ mapping=1
 
 }
 function mousePressed() {
+  if (mapping==1){
   if (mouseX >=0 && mouseX <=60 && mouseY <=y-300) {
    FR=255;
    EN=150;
@@ -1241,6 +1241,16 @@ function mousePressed() {
     if (mouseX >60 && mouseX <=120 && mouseY <=y-300) {
    FR=150;
    EN=255;
+  }}
+   if (mapping==2){
+  if (mouseX >=0 && mouseX <=60 && mouseY <=436) {
+   FR=255;
+   EN=150;
   }
+    if (mouseX >60 && mouseX <=120 && mouseY <=436) {
+   FR=150;
+   EN=255;
+  }} 
 }
  
+
