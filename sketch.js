@@ -7,7 +7,15 @@ let img6;
 let img7;
 let img8;
 let img9;
+let img10;
+let flagEN;
+let flagFR;
+let FR = 255;
+let EN = 150;
 let song;
+
+
+
 
 let Img5;//Tree
 let bg;
@@ -44,51 +52,81 @@ function preload() {
   img7 = loadImage('assets/playerR.png');
   img8 = loadImage('assets/playerU.png');
   img9 = loadImage('assets/windowskin.png');
+  img10 = loadImage('assets/mouton.gif');
   Img5 = loadImage('assets/Tree.png');
+  flagEN = loadImage('assets/flagEN.png')
+  flagFR = loadImage('assets/flagFR.png')
 }
 
 function setup() {
+ 
 textFont(font);
 textSize(fontsize);
 textAlign(CENTER, CENTER);
+
 } 
 
-  
+
 function draw() {
-  let cnv = createCanvas(960, 3400);
+   
+  let cnv = createCanvas(960,3400);
   cnv.position( 0, N, 'relative');
   if(mapping==1){
   if(a==1){
   clear()
+  noTint();
   image(sky,o,u);
   image(sea,o,t);
   background(bg);
   image(img5, x , y);
   image(Img5,0,0);
+  image(img10,600,856);
+  tint(FR);  
+  image(flagFR,0,y-350);
+  tint(EN);    
+  image(flagEN,60,y-350); 
   }  
   if(a==2){
   clear()
+  noTint();  
   image(sky,o,u);
   image(sea,o,t);
   background(bg);
   image(img6, x , y);
   image(Img5,0,0);
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-350);
+  tint(EN);
+  image(flagEN,60,y-350); 
   }
   if(a==3){
   clear()
+  noTint();  
   image(sky,o,u); 
   image(sea,o,t);  
   background(bg);
   image(img7, x , y);
-   image(Img5,0,0);
+  image(Img5,0,0);
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-350);
+  tint(EN);
+  image(flagEN,60,y-350);   
   }
   if(a==4){
   clear()
+  noTint();
   image(sky,o,u);
   image(sea,o,t);
   background(bg);
   image(img8, x , y);
-  image(Img5,0,0);  
+  image(Img5,0,0);
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-350);
+  tint(EN);  
+  image(flagEN,60,y-350);   
   }
 
 
@@ -96,11 +134,17 @@ function draw() {
   
 if (keyIsDown(LEFT_ARROW)){
   clear();
+  noTint();
   image(sky,o,u);
   image(sea,o,t);
   background(bg);
   image(img2, x , y); 
   image(Img5,0,0);
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-350);
+  tint(EN);
+  image(flagEN,60,y-350); 
   x -= 5 ;
   a = 2;
 
@@ -109,11 +153,17 @@ if (keyIsDown(LEFT_ARROW)){
   
   if (keyIsDown(RIGHT_ARROW)) {
     clear();
+    noTint();
     image(sky,o,u);
     image(sea,o,t);
     background(bg);
     image(img3, x , y);
     image(Img5,0,0);
+    image(img10,600,856) 
+    tint(FR);
+    image(flagFR,0,y-350);
+    tint(EN);
+    image(flagEN,60,y-350); 
     x += 5;
     a = 3;
 
@@ -121,11 +171,17 @@ if (keyIsDown(LEFT_ARROW)){
 
   if (keyIsDown(UP_ARROW)) {
     clear();
+    noTint();
     image(sky,o,u);
     image(sea,o,t);
     background(bg);
     image(img4, x , y);
     image(Img5,0,0);
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-350);
+    tint(EN);
+    image(flagEN,60,y-350); 
     y -= 5;
     u -=1.5;
     t -=2;
@@ -135,11 +191,17 @@ if (keyIsDown(LEFT_ARROW)){
 
   if (keyIsDown(DOWN_ARROW)) {
     clear();
+    noTint();
     image(sky,o,u);
     image(sea,o,t);
     background(bg);
     image(img1, x , y);
     image(Img5,0,0);
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-350);
+    tint(EN);
+    image(flagEN,60,y-350); 
     y += 5;
     u +=1.5;
     t +=2;
@@ -147,7 +209,7 @@ if (keyIsDown(LEFT_ARROW)){
     N -=5;
 } 
    
-console.log(x,y);
+
     //---CADRE LIMITE---//
 if (x <=64) {
   x+=5
@@ -735,14 +797,21 @@ if ( y>=770 && y<=806 && x>=334 && x<=372){
      ///panneau1 Affichage///
     
    if ( y>=782 && y<=818 && x>=318 && x<=388){
+  noTint()
   image(img9,0,y+150);  
   fill(255,150);
+     if (FR==255){
   text("Observez, étudiez et attrapez des Pokémon", 484,y+ 226);
   text("sauvages durant une période révolue de ", 484,y+ 252);
   text("l'Histoire du Japon, afin de compléter le ", 484,y+ 278);  
   text("tout premier Pokédex de la région.", 484,y+ 304);  
-   }    
-
+   }  
+        if (EN==255){
+  text("Survey, catch, and research wild Pokémon", 484,y+ 226);
+  text("in a long-gone era of Japan", 484,y+ 252);
+  text("to complete the region’s first Pokédex. ", 484,y+ 278);    
+   }   
+}
     
     
     
@@ -1013,7 +1082,7 @@ song.pause();
      
   //--End--//
 
-    
+  
     
     
     
@@ -1118,11 +1187,19 @@ if (x <=98) {
 mapping=1
 
 } 
-            //-------//
+ 
+    //-------//
 }
 
-
-  
-  
 }
-
+function mousePressed() {
+  if (mouseX >=0 && mouseX <=60 && mouseY <=y-300) {
+   FR=255;
+   EN=150;
+  }
+    if (mouseX >60 && mouseX <=120 && mouseY <=y-300) {
+   FR=150;
+   EN=255;
+  }
+}
+ 
