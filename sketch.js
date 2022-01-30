@@ -8,6 +8,9 @@ let img7;
 let img8;
 let img9;
 let img10;
+let img11;
+let img12;
+let shadow;
 let flagEN;
 let flagFR;
 let FR = 255;
@@ -40,9 +43,10 @@ function preload() {
   font = loadFont('font/pkmndp.ttf');
   song = loadSound('assets/littleroot.mp3');
   bg = loadImage('assets/plaine.gif');
-  ch = loadImage("assets/chambre.png")
-  sky = loadImage('assets/skyy.gif')
-  sea = loadImage("assets/skyWater.png")
+  ch = loadImage("assets/chambre.png");
+  sky = loadImage('assets/skyy.gif');
+  sea = loadImage("assets/skyWater.png");
+  shadow = loadImage('assets/shadow.png');
   img1 = loadImage('assets/Player.gif');
   img2 = loadImage('assets/PlayerL.gif');
   img3 = loadImage('assets/PlayerR.gif');
@@ -53,9 +57,11 @@ function preload() {
   img8 = loadImage('assets/playerU.png');
   img9 = loadImage('assets/windowskin.png');
   img10 = loadImage('assets/mouton.gif');
+  img11 = loadImage('assets/moine1.gif');
+  img12 = loadImage('assets/moine2.gif');
   Img5 = loadImage('assets/Tree.png');
-  flagEN = loadImage('assets/flagEN.png')
-  flagFR = loadImage('assets/flagFR.png')
+  flagEN = loadImage('assets/flagEN.png');
+  flagFR = loadImage('assets/flagFR.png');
 }
 
 function setup() {
@@ -78,7 +84,10 @@ function draw() {
   image(sky,o,u);
   image(sea,o,t);
   background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600)   
   image(img5, x , y);
+  image(img11, 300, 1600)  
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);  
@@ -92,7 +101,10 @@ function draw() {
   image(sky,o,u);
   image(sea,o,t);
   background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600)   
   image(img6, x , y);
+  image(img11, 300, 1600)  
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
@@ -106,7 +118,10 @@ function draw() {
   image(sky,o,u); 
   image(sea,o,t);  
   background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600)   
   image(img7, x , y);
+  image(img11, 300, 1600)    
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
@@ -120,7 +135,10 @@ function draw() {
   image(sky,o,u);
   image(sea,o,t);
   background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600)   
   image(img8, x , y);
+  image(img11, 300, 1600)  
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
@@ -138,7 +156,10 @@ if (keyIsDown(LEFT_ARROW)){
   image(sky,o,u);
   image(sea,o,t);
   background(bg);
-  image(img2, x , y); 
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600) 
+  image(img2, x , y);
+  image(img11, 300, 1600)  
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
@@ -157,7 +178,10 @@ if (keyIsDown(LEFT_ARROW)){
     image(sky,o,u);
     image(sea,o,t);
     background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600) 
     image(img3, x , y);
+    image(img11, 300, 1600)  
     image(Img5,0,0);
     image(img10,600,856) 
     tint(FR);
@@ -175,7 +199,10 @@ if (keyIsDown(LEFT_ARROW)){
     image(sky,o,u);
     image(sea,o,t);
     background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600) 
     image(img4, x , y);
+    image(img11, 300, 1600)  
     image(Img5,0,0);
     image(img10,600,856);
     tint(FR);
@@ -195,7 +222,10 @@ if (keyIsDown(LEFT_ARROW)){
     image(sky,o,u);
     image(sea,o,t);
     background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600) 
     image(img1, x , y);
+    image(img11, 300, 1600)  
     image(Img5,0,0);
     image(img10,600,856);
     tint(FR);
@@ -1044,6 +1074,22 @@ if (x >=70 && x<=248 && y >= 668 && y <= 864){
  N -=5;
  } 
     
+    //---------moine1--------//
+      if (y>=1592 && y<=1630 && x>=282 && x<=328) {
+ y-=5
+ N +=5;
+ }   
+    if (y>=1598 && y<=1630 && x>=276 && x<=328){
+ x-=5
+ }      
+     if (y>=1598 && y<=1630 && x>=282 && x<=334){
+ x+=5
+ }     
+     if (y>=1598 && y<=1636 && x>=282 && x<=328) {
+ y+=5
+ N -=5;
+ }     
+    
     
                             //------SKY-----//
     
@@ -1193,7 +1239,7 @@ song.pause();
     y += 5;
     a = 1;
 } 
-  fill(255,150);
+  fill(255,255);
      if (FR==255){
   text("bienvenu sur le site officiel de", 700,450);
   text("POKEMON OCARINA OF TIME", 700,480);
