@@ -855,9 +855,9 @@ if ( y>=770 && y<=806 && x>=334 && x<=372){
   text("tout premier Pokédex de la région.", 484,y+ 304);  
    }  
         if (EN==255){
-  text("Survey, catch, and research wild Pokémon", 484,y+ 226);
-  text("in a long-gone era of Japan", 484,y+ 252);
-  text("to complete the region’s first Pokédex. ", 484,y+ 278);    
+  text("Survey, catch, and research wild Pokémon", 484,y+ 234);
+  text("in a long-gone era of Japan", 484,y+ 260);
+  text("to complete the region’s first Pokédex. ", 484,y+ 286);    
    }   
 }
     
@@ -1111,10 +1111,6 @@ if (x >=70 && x<=248 && y >= 668 && y <= 864){
         //-------Dame Kyoka------//
     
     
-      if (y>=0 && y<=360 && x>=450 && x<=500) {
- y-=5
- N +=5;
- }   
     if (y>=0 && y<=360 && x>=444 && x<=500){
  x-=5
  }      
@@ -1211,12 +1207,13 @@ if(a==1){
   text("n'est ce pas? Mais.... ", 484,y+ 252);
   text("Une grande menace pèse sur nous...", 484,y+ 278);  
   text("Pourras tu nous venir en aide?!", 484,y+ 304);  
-   }  
-        if (EN==255){
-  text("Survey, catch, and research wild Pokémon", 484,y+ 226);
-  text("in a long-gone era of Japan", 484,y+ 252);
-  text("to complete the region’s first Pokédex. ", 484,y+ 278);    
    }   
+        if (EN==255){
+  text("Oh! A stranger! What a wonderful country,", 484,y+ 226);
+  text("isn't it? But.... ", 484,y+ 252);
+  text("A terrible threatens approach.", 484,y+ 278);  
+  text("Will you be strong enough to help us?!", 484,y+ 304);  
+   }  
 }
     
     
@@ -1305,10 +1302,11 @@ if(a==1){
   text("Pourras tu nous venir en aide?!", 484,y+ 304);  
    }   
         if (EN==255){
-  text("Survey, catch, and research wild Pokémon", 484,y+ 226);
-  text("in a long-gone era of Japan", 484,y+ 252);
-  text("to complete the region’s first Pokédex. ", 484,y+ 278);    
-   }   
+  text("Oh! A stranger! What a wonderful country,", 484,y+ 226);
+  text("isn't it? But.... ", 484,y+ 252);
+  text("A terrible threatens approach.", 484,y+ 278);  
+  text("Will you be strong enough to help us?!", 484,y+ 304);  
+   }    
 }
     
     
@@ -1462,21 +1460,25 @@ song.pause();
 } 
   fill(255,255);
      if (FR==255){
-  text("bienvenu sur le site officiel de", 700,450);
-  text("POKEMON OCARINA OF TIME", 700,480);
-  text("Si tu veux en savoir d'avantage ", 700,510);  
-  text("sur le jeu, utilises les touches flèches", 700,540);  
-  text("du clavier pour sortir de la chambre", 700,570);
-  text(" et explorer ce nouveau monde !", 700,600);     
+  text("Bienvenue sur le site officiel de", 700,460);
+  text("POKEMON OCARINA OF TIME", 700,510);
+  text("le fan-game français inspiré de l'univers", 700,560); 
+  text("Nitendo (Pokemon, Zelda, Fire Emblem... ).", 700,590); 
+  text("Si tu veux en savoir d'avantage ", 700,620);  
+  text("sur le jeu, utilise les touches fléchées", 700,650);  
+  text("du clavier pour sortir de la maison", 700,680);
+  text("et explorer ce nouveau monde!", 700,710);     
    }  
         if (EN==255){
-   text("Welcome in the official web site ", 700,450);
-  text("POKEMON OCARINA OF TIME", 700,480);
-  text("If you want now more about ", 700,510);  
-  text("this game, use the Arrow key", 700,540);  
-  text("for exit of the bedroom", 700,570);
-  text(" and exploring this new world!", 700,600);     
-   }  
+  text("Welcome to the official website", 700,460);
+  text("POKEMON OCARINA OF TIME", 700,510);
+  text("the french fangame inspired by the", 700,560); 
+  text("Nitendo universe (Pokemon, Zelda... ).", 700,590); 
+  text("If you are interested to know more", 700,620);  
+  text("about it, use the arrow keys to explore ", 700,650);  
+  text("the vast world outside this house!", 700,680);
+    
+   } 
 
     
   //---MAP 1---//
