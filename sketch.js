@@ -10,6 +10,11 @@ let img9;
 let img10;
 let img11;
 let img12;
+let img13;
+let img14;
+let img15;
+let img16;
+let img17;
 let shadow;
 let flagEN;
 let flagFR;
@@ -59,6 +64,11 @@ function preload() {
   img10 = loadImage('assets/mouton.gif');
   img11 = loadImage('assets/moine1.gif');
   img12 = loadImage('assets/moine2.gif');
+  img13 = loadImage('assets/kyoka1.png');
+  img14 = loadImage('assets/kyoka2.png');
+  img15 = loadImage('assets/kyoka3.png');
+  img16 = loadImage('assets/windowskin2.png');
+  img17 = loadImage('assets/dameKiyoka1.gif');
   Img5 = loadImage('assets/Tree.png');
   flagEN = loadImage('assets/flagEN.png');
   flagFR = loadImage('assets/flagFR.png');
@@ -85,9 +95,10 @@ function draw() {
   image(sea,o,t);
   background(bg);
   image(shadow,x+2,y+34); 
-  image(img12, 300, 1600)   
+  image(img12, 300, 1600);
+  image(img13, 474, 330);   
   image(img5, x , y);
-  image(img11, 300, 1600)  
+  image(img11, 300, 1600);   
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);  
@@ -102,9 +113,10 @@ function draw() {
   image(sea,o,t);
   background(bg);
   image(shadow,x+2,y+34); 
-  image(img12, 300, 1600)   
+  image(img12, 300, 1600);
+  image(img13, 474, 330);   
   image(img6, x , y);
-  image(img11, 300, 1600)  
+  image(img11, 300, 1600);  
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
@@ -119,9 +131,10 @@ function draw() {
   image(sea,o,t);  
   background(bg);
   image(shadow,x+2,y+34); 
-  image(img12, 300, 1600)   
+  image(img12, 300, 1600);
+  image(img13, 474, 330);   
   image(img7, x , y);
-  image(img11, 300, 1600)    
+  image(img11, 300, 1600);    
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
@@ -136,9 +149,10 @@ function draw() {
   image(sea,o,t);
   background(bg);
   image(shadow,x+2,y+34); 
-  image(img12, 300, 1600)   
+  image(img12, 300, 1600); 
+  image(img13, 474, 330);   
   image(img8, x , y);
-  image(img11, 300, 1600)  
+  image(img11, 300, 1600);  
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
@@ -157,9 +171,10 @@ if (keyIsDown(LEFT_ARROW)){
   image(sea,o,t);
   background(bg);
   image(shadow,x+2,y+34); 
-  image(img12, 300, 1600) 
+  image(img12, 300, 1600);
+  image(img13, 474, 330); 
   image(img2, x , y);
-  image(img11, 300, 1600)  
+  image(img11, 300, 1600);  
   image(Img5,0,0);
   image(img10,600,856);
   tint(FR);
@@ -179,7 +194,8 @@ if (keyIsDown(LEFT_ARROW)){
     image(sea,o,t);
     background(bg);
     image(shadow,x+2,y+34); 
-    image(img12, 300, 1600) 
+    image(img12, 300, 1600);
+    image(img13, 474, 330); 
     image(img3, x , y);
     image(img11, 300, 1600)  
     image(Img5,0,0);
@@ -200,9 +216,10 @@ if (keyIsDown(LEFT_ARROW)){
     image(sea,o,t);
     background(bg);
     image(shadow,x+2,y+34); 
-    image(img12, 300, 1600) 
+    image(img12, 300, 1600);
+    image(img13, 474, 330); 
     image(img4, x , y);
-    image(img11, 300, 1600)  
+    image(img11, 300, 1600);  
     image(Img5,0,0);
     image(img10,600,856);
     tint(FR);
@@ -223,9 +240,10 @@ if (keyIsDown(LEFT_ARROW)){
     image(sea,o,t);
     background(bg);
     image(shadow,x+2,y+34); 
-    image(img12, 300, 1600) 
+    image(img12, 300, 1600); 
+    image(img13, 474, 330); 
     image(img1, x , y);
-    image(img11, 300, 1600)  
+    image(img11, 300, 1600) ; 
     image(Img5,0,0);
     image(img10,600,856);
     tint(FR);
@@ -1089,6 +1107,209 @@ if (x >=70 && x<=248 && y >= 668 && y <= 864){
  y+=5
  N -=5;
  }     
+    
+        //-------Dame Kyoka------//
+    
+    
+      if (y>=0 && y<=360 && x>=450 && x<=500) {
+ y-=5
+ N +=5;
+ }   
+    if (y>=0 && y<=360 && x>=444 && x<=500){
+ x-=5
+ }      
+     if (y>=0 && y<=360 && x>=450 && x<=500){
+ x+=5
+ }     
+     if (y>=0 && y<=366 && x>=450 && x<=500) {
+ y+=5
+ N -=5;
+ } 
+    
+    //----Kyoka affichage---//
+    
+       if ( y>=0 && y<=354 && x>=432 && x<=500){
+if(a==1){
+  clear()
+  noTint();
+  image(sky,o,u);
+  image(sea,o,t);
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(img14, 474, 330);   
+  image(img5, x , y);
+  image(img11, 300, 1600);   
+  image(Img5,0,0);
+  image(img10,600,856);
+  tint(FR);  
+  image(flagFR,0,y-342);
+  tint(EN);    
+  image(flagEN,60,y-342); 
+  }  
+  if(a==2){
+  clear()
+  noTint();  
+  image(sky,o,u);
+  image(sea,o,t);
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(img14, 474, 330);   
+  image(img6, x , y);
+  image(img11, 300, 1600);  
+  image(Img5,0,0);
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==3){
+  clear()
+  noTint();  
+  image(sky,o,u); 
+  image(sea,o,t);  
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(img14, 474, 330);   
+  image(img7, x , y);
+  image(img11, 300, 1600);    
+  image(Img5,0,0);
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342);   
+  }
+  if(a==4){
+  clear()
+  noTint();
+  image(sky,o,u);
+  image(sea,o,t);
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600); 
+  image(img14, 474, 330);   
+  image(img8, x , y);
+  image(img11, 300, 1600);  
+  image(Img5,0,0);
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);  
+  image(flagEN,60,y-342);   
+  }
+  noTint(); 
+  image(img17,600,y+30);          
+  image(img16,10,y+130); 
+      
+  fill(30,250);
+     if (FR==255){
+  text("Oh! Un visiteur! Quelle région magnifique,", 484,y+ 226);
+  text("n'est ce pas? Mais.... ", 484,y+ 252);
+  text("Une grande menace pèse sur nous...", 484,y+ 278);  
+  text("Pourras tu nous venir en aide?!", 484,y+ 304);  
+   }  
+        if (EN==255){
+  text("Survey, catch, and research wild Pokémon", 484,y+ 226);
+  text("in a long-gone era of Japan", 484,y+ 252);
+  text("to complete the region’s first Pokédex. ", 484,y+ 278);    
+   }   
+}
+    
+    
+           if ( y>=366 && y<=380 && x>=448 && x<=500){
+if(a==1){
+  clear()
+  noTint();
+  image(sky,o,u);
+  image(sea,o,t);
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(img15, 474, 330);   
+  image(img5, x , y);
+  image(img11, 300, 1600);   
+  image(Img5,0,0);
+  image(img10,600,856);
+  tint(FR);  
+  image(flagFR,0,y-342);
+  tint(EN);    
+  image(flagEN,60,y-342); 
+  }  
+  if(a==2){
+  clear()
+  noTint();  
+  image(sky,o,u);
+  image(sea,o,t);
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(img15, 474, 330);   
+  image(img6, x , y);
+  image(img11, 300, 1600);  
+  image(Img5,0,0);
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==3){
+  clear()
+  noTint();  
+  image(sky,o,u); 
+  image(sea,o,t);  
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(img15, 474, 330);   
+  image(img7, x , y);
+  image(img11, 300, 1600);    
+  image(Img5,0,0);
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342);   
+  }
+  if(a==4){
+  clear()
+  noTint();
+  image(sky,o,u);
+  image(sea,o,t);
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600); 
+  image(img15, 474, 330);   
+  image(img8, x , y);
+  image(img11, 300, 1600);  
+  image(Img5,0,0);
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);  
+  image(flagEN,60,y-342);   
+  }
+  noTint(); 
+  image(img17,600,y+30);          
+  image(img16,10,y+130); 
+      
+  fill(30,250);
+     if (FR==255){
+  text("Oh! Un visiteur! Quelle région magnifique,", 484,y+ 226);
+  text("n'est ce pas? Mais.... ", 484,y+ 252);
+  text("Une grande menace pèse sur nous...", 484,y+ 278);  
+  text("Pourras tu nous venir en aide?!", 484,y+ 304);  
+   }   
+        if (EN==255){
+  text("Survey, catch, and research wild Pokémon", 484,y+ 226);
+  text("in a long-gone era of Japan", 484,y+ 252);
+  text("to complete the region’s first Pokédex. ", 484,y+ 278);    
+   }   
+}
     
     
                             //------SKY-----//
