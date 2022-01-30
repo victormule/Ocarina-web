@@ -21,6 +21,7 @@ let flagFR;
 let FR = 255;
 let EN = 150;
 let song;
+let fr = 60; //starting FPS
 
 
 
@@ -29,9 +30,12 @@ let Img5;//Tree
 let bg;
 let ch;
 let sky;
+let cloud1;
+let cloud2;
 let sea;
 let mapping = 2;
-let o = 0;
+let g =-600;
+let o =-400;
 let u = 0;
 let t = 0;
 let x = 260;
@@ -49,7 +53,9 @@ function preload() {
   song = loadSound('assets/littleroot.mp3');
   bg = loadImage('assets/plaine.gif');
   ch = loadImage("assets/chambre.png");
-  sky = loadImage('assets/skyy.gif');
+  sky = loadImage('assets/sky.png');
+  cloud1 = loadImage('assets/cloud1.png');
+  cloud2 = loadImage('assets/cloud2.png');
   sea = loadImage("assets/skyWater.png");
   shadow = loadImage('assets/shadow.png');
   img1 = loadImage('assets/Player.gif');
@@ -72,6 +78,7 @@ function preload() {
   Img5 = loadImage('assets/Tree.png');
   flagEN = loadImage('assets/flagEN.png');
   flagFR = loadImage('assets/flagFR.png');
+  frameRate(fr); 
 }
 
 function setup() {
@@ -91,8 +98,10 @@ function draw() {
   if(a==1){
   clear()
   noTint();
-  image(sky,o,u);
-  image(sea,o,t);
+  image(sky,0,u);
+  image(sea,0,t); 
+  image(cloud2,g,u);
+  image(cloud1,o,u);  
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
@@ -109,8 +118,10 @@ function draw() {
   if(a==2){
   clear()
   noTint();  
-  image(sky,o,u);
-  image(sea,o,t);
+  image(sky,0,u);
+  image(sea,0,t); 
+  image(cloud2,g,u);
+  image(cloud1,o,u);  
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
@@ -127,8 +138,10 @@ function draw() {
   if(a==3){
   clear()
   noTint();  
-  image(sky,o,u); 
-  image(sea,o,t);  
+  image(sky,0,u);
+  image(sea,0,t);
+  image(cloud2,g,u);
+  image(cloud1,o,u);
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
@@ -145,8 +158,10 @@ function draw() {
   if(a==4){
   clear()
   noTint();
-  image(sky,o,u);
-  image(sea,o,t);
+  image(sky,0,u);
+  image(sea,0,t); 
+  image(cloud2,g,u);
+  image(cloud1,o,u);  
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600); 
@@ -167,8 +182,10 @@ function draw() {
 if (keyIsDown(LEFT_ARROW)){
   clear();
   noTint();
-  image(sky,o,u);
-  image(sea,o,t);
+  image(sky,0,u);
+  image(sea,0,t); 
+  image(cloud2,g,u);
+  image(cloud1,o,u);
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
@@ -190,8 +207,10 @@ if (keyIsDown(LEFT_ARROW)){
   if (keyIsDown(RIGHT_ARROW)) {
     clear();
     noTint();
-    image(sky,o,u);
-    image(sea,o,t);
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
     background(bg);
     image(shadow,x+2,y+34); 
     image(img12, 300, 1600);
@@ -212,8 +231,10 @@ if (keyIsDown(LEFT_ARROW)){
   if (keyIsDown(UP_ARROW)) {
     clear();
     noTint();
-    image(sky,o,u);
-    image(sea,o,t);
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
     background(bg);
     image(shadow,x+2,y+34); 
     image(img12, 300, 1600);
@@ -236,8 +257,10 @@ if (keyIsDown(LEFT_ARROW)){
   if (keyIsDown(DOWN_ARROW)) {
     clear();
     noTint();
-    image(sky,o,u);
-    image(sea,o,t);
+    image(sky,0,u);
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    image(sea,0,t);
     background(bg);
     image(shadow,x+2,y+34); 
     image(img12, 300, 1600); 
@@ -1128,8 +1151,10 @@ if (x >=70 && x<=248 && y >= 668 && y <= 864){
 if(a==1){
   clear()
   noTint();
-  image(sky,o,u);
-  image(sea,o,t);
+  image(sky,0,u);
+  image(sea,0,t);
+  image(cloud2,g,u);
+  image(cloud1,o,u);
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
@@ -1146,8 +1171,10 @@ if(a==1){
   if(a==2){
   clear()
   noTint();  
-  image(sky,o,u);
-  image(sea,o,t);
+  image(sky,0,u);
+  image(sea,0,t); 
+  image(cloud2,g,u); 
+  image(cloud1,o,u);  
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
@@ -1164,8 +1191,10 @@ if(a==1){
   if(a==3){
   clear()
   noTint();  
-  image(sky,o,u); 
-  image(sea,o,t);  
+  image(sky,0,u); 
+  image(sea,0,t); 
+  image(cloud2,g,u); 
+  image(cloud1,o,u);  
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
@@ -1182,8 +1211,10 @@ if(a==1){
   if(a==4){
   clear()
   noTint();
-  image(sky,o,u);
-  image(sea,o,t);
+  image(sky,0,u);
+  image(sea,0,t);
+  image(cloud2,g,u);
+  image(cloud1,o,u);
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600); 
@@ -1221,8 +1252,10 @@ if(a==1){
 if(a==1){
   clear()
   noTint();
-  image(sky,o,u);
-  image(sea,o,t);
+  image(sky,0,u);
+  image(sea,0,t);
+  image(cloud2,g,u);
+  image(cloud1,o,u);
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
@@ -1239,8 +1272,10 @@ if(a==1){
   if(a==2){
   clear()
   noTint();  
-  image(sky,o,u);
-  image(sea,o,t);
+  image(sky,0,u);
+  image(sea,0,t);
+  image(cloud2,g,u);
+  image(cloud1,o,u);
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
@@ -1257,8 +1292,10 @@ if(a==1){
   if(a==3){
   clear()
   noTint();  
-  image(sky,o,u); 
-  image(sea,o,t);  
+  image(sky,0,u); 
+  image(sea,0,t); 
+  image(cloud2,g,u);
+  image(cloud1,o,u);
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
@@ -1275,8 +1312,10 @@ if(a==1){
   if(a==4){
   clear()
   noTint();
-  image(sky,o,u);
-  image(sea,o,t);
+  image(sky,0,u);
+  image(sea,0,t);
+  image(cloud2,g,u);
+  image(cloud1,o,u);
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600); 
@@ -1312,16 +1351,21 @@ if(a==1){
     
                             //------SKY-----//
     
-  
+  o += 1;
+  g +=0.8;  
   if (u <= -120){
   u+=1.5   
  }   
   if (u >= 120){
   u-=1.5   
  }  
-    
+  if ( o >= width){
+  o=-450;  
+  }  
   
-                                //------SEA-----//
+  if ( g >= width){
+  g=-600;  
+  }                                  //------SEA-----//
     
     
   
@@ -1539,3 +1583,4 @@ function mousePressed() {
   }} 
 }
  
+
