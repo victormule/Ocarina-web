@@ -33,8 +33,11 @@ let sky;
 let cloud1;
 let cloud2;
 let sea;
+let bird1;
 let mapping = 2;
 let g =-600;
+let e =-100;
+let f = 800;
 let o =-400;
 let u = 0;
 let t = 0;
@@ -57,6 +60,7 @@ function preload() {
   cloud1 = loadImage('assets/cloud1.png');
   cloud2 = loadImage('assets/cloud2.png');
   sea = loadImage("assets/skyWater.png");
+  bird1 = loadImage("assets/bird1.gif");
   shadow = loadImage('assets/shadow.png');
   img1 = loadImage('assets/Player.gif');
   img2 = loadImage('assets/PlayerL.gif');
@@ -105,10 +109,12 @@ function draw() {
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
-  image(img13, 474, 330);   
+  image(img13, 474, 330);
+  image(shadow,e+4,f+200);  
   image(img5, x , y);
   image(img11, 300, 1600);   
   image(Img5,0,0);
+  image(bird1,e,f)
   image(img10,600,856);
   tint(FR);  
   image(flagFR,0,y-342);
@@ -127,8 +133,10 @@ function draw() {
   image(img12, 300, 1600);
   image(img13, 474, 330);   
   image(img6, x , y);
-  image(img11, 300, 1600);  
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
   image(Img5,0,0);
+  image(bird1,e,f)
   image(img10,600,856);
   tint(FR);
   image(flagFR,0,y-342);
@@ -147,8 +155,10 @@ function draw() {
   image(img12, 300, 1600);
   image(img13, 474, 330);   
   image(img7, x , y);
-  image(img11, 300, 1600);    
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
   image(Img5,0,0);
+  image(bird1,e,f)
   image(img10,600,856);
   tint(FR);
   image(flagFR,0,y-342);
@@ -167,8 +177,10 @@ function draw() {
   image(img12, 300, 1600); 
   image(img13, 474, 330);   
   image(img8, x , y);
-  image(img11, 300, 1600);  
+  image(img11, 300, 1600);
+  image(shadow,e+4,f+200);    
   image(Img5,0,0);
+  image(bird1,e,f)
   image(img10,600,856);
   tint(FR);
   image(flagFR,0,y-342);
@@ -191,8 +203,10 @@ if (keyIsDown(LEFT_ARROW)){
   image(img12, 300, 1600);
   image(img13, 474, 330); 
   image(img2, x , y);
-  image(img11, 300, 1600);  
+  image(img11, 300, 1600);
+  image(shadow,e+4,f+200);  
   image(Img5,0,0);
+  image(bird1,e,f)
   image(img10,600,856);
   tint(FR);
   image(flagFR,0,y-342);
@@ -217,7 +231,9 @@ if (keyIsDown(LEFT_ARROW)){
     image(img13, 474, 330); 
     image(img3, x , y);
     image(img11, 300, 1600)  
-    image(Img5,0,0);
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0); 
+    image(bird1,e,f);
     image(img10,600,856) 
     tint(FR);
     image(flagFR,0,y-342);
@@ -240,8 +256,10 @@ if (keyIsDown(LEFT_ARROW)){
     image(img12, 300, 1600);
     image(img13, 474, 330); 
     image(img4, x , y);
-    image(img11, 300, 1600);  
+    image(img11, 300, 1600);
+    image(shadow,e+4,f+200);  
     image(Img5,0,0);
+    image(bird1,e,f)
     image(img10,600,856);
     tint(FR);
     image(flagFR,0,y-342);
@@ -266,8 +284,10 @@ if (keyIsDown(LEFT_ARROW)){
     image(img12, 300, 1600); 
     image(img13, 474, 330); 
     image(img1, x , y);
-    image(img11, 300, 1600) ; 
+    image(img11, 300, 1600) ;
+    image(shadow,e+4,f+200);  
     image(Img5,0,0);
+    image(bird1,e,f)
     image(img10,600,856);
     tint(FR);
     image(flagFR,0,y-342);
@@ -1375,6 +1395,18 @@ if(a==1){
   if (t >= 120){
   t-=2   
  }  
+    
+    
+    //-----Bird1------//
+    
+   e+=4;
+   f+=2; 
+  if ( e >= width){
+   e=-800; 
+   f= 400; 
+  } 
+    
+    
   //---MAP TRANSFER--/
       
     
@@ -1583,4 +1615,3 @@ function mousePressed() {
   }} 
 }
  
-
