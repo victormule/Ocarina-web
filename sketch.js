@@ -34,6 +34,8 @@ let cloud1;
 let cloud2;
 let sea;
 let bird1;
+let combat1;
+let combat2;
 let mapping = 2;
 let g =-600;
 let e =-100;
@@ -62,6 +64,8 @@ function preload() {
   sea = loadImage("assets/skyWater.png");
   bird1 = loadImage("assets/bird1.gif");
   shadow = loadImage('assets/shadow.png');
+  combat1 = loadImage('assets/combat1.gif');
+  combat2 = loadImage('assets/combat2.gif');
   img1 = loadImage('assets/Player.gif');
   img2 = loadImage('assets/PlayerL.gif');
   img3 = loadImage('assets/PlayerR.gif');
@@ -110,8 +114,10 @@ function draw() {
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
   image(img13, 474, 330);
-  image(shadow,e+4,f+200);  
+  image(shadow,e+4,f+200);
+  image(combat2,400,1700);  
   image(img5, x , y);
+  image(combat1,400,1700);  
   image(img11, 300, 1600);   
   image(Img5,0,0);
   image(bird1,e,f)
@@ -131,8 +137,10 @@ function draw() {
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
-  image(img13, 474, 330);   
+  image(img13, 474, 330);
+  image(combat2,400,1700);  
   image(img6, x , y);
+  image(combat1,400,1700);   
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -153,8 +161,10 @@ function draw() {
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
-  image(img13, 474, 330);   
+  image(img13, 474, 330);
+  image(combat2,400,1700);
   image(img7, x , y);
+  image(combat1,400,1700); 
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -175,8 +185,10 @@ function draw() {
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600); 
-  image(img13, 474, 330);   
+  image(img13, 474, 330);
+  image(combat2,400,1700);  
   image(img8, x , y);
+  image(combat1,400,1700); 
   image(img11, 300, 1600);
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -201,8 +213,10 @@ if (keyIsDown(LEFT_ARROW)){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
-  image(img13, 474, 330); 
+  image(img13, 474, 330);
+  image(combat2,400,1700);
   image(img2, x , y);
+  image(combat1,400,1700); 
   image(img11, 300, 1600);
   image(shadow,e+4,f+200);  
   image(Img5,0,0);
@@ -228,8 +242,10 @@ if (keyIsDown(LEFT_ARROW)){
     background(bg);
     image(shadow,x+2,y+34); 
     image(img12, 300, 1600);
-    image(img13, 474, 330); 
+    image(img13, 474, 330);
+    image(combat2,400,1700);
     image(img3, x , y);
+    image(combat1,400,1700); 
     image(img11, 300, 1600)  
     image(shadow,e+4,f+200);  
     image(Img5,0,0); 
@@ -254,8 +270,10 @@ if (keyIsDown(LEFT_ARROW)){
     background(bg);
     image(shadow,x+2,y+34); 
     image(img12, 300, 1600);
-    image(img13, 474, 330); 
+    image(img13, 474, 330);
+    image(combat2,400,1700);
     image(img4, x , y);
+    image(combat1,400,1700); 
     image(img11, 300, 1600);
     image(shadow,e+4,f+200);  
     image(Img5,0,0);
@@ -283,7 +301,9 @@ if (keyIsDown(LEFT_ARROW)){
     image(shadow,x+2,y+34); 
     image(img12, 300, 1600); 
     image(img13, 474, 330); 
+    image(combat2,400,1700);
     image(img1, x , y);
+    image(combat1,400,1700); 
     image(img11, 300, 1600) ;
     image(shadow,e+4,f+200);  
     image(Img5,0,0);
@@ -1150,6 +1170,24 @@ if (x >=70 && x<=248 && y >= 668 && y <= 864){
  y+=5
  N -=5;
  }     
+    
+        //---------combat--------//
+    
+    
+      if (y>=1740 && y<=1808 && x>=428 && x<=620) {
+ y-=5
+ N +=5;
+ }   
+    if (y>=1748 && y<=1808 && x>=420 && x<=620){
+ x-=5
+ }      
+     if (y>=1748 && y<=1808 && x>=428 && x<=628){
+ x+=5
+ }     
+     if (y>=1748 && y<=1816 && x>=428 && x<=620) {
+ y+=5
+ N -=5;
+ }   
     
         //-------Dame Kyoka------//
     
