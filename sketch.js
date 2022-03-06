@@ -15,6 +15,8 @@ let img14;
 let img15;
 let img16;
 let img17;
+let img18;
+let imag19;
 let shadow;
 let flagEN;
 let flagFR;
@@ -36,6 +38,11 @@ let sea;
 let bird1;
 let combat1;
 let combat2;
+let kaio1;
+let kaio1a;
+let kaio2;
+let kaio3;
+let kaio4
 let mapping = 2;
 let g =-600;
 let e =-100;
@@ -81,8 +88,15 @@ function preload() {
   img13 = loadImage('assets/kyoka1.png');
   img14 = loadImage('assets/kyoka2.png');
   img15 = loadImage('assets/kyoka3.png');
+  kaio1 = loadImage('assets/kaio1.png');
+  kaio1a = loadImage('assets/kaio1a.png');
+  kaio2 = loadImage('assets/kaio2.png');
+  kaio3 = loadImage('assets/kaio3.png');
+  kaio4 = loadImage('assets/kaio4.png');
   img16 = loadImage('assets/windowskin2.png');
   img17 = loadImage('assets/dameKiyoka1.gif');
+  img18 = loadImage('assets/maitreKaio.gif')
+  img19 = loadImage('assets/windowskin3.png');
   Img5 = loadImage('assets/Tree.png');
   flagEN = loadImage('assets/flagEN.png');
   flagFR = loadImage('assets/flagFR.png');
@@ -99,7 +113,7 @@ textAlign(CENTER, CENTER);
 
 
 function draw() {
-   
+ 
   let cnv = createCanvas(960,3400);
   cnv.position( 0, N, 'relative');
   if(mapping==1){
@@ -115,8 +129,10 @@ function draw() {
   image(img12, 300, 1600);
   image(img13, 474, 330);
   image(shadow,e+4,f+200);
-  image(combat2,400,1700);  
+  image(combat2,400,1700); 
+  image(kaio1,500,1680);  
   image(img5, x , y);
+  image(kaio1a,500,1680);  
   image(combat1,400,1700);  
   image(img11, 300, 1600);   
   image(Img5,0,0);
@@ -138,8 +154,10 @@ function draw() {
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
   image(img13, 474, 330);
-  image(combat2,400,1700);  
+  image(combat2,400,1700);
+  image(kaio1,500,1680);   
   image(img6, x , y);
+  image(kaio1a,500,1680); 
   image(combat1,400,1700);   
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
@@ -163,7 +181,9 @@ function draw() {
   image(img12, 300, 1600);
   image(img13, 474, 330);
   image(combat2,400,1700);
+  image(kaio1,500,1680); 
   image(img7, x , y);
+  image(kaio1a,500,1680); 
   image(combat1,400,1700); 
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
@@ -186,8 +206,10 @@ function draw() {
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600); 
   image(img13, 474, 330);
-  image(combat2,400,1700);  
+  image(combat2,400,1700); 
+  image(kaio1,500,1680);   
   image(img8, x , y);
+  image(kaio1a,500,1680); 
   image(combat1,400,1700); 
   image(img11, 300, 1600);
   image(shadow,e+4,f+200);    
@@ -215,7 +237,9 @@ if (keyIsDown(LEFT_ARROW)){
   image(img12, 300, 1600);
   image(img13, 474, 330);
   image(combat2,400,1700);
+  image(kaio1,500,1680); 
   image(img2, x , y);
+  image(kaio1a,500,1680); 
   image(combat1,400,1700); 
   image(img11, 300, 1600);
   image(shadow,e+4,f+200);  
@@ -244,7 +268,9 @@ if (keyIsDown(LEFT_ARROW)){
     image(img12, 300, 1600);
     image(img13, 474, 330);
     image(combat2,400,1700);
+    image(kaio1,500,1680); 
     image(img3, x , y);
+    image(kaio1a,500,1680); 
     image(combat1,400,1700); 
     image(img11, 300, 1600)  
     image(shadow,e+4,f+200);  
@@ -272,7 +298,9 @@ if (keyIsDown(LEFT_ARROW)){
     image(img12, 300, 1600);
     image(img13, 474, 330);
     image(combat2,400,1700);
+    image(kaio1,500,1680); 
     image(img4, x , y);
+    image(kaio1a,500,1680); 
     image(combat1,400,1700); 
     image(img11, 300, 1600);
     image(shadow,e+4,f+200);  
@@ -302,7 +330,9 @@ if (keyIsDown(LEFT_ARROW)){
     image(img12, 300, 1600); 
     image(img13, 474, 330); 
     image(combat2,400,1700);
+    image(kaio1,500,1680); 
     image(img1, x , y);
+    image(kaio1a,500,1680); 
     image(combat1,400,1700); 
     image(img11, 300, 1600) ;
     image(shadow,e+4,f+200);  
@@ -924,7 +954,24 @@ if ( y>=770 && y<=806 && x>=334 && x<=372){
    }   
 }
     
+      ///panneau2 Affichage///
     
+   if ( y>=1460 && y<=1490 && x>=346 && x<=425){
+  noTint()
+  image(img9,0,y+150);  
+  fill(255,150);
+     if (FR==255){
+  text("Nous sommes en 1570. A cette époque,", 484,y+ 226);
+  text("il n'est pas rare de se voir provoquer", 484,y+ 252);
+  text("en duel. Vos pokemons ne vous seront", 484,y+ 278);  
+  text("d'aucun secours dans un combat au sabre.", 484,y+ 304);  
+   }  
+        if (EN==255){
+  text("In 1570, it's usual to be challenged", 484,y+ 234);
+  text("to a dual. But be carefull, your pokemon", 484,y+ 260);
+  text("will be helpless during a sword fight.", 484,y+ 286);    
+   }   
+}   
     
     
     
@@ -1171,6 +1218,440 @@ if (x >=70 && x<=248 && y >= 668 && y <= 864){
  N -=5;
  }     
     
+        //---------Kaio--------//
+    
+      if (y>=1672 && y<=1712 && x>=494 && x<=542) {
+ y-=5
+ N +=5;
+ }   
+    if (y>=1680 && y<=1712 && x>=486 && x<=542){
+ x-=5
+ }      
+     if (y>=1680 && y<=1712 && x>=494 && x<=548){
+ x+=5
+ }     
+     if (y>=1680 && y<=1720 && x>=494 && x<=542) {
+ y+=5
+ N -=5;
+ }     
+    
+     //----Kaio affichage---//
+    
+       if ( y>=1660 && y<=1680 && x>=482 && x<=550){
+if(a==1){
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(img5, x , y);
+  image(kaio4,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==2){
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(img6, x , y);
+  image(kaio4,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==3){
+  clear()
+  noTint();  
+ 
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(img7, x , y);
+  image(kaio4,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==4){
+   clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(img8, x , y);
+  image(kaio4,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  noTint(); 
+  image(img18,590,y+30);          
+  image(img19,10,y+130); 
+      
+  fill(30,250);
+     if (FR==255){
+  text("Si tu deviens fort tu pourras monter en grade", 484,y+ 226);
+  text("et devenir Samuraï, Ninja ou Moine.", 484,y+ 252);
+  text("Sache que la force d'un Pokemon dépend", 484,y+ 278);  
+  text("aussi des choix de son dresseur. ", 484,y+ 304);  
+   }   
+        if (EN==255){
+  text("If you become strong enough you will be", 484,y+ 226);
+  text("promoted as a Samurai, a Ninja or a Monk.", 484,y+ 252);
+  text("Remember that the Pokemon's strengh", 484,y+ 278);  
+  text("depend on his trainer's choices.", 484,y+ 304);    
+   }  
+}
+     
+    if ( y>=1690 && y<=1720 && x>=458 && x<=510){
+if(a==1){
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(img5, x , y);
+  image(kaio2,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==2){
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(img6, x , y);
+  image(kaio2,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==3){
+  clear()
+  noTint();  
+ 
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(img7, x , y);
+  image(kaio2,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==4){
+   clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(img8, x , y);
+  image(kaio2,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  noTint(); 
+  image(img18,590,y+30);          
+  image(img19,10,y+130); 
+      
+  fill(30,250);
+     if (FR==255){
+  text("Si tu deviens fort tu pourras monter en grade", 484,y+ 226);
+  text("et devenir Samuraï, Ninja ou Moine.", 484,y+ 252);
+  text("Sache que la force d'un Pokemon dépend", 484,y+ 278);  
+  text("aussi des choix de son dresseur. ", 484,y+ 304);  
+   }   
+        if (EN==255){
+  text("If you become strong enough you will be", 484,y+ 226);
+  text("promoted as a Samurai, a Ninja or a Monk.", 484,y+ 252);
+  text("Remember that the Pokemon's strengh", 484,y+ 278);  
+  text("depend on his trainer's choices.", 484,y+ 304);    
+   }  
+}
+    
+    if ( y>=1680 && y<=1720 && x>=510 && x<=560){
+if(a==1){
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(img5, x , y);
+  image(kaio3,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==2){
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(img6, x , y);
+  image(kaio3,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==3){
+  clear()
+  noTint();  
+ 
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(img7, x , y);
+  image(kaio3,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==4){
+   clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(img8, x , y);
+  image(kaio3,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  noTint(); 
+  image(img18,590,y+30);          
+  image(img19,10,y+130); 
+      
+  fill(30,250);
+     if (FR==255){
+  text("Si tu deviens fort tu pourras monter en grade", 484,y+ 226);
+  text("et devenir Samuraï, Ninja ou Moine.", 484,y+ 252);
+  text("Sache que la force d'un Pokemon dépend", 484,y+ 278);  
+  text("aussi des choix de son dresseur. ", 484,y+ 304);  
+   }   
+        if (EN==255){
+  text("If you become strong enough you will be", 484,y+ 226);
+  text("promoted as a Samurai, a Ninja or a Monk.", 484,y+ 252);
+  text("Remember that the Pokemon's strengh", 484,y+ 278);  
+  text("depend on his trainer's choices.", 484,y+ 304);    
+   }  
+}
+    
+           if ( y>=1720 && y<=1760 && x>=482 && x<=550){
+if(a==1){
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(kaio1,500,1680);  
+  image(img5, x , y);
+  image(kaio1a,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==2){
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(kaio1,500,1680);  
+  image(img6, x , y);
+  image(kaio1a,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==3){
+  clear()
+  noTint();  
+ 
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(kaio1,500,1680);  
+  image(img7, x , y);
+  image(kaio1a,500,1680); 
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==4){
+   clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(combat2,400,1700);   
+  image(kaio1,500,1680);  
+  image(img8, x , y);
+  image(kaio1a,500,1680);
+  image(combat1,400,1700);   
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  noTint(); 
+  image(img18,590,y+30);          
+  image(img19,10,y+130); 
+      
+  fill(30,250);
+     if (FR==255){
+  text("Si tu deviens fort tu pourras monter en grade", 484,y+ 226);
+  text("et devenir Samuraï, Ninja ou Moine.", 484,y+ 252);
+  text("Sache que la force d'un Pokemon dépend", 484,y+ 278);  
+  text("aussi des choix de son dresseur. ", 484,y+ 304);  
+   }   
+        if (EN==255){
+  text("If you become strong enough you will be", 484,y+ 226);
+  text("promoted as a Samurai, a Ninja or a Monk.", 484,y+ 252);
+  text("Remember that the Pokemon's strengh", 484,y+ 278);  
+  text("depend on his trainer's choices.", 484,y+ 304);    
+   }  
+}
         //---------combat--------//
     
     
@@ -1652,4 +2133,5 @@ function mousePressed() {
    EN=255;
   }} 
 }
+
  
