@@ -20,6 +20,7 @@ let img19;
 let img20;
 let img21;
 let img22;
+let img23;
 let shadow;
 let flagEN;
 let flagFR;
@@ -106,7 +107,8 @@ function preload() {
   img19 = loadImage('assets/windowskin3.png');
   img20 = loadImage('assets/samurai.gif')
   img21 = loadImage('assets/windowskin4.png');
-  img22 = loadImage('assets/Sasha.gif')
+  img22 = loadImage('assets/Sasha.gif');
+  img23 = loadImage('assets/windowskin5.png');
   Img5 = loadImage('assets/Tree.png');
   flagEN = loadImage('assets/flagEN.png');
   flagFR = loadImage('assets/flagFR.png');
@@ -1512,7 +1514,7 @@ if(a==1){
   }
   noTint(); 
   image(img22,534,y+22);          
-  image(img21,10,y+130); 
+  image(img23,10,y+130); 
       
   fill(30,250);
      if (FR==255){
