@@ -1001,6 +1001,24 @@ if ( y>=770 && y<=806 && x>=334 && x<=372){
    }   
 }   
     
+         ///panneau3 Affichage///
+    
+   if ( y>=2104 && y<=2160 && x>=300 && x<=356){
+  noTint()
+  image(img9,0,y+150);  
+  fill(255,150);
+     if (FR==255){
+  text("Affrontez des dresseurs redoutable dans", 484,y+ 226);
+  text("des combats aussi difficiles qu'épiques.", 484,y+ 252);
+  text("Menez vos Pokemon à la victoire contre de", 484,y+ 278);  
+  text("grands champions pour remporter leurs royaume.", 484,y+ 304);  
+   }  
+        if (EN==255){
+  text("In 1570, it's usual to be challenged", 484,y+ 234);
+  text("to a dual. But be carefull, your pokemon", 484,y+ 260);
+  text("will be helpless during a sword fight.", 484,y+ 286);    
+   }   
+}   
     
     
     //-panneau3-//
@@ -2474,4 +2492,3 @@ function mousePressed() {
    EN=255;
   }} 
 }
-
