@@ -1,4 +1,5 @@
 let img;// Declare variable 'img'.
+var gif_loadImg, gif_createImg;
 let img2;
 let img3;
 let img4;
@@ -44,6 +45,10 @@ let combat1;
 let combat2;
 let battle;
 let battle1;
+let ponita;
+let ponita1;
+let fille;
+let fille1;
 let kaio1;
 let kaio1a;
 let kaio2;
@@ -62,6 +67,7 @@ let a = 1;
 let M = 0;
 let N =-400;
 let font 
+
 fontsize = 28;
 
 
@@ -109,14 +115,17 @@ function preload() {
   img21 = loadImage('assets/windowskin4.png');
   img22 = loadImage('assets/Sasha.gif');
   img23 = loadImage('assets/windowskin5.png');
+  ponita = loadImage('assets/ponita.gif');
+  ponita1 = loadImage('assets/ponita1.gif');
+  fille = loadImage('assets/fille.gif');
+  fille1 = loadImage('assets/fille1.gif');
   Img5 = loadImage('assets/Tree.png');
   flagEN = loadImage('assets/flagEN.png');
   flagFR = loadImage('assets/flagFR.png');
   frameRate(fr); 
 }
 
-function setup() {
- 
+function setup() {  
 textFont(font);
 textSize(fontsize);
 textAlign(CENTER, CENTER);
@@ -125,7 +134,6 @@ textAlign(CENTER, CENTER);
 
 
 function draw() {
- 
   let cnv = createCanvas(960,3400);
   cnv.position( 0, N, 'relative');
   if(mapping==1){
@@ -136,18 +144,22 @@ function draw() {
   image(sea,0,t); 
   image(cloud2,g,u);
   image(cloud1,o,u);  
-  background(bg);
+  background(bg); 
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
   image(img13, 474, 330);
   image(shadow,e+4,f+200);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);   
   image(battle1,116,2316);    
   image(combat2,400,1700); 
   image(kaio1,500,1680);  
   image(img5, x , y);
   image(kaio1a,500,1680);  
   image(combat1,400,1700);
-  image(battle,116,2316);      
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600);   
   image(Img5,0,0);
   image(bird1,e,f)
@@ -163,18 +175,22 @@ function draw() {
   image(sky,0,u);
   image(sea,0,t); 
   image(cloud2,g,u);
-  image(cloud1,o,u);  
+  image(cloud1,o,u);
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
   image(img13, 474, 330);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);   
   image(battle1,116,2316);  
   image(combat2,400,1700);
   image(kaio1,500,1680);   
   image(img6, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700); 
-  image(battle,116,2316);             
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -196,13 +212,17 @@ function draw() {
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
   image(img13, 474, 330);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);   
   image(battle1,116,2316);  
   image(combat2,400,1700);
   image(kaio1,500,1680); 
   image(img7, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700); 
-  image(battle,116,2316);               
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -224,13 +244,17 @@ function draw() {
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600); 
   image(img13, 474, 330);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);   
   image(battle1,116,2316);  
   image(combat2,400,1700); 
   image(kaio1,500,1680);   
   image(img8, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700);
- image(battle,116,2316);               
+  image(battle,116,2316);               
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600);
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -256,13 +280,17 @@ if (keyIsDown(LEFT_ARROW)){
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
   image(img13, 474, 330);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576); 
   image(battle1,116,2316);
   image(combat2,400,1700);
   image(kaio1,500,1680); 
   image(img2, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);             
+  image(battle,116,2316);  
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
   image(img11, 300, 1600);
   image(shadow,e+4,f+200);  
   image(Img5,0,0);
@@ -289,13 +317,17 @@ if (keyIsDown(LEFT_ARROW)){
     image(shadow,x+2,y+34); 
     image(img12, 300, 1600);
     image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
     image(battle1,116,2316);
     image(combat2,400,1700);
     image(kaio1,500,1680); 
     image(img3, x , y);
     image(kaio1a,500,1680); 
     image(combat1,400,1700);
-    image(battle,116,2316);           
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
     image(img11, 300, 1600);  
     image(shadow,e+4,f+200);  
     image(Img5,0,0); 
@@ -321,13 +353,17 @@ if (keyIsDown(LEFT_ARROW)){
     image(shadow,x+2,y+34); 
     image(img12, 300, 1600);
     image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
     image(battle1,116,2316);
     image(combat2,400,1700);
     image(kaio1,500,1680); 
     image(img4, x , y);
     image(kaio1a,500,1680); 
     image(combat1,400,1700);
-    image(battle,116,2316); 
+    image(battle,116,2316);
+    image(ponita,484, 2576); 
+    image(fille,484, 2576);
     image(img11, 300, 1600);
     image(shadow,e+4,f+200);  
     image(Img5,0,0);
@@ -356,12 +392,16 @@ if (keyIsDown(LEFT_ARROW)){
     image(img12, 300, 1600); 
     image(img13, 474, 330);
     image(battle1,116,2316);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
     image(combat2,400,1700);
     image(kaio1,500,1680); 
     image(img1, x , y);
     image(kaio1a,500,1680); 
     image(combat1,400,1700); 
-    image(battle,116,2316);       
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
     image(img11, 300, 1600) ;
     image(shadow,e+4,f+200);  
     image(Img5,0,0);
@@ -1496,7 +1536,7 @@ if(a==1){
   image(img7, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316); 
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1519,7 +1559,7 @@ if(a==1){
   image(img8, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);    
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
