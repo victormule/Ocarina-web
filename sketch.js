@@ -1,5 +1,4 @@
 let img;// Declare variable 'img'.
-var gif_loadImg, gif_createImg;
 let img2;
 let img3;
 let img4;
@@ -1332,13 +1331,17 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);
   image(battle1,116,2316);
   image(combat2,400,1700);
   image(kaio1,500,1680);
   image(img5, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700); 
-  image(battle,116,2316); 
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1355,13 +1358,17 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);  
   image(combat2,400,1700);
   image(kaio1,500,1680);  
   image(img6, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1381,13 +1388,17 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);
   image(combat2,400,1700);
   image(kaio1,500,1680);  
   image(img7, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1404,13 +1415,17 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);  
   image(combat2,400,1700);
   image(kaio1,500,1680);  
   image(img8, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1421,6 +1436,136 @@ if(a==1){
   tint(EN);
   image(flagEN,60,y-342); 
   }
+       if (keyIsDown(LEFT_ARROW)){
+  clear();
+  noTint();
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(img13, 474, 330);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576); 
+  image(battle1,116,2316);
+  image(combat2,400,1700);
+  image(kaio1,500,1680); 
+  image(img2, x , y);
+  image(kaio1a,500,1680); 
+  image(combat1,400,1700);
+  image(battle,116,2316);  
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
+  image(img11, 300, 1600);
+  image(shadow,e+4,f+200);  
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+
+}
+
+  
+  if (keyIsDown(RIGHT_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(kaio1,500,1680); 
+    image(img3, x , y);
+    image(kaio1a,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600);  
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0); 
+    image(bird1,e,f);
+    image(img10,600,856) 
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+
+}
+
+  if (keyIsDown(UP_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(kaio1,500,1680); 
+    image(img4, x , y);
+    image(kaio1a,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576); 
+    image(fille,484, 2576);
+    image(img11, 300, 1600);
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+}
+
+  if (keyIsDown(DOWN_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    image(sea,0,t);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600); 
+    image(img13, 474, 330);
+    image(battle1,116,2316);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(combat2,400,1700);
+    image(kaio1,500,1680); 
+    image(img1, x , y);
+    image(kaio1a,500,1680); 
+    image(combat1,400,1700); 
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600) ;
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+} 
   noTint(); 
   image(img20,582,y+24);          
   image(img21,10,y+130); 
@@ -1481,13 +1626,17 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);
   image(battle1,116,2316);
   image(combat2,400,1700);
   image(kaio1,500,1680);
   image(img5, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700); 
-  image(battle,116,2316); 
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1504,13 +1653,17 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);  
   image(combat2,400,1700);
   image(kaio1,500,1680);  
   image(img6, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1530,13 +1683,17 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);
   image(combat2,400,1700);
   image(kaio1,500,1680);  
   image(img7, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316); 
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1553,13 +1710,17 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);  
   image(combat2,400,1700);
   image(kaio1,500,1680);  
   image(img8, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);    
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1570,6 +1731,136 @@ if(a==1){
   tint(EN);
   image(flagEN,60,y-342); 
   }
+       if (keyIsDown(LEFT_ARROW)){
+  clear();
+  noTint();
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(img13, 474, 330);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576); 
+  image(battle1,116,2316);
+  image(combat2,400,1700);
+  image(kaio1,500,1680); 
+  image(img2, x , y);
+  image(kaio1a,500,1680); 
+  image(combat1,400,1700);
+  image(battle,116,2316);  
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
+  image(img11, 300, 1600);
+  image(shadow,e+4,f+200);  
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+
+}
+
+  
+  if (keyIsDown(RIGHT_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(kaio1,500,1680); 
+    image(img3, x , y);
+    image(kaio1a,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600);  
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0); 
+    image(bird1,e,f);
+    image(img10,600,856) 
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+
+}
+
+  if (keyIsDown(UP_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(kaio1,500,1680); 
+    image(img4, x , y);
+    image(kaio1a,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576); 
+    image(fille,484, 2576);
+    image(img11, 300, 1600);
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+}
+
+  if (keyIsDown(DOWN_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    image(sea,0,t);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600); 
+    image(img13, 474, 330);
+    image(battle1,116,2316);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(combat2,400,1700);
+    image(kaio1,500,1680); 
+    image(img1, x , y);
+    image(kaio1a,500,1680); 
+    image(combat1,400,1700); 
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600) ;
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+} 
   noTint(); 
   image(img22,534,y+22);          
   image(img23,10,y+130); 
@@ -1584,6 +1875,23 @@ if(a==1){
   text("Maximum harden !", 484,y+ 284);     
    }  
 }
+    
+     //---------Aventurière--------//
+    
+      if (y>=2584 && y<=2620 && x>=460 && x<=586) {
+ y-=5
+ N +=5;
+ }   
+    if (y>=2590 && y<=2620 && x>=454 && x<=586){
+ x-=5
+ }      
+     if (y>=2590 && y<=2620 && x>=460 && x<=592){
+ x+=5
+ }     
+     if (y>=2590 && y<=2626 && x>=460 && x<=586) {
+ y+=5
+ N -=5;
+ }     
     
         //---------Kaio--------//
     
@@ -1611,12 +1919,16 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);
   image(battle1,116,2316);
-  image(combat2,400,1700);   
+  image(combat2,400,1700);
   image(img5, x , y);
   image(kaio4,500,1680); 
   image(combat1,400,1700); 
-  image(battle,116,2316); 
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1633,12 +1945,16 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);  
-  image(combat2,400,1700);   
+  image(combat2,400,1700);
   image(img6, x , y);
   image(kaio4,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1658,12 +1974,16 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);
-  image(combat2,400,1700);   
+  image(combat2,400,1700); 
   image(img7, x , y);
   image(kaio4,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1680,12 +2000,16 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);  
-  image(combat2,400,1700);   
+  image(combat2,400,1700);
   image(img8, x , y);
   image(kaio4,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1696,6 +2020,132 @@ if(a==1){
   tint(EN);
   image(flagEN,60,y-342); 
   }
+       if (keyIsDown(LEFT_ARROW)){
+  clear();
+  noTint();
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(img13, 474, 330);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576); 
+  image(battle1,116,2316);
+  image(combat2,400,1700);
+  image(img2, x , y);
+  image(kaio4,500,1680); 
+  image(combat1,400,1700);
+  image(battle,116,2316);  
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
+  image(img11, 300, 1600);
+  image(shadow,e+4,f+200);  
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+
+}
+
+  
+  if (keyIsDown(RIGHT_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(img3, x , y);
+    image(kaio4,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600);  
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0); 
+    image(bird1,e,f);
+    image(img10,600,856) 
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+
+}
+
+  if (keyIsDown(UP_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(img4, x , y);
+    image(kaio4,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576); 
+    image(fille,484, 2576);
+    image(img11, 300, 1600);
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+}
+
+  if (keyIsDown(DOWN_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    image(sea,0,t);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600); 
+    image(img13, 474, 330);
+    image(battle1,116,2316);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(combat2,400,1700); 
+    image(img1, x , y);
+    image(kaio4,500,1680); 
+    image(combat1,400,1700); 
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600) ;
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+} 
   noTint(); 
   image(img18,590,y+30);          
   image(img19,10,y+130); 
@@ -1722,12 +2172,16 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);
   image(battle1,116,2316);
-  image(combat2,400,1700);   
+  image(combat2,400,1700);
   image(img5, x , y);
   image(kaio2,500,1680); 
-  image(combat1,400,1700);
-  image(battle,116,2316); 
+  image(combat1,400,1700); 
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1744,12 +2198,16 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
-  image(battle1,116,2316); 
-  image(combat2,400,1700);   
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
+  image(battle1,116,2316);  
+  image(combat2,400,1700); 
   image(img6, x , y);
   image(kaio2,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1769,12 +2227,16 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
-  image(battle1,116,2316);  
-  image(combat2,400,1700);   
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
+  image(battle1,116,2316);
+  image(combat2,400,1700);
   image(img7, x , y);
   image(kaio2,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1791,12 +2253,16 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);  
-  image(combat2,400,1700);   
+  image(combat2,400,1700); 
   image(img8, x , y);
   image(kaio2,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1807,6 +2273,132 @@ if(a==1){
   tint(EN);
   image(flagEN,60,y-342); 
   }
+       if (keyIsDown(LEFT_ARROW)){
+  clear();
+  noTint();
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(img13, 474, 330);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576); 
+  image(battle1,116,2316);
+  image(combat2,400,1700);
+  image(img2, x , y);
+  image(kaio2,500,1680); 
+  image(combat1,400,1700);
+  image(battle,116,2316);  
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
+  image(img11, 300, 1600);
+  image(shadow,e+4,f+200);  
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+
+}
+
+  
+  if (keyIsDown(RIGHT_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(img3, x , y);
+    image(kaio2,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600);  
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0); 
+    image(bird1,e,f);
+    image(img10,600,856) 
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+
+}
+
+  if (keyIsDown(UP_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(img4, x , y);
+    image(kaio2,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576); 
+    image(fille,484, 2576);
+    image(img11, 300, 1600);
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+}
+
+  if (keyIsDown(DOWN_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    image(sea,0,t);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600); 
+    image(img13, 474, 330);
+    image(battle1,116,2316);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(combat2,400,1700);
+    image(img1, x , y);
+    image(kaio2,500,1680); 
+    image(combat1,400,1700); 
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600) ;
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+} 
   noTint(); 
   image(img18,590,y+30);          
   image(img19,10,y+130); 
@@ -1833,12 +2425,17 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);
   image(battle1,116,2316);
-  image(combat2,400,1700);   
+  image(combat2,400,1700);
+
   image(img5, x , y);
   image(kaio3,500,1680); 
-  image(combat1,400,1700);
-  image(battle,116,2316); 
+  image(combat1,400,1700); 
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1855,12 +2452,16 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);  
-  image(combat2,400,1700);   
+  image(combat2,400,1700);  
   image(img6, x , y);
   image(kaio3,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1880,12 +2481,16 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
-  image(battle1,116,2316);  
-  image(combat2,400,1700);   
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
+  image(battle1,116,2316);
+  image(combat2,400,1700);
   image(img7, x , y);
   image(kaio3,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1902,12 +2507,16 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);  
-  image(combat2,400,1700);   
+  image(combat2,400,1700);  
   image(img8, x , y);
   image(kaio3,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1918,6 +2527,132 @@ if(a==1){
   tint(EN);
   image(flagEN,60,y-342); 
   }
+       if (keyIsDown(LEFT_ARROW)){
+  clear();
+  noTint();
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(img13, 474, 330);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576); 
+  image(battle1,116,2316);
+  image(combat2,400,1700); 
+  image(img2, x , y);
+  image(kaio3,500,1680); 
+  image(combat1,400,1700);
+  image(battle,116,2316);  
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
+  image(img11, 300, 1600);
+  image(shadow,e+4,f+200);  
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+
+}
+
+  
+  if (keyIsDown(RIGHT_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(img3, x , y);
+    image(kaio3,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600);  
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0); 
+    image(bird1,e,f);
+    image(img10,600,856) 
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+
+}
+
+  if (keyIsDown(UP_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(img4, x , y);
+    image(kaio3,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576); 
+    image(fille,484, 2576);
+    image(img11, 300, 1600);
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+}
+
+  if (keyIsDown(DOWN_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    image(sea,0,t);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600); 
+    image(img13, 474, 330);
+    image(battle1,116,2316);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(combat2,400,1700); 
+    image(img1, x , y);
+    image(kaio3,500,1680); 
+    image(combat1,400,1700); 
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600) ;
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+} 
   noTint(); 
   image(img18,590,y+30);          
   image(img19,10,y+130); 
@@ -1944,13 +2679,17 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);
   image(battle1,116,2316);
-  image(combat2,400,1700);   
-  image(kaio1,500,1680);  
+  image(combat2,400,1700);
+  image(kaio1,500,1680);
   image(img5, x , y);
   image(kaio1a,500,1680); 
-  image(combat1,400,1700);
-  image(battle,116,2316); 
+  image(combat1,400,1700); 
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1967,13 +2706,17 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);  
-  image(combat2,400,1700);   
+  image(combat2,400,1700);
   image(kaio1,500,1680);  
   image(img6, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -1993,13 +2736,17 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
-  image(battle1,116,2316);  
-  image(combat2,400,1700);   
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
+  image(battle1,116,2316);
+  image(combat2,400,1700);
   image(kaio1,500,1680);  
   image(img7, x , y);
   image(kaio1a,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -2016,13 +2763,17 @@ if(a==1){
   background(bg);
   image(shadow,x+2,y+34); 
   image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
   image(battle1,116,2316);  
-  image(combat2,400,1700);   
+  image(combat2,400,1700);
   image(kaio1,500,1680);  
   image(img8, x , y);
-  image(kaio1a,500,1680);
+  image(kaio1a,500,1680); 
   image(combat1,400,1700);
-  image(battle,116,2316);   
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
   image(img11, 300, 1600); 
   image(shadow,e+4,f+200);    
   image(Img5,0,0);
@@ -2033,6 +2784,136 @@ if(a==1){
   tint(EN);
   image(flagEN,60,y-342); 
   }
+       if (keyIsDown(LEFT_ARROW)){
+  clear();
+  noTint();
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(img13, 474, 330);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576); 
+  image(battle1,116,2316);
+  image(combat2,400,1700);
+  image(kaio1,500,1680); 
+  image(img2, x , y);
+  image(kaio1a,500,1680); 
+  image(combat1,400,1700);
+  image(battle,116,2316);  
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
+  image(img11, 300, 1600);
+  image(shadow,e+4,f+200);  
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+
+}
+
+  
+  if (keyIsDown(RIGHT_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(kaio1,500,1680); 
+    image(img3, x , y);
+    image(kaio1a,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600);  
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0); 
+    image(bird1,e,f);
+    image(img10,600,856) 
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+
+}
+
+  if (keyIsDown(UP_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(kaio1,500,1680); 
+    image(img4, x , y);
+    image(kaio1a,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576); 
+    image(fille,484, 2576);
+    image(img11, 300, 1600);
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+}
+
+  if (keyIsDown(DOWN_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    image(sea,0,t);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600); 
+    image(img13, 474, 330);
+    image(battle1,116,2316);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(combat2,400,1700);
+    image(kaio1,500,1680); 
+    image(img1, x , y);
+    image(kaio1a,500,1680); 
+    image(combat1,400,1700); 
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600) ;
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+} 
   noTint(); 
   image(img18,590,y+30);          
   image(img19,10,y+130); 
@@ -2532,3 +3413,4 @@ function mousePressed() {
    EN=255;
   }} 
 }
+
