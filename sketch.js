@@ -28,7 +28,7 @@ let flagFR;
 let FR = 255;
 let EN = 150;
 let song;
-let fr = 60; //starting FPS
+let fr = 120; //starting FPS
 
 
 
