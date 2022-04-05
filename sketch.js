@@ -3697,9 +3697,9 @@ if(mapping==3){
   image(img5, x , y);
   image(temple2, 357,1922);
   tint(FR);  
-  image(flagFR,0,392);
+  image(flagFR,0,y-316);
   tint(EN);    
-  image(flagEN,60,392); 
+  image(flagEN,60,y-316);
   }
   if(a==2){
   clear()
@@ -3710,9 +3710,9 @@ if(mapping==3){
   image(img6, x , y); 
   image(temple2, 357,1922);  
   tint(FR);  
-  image(flagFR,0,392);
+  image(flagFR,0,y-316);
   tint(EN);    
-  image(flagEN,60,392);   
+  image(flagEN,60,y-316);
   }
   if(a==3){
   clear() 
@@ -3723,9 +3723,9 @@ if(mapping==3){
   image(img7, x , y); 
   image(temple2, 357,1922);  
   tint(FR);  
-  image(flagFR,0,392);
+  image(flagFR,0,y-316);
   tint(EN);    
-  image(flagEN,60,392);   
+  image(flagEN,60,y-316);
   }
   if(a==4){
   clear()
@@ -3736,9 +3736,9 @@ if(mapping==3){
   image(img8, x , y); 
   image(temple2, 357,1922);  
   tint(FR);  
-  image(flagFR,0,392);
+  image(flagFR,0,y-316);
   tint(EN);    
-  image(flagEN,60,392);   
+  image(flagEN,60,y-316); 
   }
 
 
@@ -3751,9 +3751,9 @@ if(mapping==3){
   image(img2, x , y);
   image(temple2, 357,1922);  
   tint(FR);  
-  image(flagFR,0,392);
+  image(flagFR,0,y-316);
   tint(EN);    
-  image(flagEN,60,392); 
+  image(flagEN,60,y-316);
     x -= 5 ;
     a = 2;
 
@@ -3769,9 +3769,9 @@ if(mapping==3){
   image(img3, x , y);
   image(temple2, 357,1922);  
   tint(FR);  
-  image(flagFR,0,392);
+  image(flagFR,0,y-316);
   tint(EN);    
-  image(flagEN,60,392); 
+  image(flagEN,60,y-316);
     x += 5;
     a = 3;
 
@@ -3786,9 +3786,9 @@ if(mapping==3){
   image(img4, x , y);
   image(temple2, 357,1922);  
   tint(FR);  
-  image(flagFR,0,392);
+  image(flagFR,0,y-316);
   tint(EN);    
-  image(flagEN,60,392); 
+  image(flagEN,60,y-316);
     y -= 5;
     a = 4;
     N +=5;
@@ -3803,9 +3803,9 @@ if(mapping==3){
   image(img1, x , y);
   image(temple2, 357,1922);  
   tint(FR);  
-  image(flagFR,0,392);
+  image(flagFR,0,y-316);
   tint(EN);    
-  image(flagEN,60,392); 
+  image(flagEN,60,y-316);
     y += 5;
     a = 1;
     N -=5;
@@ -3823,7 +3823,6 @@ if(mapping==3){
   }
   
   //limite MAP3//
-  
   
   
   
@@ -3846,7 +3845,133 @@ if(mapping==3){
  N+=5    
 } 
 
+  
+  //----bord Gauche---//
+  
+      if (  y>=2044 && y<=2090 && x<=513) {
+ y-=5 
+ N +=5;      
+} 
+      if (  y>=2050 && y<=2096 && x<=513) {
+ y+=5 
+ N -=5;      
+}  
+      if (  y>=2050 && y<=2090 && x<=519) {
+ x+=5 
+     
+}    
  
+  //
+  
+        if (  y>=2204 && y<=2250 && x<=513) {
+ y-=5 
+ N +=5;      
+} 
+      if (  y>=2210 && y<=2256 && x<=513) {
+ y+=5 
+ N -=5;      
+}  
+      if (  y>=2210 && y<=2250 && x<=519) {
+ x+=5 
+     
+} 
+  
+  //
+  
+          if (  y>=2364 && y<=2410 && x<=513) {
+ y-=5 
+ N +=5;      
+} 
+      if (  y>=2370 && y<=2416 && x<=513) {
+ y+=5 
+ N -=5;      
+}  
+      if (  y>=2370 && y<=2410 && x<=519) {
+ x+=5 
+     
+} 
+  
+  //
+  //----bord Droit---//
+  
+      if (  y>=2044 && y<=2090 && x>=754) {
+ y-=5 
+ N +=5;      
+} 
+      if (  y>=2050 && y<=2096 && x>=754) {
+ y+=5 
+ N -=5;      
+}  
+      if (  y>=2050 && y<=2090 && x>=748) {
+ x-=5 
+     
+}    
+ 
+  //
+  
+        if (  y>=2204 && y<=2250 && x>=754) {
+ y-=5 
+ N +=5;      
+} 
+      if (  y>=2210 && y<=2256 && x>=754) {
+ y+=5 
+ N -=5;      
+}  
+      if (  y>=2210 && y<=2250 && x>=748) {
+ x-=5 
+     
+} 
+  
+  //
+  
+          if (  y>=2364 && y<=2410 && x>=754) {
+ y-=5 
+ N +=5;      
+} 
+      if (  y>=2370 && y<=2416 && x>=754) {
+ y+=5 
+ N -=5;      
+}  
+      if (  y>=2370 && y<=2410 && x>=748) {
+ x-=5 
+     
+} 
+  
+  
+  //-----flamme----//
+  
+        if (y>=2057 && y<=2102 && x>=532 && x<=738) {
+ y-=5
+ N +=5;
+ }   
+    if (y>=2062 && y<=2102 && x>=528 && x<=738){
+ x-=5
+ }      
+     if (y>=2062 && y<=2102 && x>=532 && x<=740){
+ x+=5
+ }     
+     if (y>=2062 && y<=2106 && x>=532 && x<=738) {
+ y+=5
+ N -=5;
+ }    
+  
+    //-----Panneau credit----//
+  
+        if (y>=2046 && y<=2100 && x>=574 && x<=690) {
+ y-=5
+ N +=5;
+ }   
+    if (y>=2050 && y<=2100 && x>=570 && x<=690){
+ x-=5
+ }      
+     if (y>=2050 && y<=2100 && x>=574 && x<=694){
+ x+=5
+ }     
+     if (y>=2050 && y<=2100 && x>=574 && x<=690) {
+ y+=5
+ N -=5;
+ }   
+  
 
          //---MAP3 TRANSFER--/
 
@@ -3887,13 +4012,12 @@ function mousePressed() {
    EN=255;
   }} 
   if (mapping==3){
-  if (mouseX >=0 && mouseX <=60 && mouseY <=y-300) {
+  if (mouseX >=0 && mouseX <=60 && mouseY <=y-270) {
    FR=255;
    EN=150;
   }
-    if (mouseX >60 && mouseX <=120 && mouseY <=y-300) {
+    if (mouseX >60 && mouseX <=120 && mouseY <=y-270) {
    FR=150;
    EN=255;
   }}  
 }
-
