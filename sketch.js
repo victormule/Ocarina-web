@@ -28,7 +28,7 @@ let flagFR;
 let FR = 255;
 let EN = 150;
 let song;
-let fr = 60; //starting FPS
+let fr = 100; //starting FPS
 
 
 
@@ -84,6 +84,7 @@ function preload() {
   ch = loadImage("assets/chambre.png");
   temple = loadImage('assets/temple.png')
   temple2 = loadImage('assets/temple2.gif')
+  temple3 = loadImage('assets/templefeu.gif')
   light1= loadImage('assets/templelight.png')
   sky = loadImage('assets/sky.png');
   cloud1 = loadImage('assets/cloud1.png');
@@ -3691,6 +3692,7 @@ if(mapping==3){
   clear()
   noTint()  
   background(temple);  
+  image(temple3, 553,2098);  
   image(shadow,x+2,y+34);  
   image(img5, x , y);
   image(temple2, 357,1922);
@@ -3703,6 +3705,7 @@ if(mapping==3){
   clear()
   noTint()  
   background(temple);  
+  image(temple3, 553,2098);  
   image(shadow,x+2,y+34);  
   image(img6, x , y); 
   image(temple2, 357,1922);  
@@ -3714,7 +3717,8 @@ if(mapping==3){
   if(a==3){
   clear() 
   noTint()  
-  background(temple); 
+  background(temple);
+  image(temple3, 553,2098);  
   image(shadow,x+2,y+34);  
   image(img7, x , y); 
   image(temple2, 357,1922);  
@@ -3727,6 +3731,7 @@ if(mapping==3){
   clear()
   noTint()    
   background(temple);
+  image(temple3, 553,2098);  
   image(shadow,x+2,y+34);  
   image(img8, x , y); 
   image(temple2, 357,1922);  
@@ -3741,6 +3746,7 @@ if(mapping==3){
   clear();
   noTint()  
   background(temple); 
+  image(temple3, 553,2098);  
   image(shadow,x+2,y+34);  
   image(img2, x , y);
   image(temple2, 357,1922);  
@@ -3758,6 +3764,7 @@ if(mapping==3){
   clear();
   noTint()  
   background(temple); 
+  image(temple3, 553,2098);  
   image(shadow,x+2,y+34);  
   image(img3, x , y);
   image(temple2, 357,1922);  
@@ -3774,6 +3781,7 @@ if(mapping==3){
   clear();
   noTint()  
   background(temple); 
+  image(temple3, 553,2098);  
   image(shadow,x+2,y+34);  
   image(img4, x , y);
   image(temple2, 357,1922);  
@@ -3790,6 +3798,7 @@ if(mapping==3){
   clear();
   noTint()  
   background(temple); 
+  image(temple3, 553,2098); 
   image(shadow,x+2,y+34);  
   image(img1, x , y);
   image(temple2, 357,1922);  
@@ -3887,3 +3896,4 @@ function mousePressed() {
    EN=255;
   }}  
 }
+
