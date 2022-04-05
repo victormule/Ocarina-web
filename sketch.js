@@ -21,6 +21,7 @@ let img20;
 let img21;
 let img22;
 let img23;
+let img24;
 let shadow;
 let flagEN;
 let flagFR;
@@ -48,11 +49,14 @@ let ponita;
 let ponita1;
 let fille;
 let fille1;
+let temple;
+let temple2;
+let light1;
 let kaio1;
 let kaio1a;
 let kaio2;
 let kaio3;
-let kaio4
+let kaio4;
 let mapping = 2;
 let g =-600;
 let e =-100;
@@ -62,6 +66,8 @@ let u = 0;
 let t = 0;
 let x = 260;
 let y = 590;
+let z = 200;
+let Z = 0.2;
 let a = 1;
 let M = 0;
 let N =-400;
@@ -76,6 +82,9 @@ function preload() {
   song = loadSound('assets/littleroot.mp3');
   bg = loadImage('assets/plaine.gif');
   ch = loadImage("assets/chambre.png");
+  temple = loadImage('assets/temple.gif')
+  temple2 = loadImage('assets/temple2.gif')
+  light1= loadImage('assets/templelight.png')
   sky = loadImage('assets/sky.png');
   cloud1 = loadImage('assets/cloud1.png');
   cloud2 = loadImage('assets/cloud2.png');
@@ -114,6 +123,7 @@ function preload() {
   img21 = loadImage('assets/windowskin4.png');
   img22 = loadImage('assets/Sasha.gif');
   img23 = loadImage('assets/windowskin5.png');
+  img24 = loadImage('assets/elise.gif');
   ponita = loadImage('assets/ponita.gif');
   ponita1 = loadImage('assets/ponita1.gif');
   fille = loadImage('assets/fille.gif');
@@ -131,10 +141,11 @@ textAlign(CENTER, CENTER);
 
 } 
 
-
 function draw() {
   let cnv = createCanvas(960,3400);
   cnv.position( 0, N, 'relative');
+  
+
   if(mapping==1){
   if(a==1){
   clear()
@@ -1893,6 +1904,269 @@ if(a==1){
  N -=5;
  }     
     
+        //-------------Aventurière affichage-----------//
+    
+     if ( y>=2566 && y<=2650 && x>=430 && x<=610){
+if(a==1){
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);
+  image(battle1,116,2316);
+  image(combat2,400,1700);
+  image(kaio1,500,1680);
+  image(img5, x , y);
+  image(kaio1a,500,1680); 
+  image(combat1,400,1700); 
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==2){
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
+  image(battle1,116,2316);  
+  image(combat2,400,1700);
+  image(kaio1,500,1680);  
+  image(img6, x , y);
+  image(kaio1a,500,1680); 
+  image(combat1,400,1700);
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==3){
+  clear()
+  noTint();  
+ 
+  clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
+  image(battle1,116,2316);
+  image(combat2,400,1700);
+  image(kaio1,500,1680);  
+  image(img7, x , y);
+  image(kaio1a,500,1680); 
+  image(combat1,400,1700);
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+  if(a==4){
+   clear()
+  noTint();   
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576);  
+  image(battle1,116,2316);  
+  image(combat2,400,1700);
+  image(kaio1,500,1680);  
+  image(img8, x , y);
+  image(kaio1a,500,1680); 
+  image(combat1,400,1700);
+  image(battle,116,2316);
+  image(ponita,484, 2576);
+  image(fille,484, 2576);  
+  image(img11, 300, 1600); 
+  image(shadow,e+4,f+200);    
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+  }
+       if (keyIsDown(LEFT_ARROW)){
+  clear();
+  noTint();
+  background(bg);
+  image(shadow,x+2,y+34); 
+  image(img12, 300, 1600);
+  image(img13, 474, 330);
+  image(ponita1,484, 2576);
+  image(fille1,484, 2576); 
+  image(battle1,116,2316);
+  image(combat2,400,1700);
+  image(kaio1,500,1680); 
+  image(img2, x , y);
+  image(kaio1a,500,1680); 
+  image(combat1,400,1700);
+  image(battle,116,2316);  
+  image(ponita,484, 2576);
+  image(fille,484, 2576);
+  image(img11, 300, 1600);
+  image(shadow,e+4,f+200);  
+  image(Img5,0,0);
+  image(bird1,e,f)
+  image(img10,600,856);
+  tint(FR);
+  image(flagFR,0,y-342);
+  tint(EN);
+  image(flagEN,60,y-342); 
+
+}
+
+  
+  if (keyIsDown(RIGHT_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(kaio1,500,1680); 
+    image(img3, x , y);
+    image(kaio1a,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600);  
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0); 
+    image(bird1,e,f);
+    image(img10,600,856) 
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+
+}
+
+  if (keyIsDown(UP_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(sea,0,t); 
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600);
+    image(img13, 474, 330);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(battle1,116,2316);
+    image(combat2,400,1700);
+    image(kaio1,500,1680); 
+    image(img4, x , y);
+    image(kaio1a,500,1680); 
+    image(combat1,400,1700);
+    image(battle,116,2316);
+    image(ponita,484, 2576); 
+    image(fille,484, 2576);
+    image(img11, 300, 1600);
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+}
+
+  if (keyIsDown(DOWN_ARROW)) {
+    clear();
+    noTint();
+    image(sky,0,u);
+    image(cloud2,g,u);
+    image(cloud1,o,u);
+    image(sea,0,t);
+    background(bg);
+    image(shadow,x+2,y+34); 
+    image(img12, 300, 1600); 
+    image(img13, 474, 330);
+    image(battle1,116,2316);
+    image(ponita1,484, 2576);
+    image(fille1,484, 2576); 
+    image(combat2,400,1700);
+    image(kaio1,500,1680); 
+    image(img1, x , y);
+    image(kaio1a,500,1680); 
+    image(combat1,400,1700); 
+    image(battle,116,2316);
+    image(ponita,484, 2576);
+    image(fille,484, 2576);
+    image(img11, 300, 1600) ;
+    image(shadow,e+4,f+200);  
+    image(Img5,0,0);
+    image(bird1,e,f)
+    image(img10,600,856);
+    tint(FR);
+    image(flagFR,0,y-342);
+    tint(EN);
+    image(flagEN,60,y-342); 
+} 
+  noTint(); 
+  image(img24,584,y+22);          
+  image(img23,10,y+130); 
+      
+  fill(30,250);
+     if (FR==255){
+  text("Dans cette aventure, il faut du temps ", 484,y+ 226);
+  text("pour que ton pokemon t'obéisses.", 484,y+ 252);
+  text("Seuls les liens d'amitier et la persévérance", 484,y+ 278);  
+  text("en feront un bon compagnon de combat. ", 484,y+ 304);  
+   }   
+        if (EN==255){
+  text("If you become strong enough you will be", 484,y+ 226);
+  text("promoted as a Samurai, a Ninja or a Monk.", 484,y+ 252);
+  text("Remember that the Pokemon's strengh", 484,y+ 278);  
+  text("depend on his trainer's choices.", 484,y+ 304);    
+   }
+ }
+    
         //---------Kaio--------//
     
       if (y>=1672 && y<=1712 && x>=494 && x<=542) {
@@ -3210,14 +3484,23 @@ if(a==1){
       
     
     
-      if ( x >=255 && x<=264 && y >= 680 && y <= 770){
+      if ( x >=255 && x<=264 && y >= 680 && y <= 778){
  y=744 
  N=-400      
 song.playMode('sustain');
 song.pause();        
  mapping = 2
 }
+  
     
+       if ( x >=700 && x<=720 && y >= 2460 && y <= 2476){
+ y=2450
+ x=634        
+     
+song.playMode('sustain');
+song.pause();        
+ mapping = 3
+}
     
      
   //--End--//
@@ -3241,6 +3524,7 @@ song.pause();
   clear()
   noTint()  
   background(ch);
+  image(shadow,x+2,y+34);  
   image(img5, x , y);
   tint(FR);  
   image(flagFR,0,392);
@@ -3251,6 +3535,7 @@ song.pause();
   clear()
   noTint()  
   background(ch);
+  image(shadow,x+2,y+34);  
   image(img6, x , y);
   tint(FR);  
   image(flagFR,0,392);
@@ -3261,6 +3546,7 @@ song.pause();
   clear() 
   noTint()  
   background(ch);
+  image(shadow,x+2,y+34);  
   image(img7, x , y);
   tint(FR);  
   image(flagFR,0,392);
@@ -3271,6 +3557,7 @@ song.pause();
   clear()
   noTint()    
   background(ch);
+  image(shadow,x+2,y+34);  
   image(img8, x , y);
   tint(FR);  
   image(flagFR,0,392);
@@ -3283,6 +3570,7 @@ song.pause();
   clear();
   noTint()  
   background(ch);
+  image(shadow,x+2,y+34);  
   image(img2, x , y);
   tint(FR);  
   image(flagFR,0,392);
@@ -3298,6 +3586,7 @@ song.pause();
   clear();
   noTint()  
   background(ch);
+  image(shadow,x+2,y+34);  
   image(img3, x , y);
   tint(FR);  
   image(flagFR,0,392);
@@ -3312,6 +3601,7 @@ song.pause();
   clear();
   noTint()  
   background(ch);
+  image(shadow,x+2,y+34);  
   image(img4, x , y);
   tint(FR);  
   image(flagFR,0,392);
@@ -3325,6 +3615,7 @@ song.pause();
   clear();
   noTint()  
   background(ch);
+  image(shadow,x+2,y+34);  
   image(img1, x , y);
   tint(FR);  
   image(flagFR,0,392);
@@ -3388,9 +3679,183 @@ if (x <=98) {
 mapping=1
 
 } 
+
+} 
+
+
+  //------------MAP3------------//
+  
+  
+if(mapping==3){  
+  if(a==1 ){
+  clear()
+  noTint()  
+  background(temple);  
+  image(shadow,x+2,y+34);  
+  image(img5, x , y);
+  image(temple2, 357,1922);
+  tint(FR);  
+  image(flagFR,0,392);
+  tint(EN);    
+  image(flagEN,60,392); 
+  }
+  if(a==2){
+  clear()
+  noTint()  
+  background(temple);  
+  image(shadow,x+2,y+34);  
+  image(img6, x , y); 
+  image(temple2, 357,1922);  
+  tint(FR);  
+  image(flagFR,0,392);
+  tint(EN);    
+  image(flagEN,60,392);   
+  }
+  if(a==3){
+  clear() 
+  noTint()  
+  background(temple); 
+  image(shadow,x+2,y+34);  
+  image(img7, x , y); 
+  image(temple2, 357,1922);  
+  tint(FR);  
+  image(flagFR,0,392);
+  tint(EN);    
+  image(flagEN,60,392);   
+  }
+  if(a==4){
+  clear()
+  noTint()    
+  background(temple);
+  image(shadow,x+2,y+34);  
+  image(img8, x , y); 
+  image(temple2, 357,1922);  
+  tint(FR);  
+  image(flagFR,0,392);
+  tint(EN);    
+  image(flagEN,60,392);   
+  }
+
+
+  if (keyIsDown(LEFT_ARROW)){
+  clear();
+  noTint()  
+  background(temple); 
+  image(shadow,x+2,y+34);  
+  image(img2, x , y);
+  image(temple2, 357,1922);  
+  tint(FR);  
+  image(flagFR,0,392);
+  tint(EN);    
+  image(flagEN,60,392); 
+    x -= 5 ;
+    a = 2;
+
+}
+
+  
+  if (keyIsDown(RIGHT_ARROW)) {
+  clear();
+  noTint()  
+  background(temple); 
+  image(shadow,x+2,y+34);  
+  image(img3, x , y);
+  image(temple2, 357,1922);  
+  tint(FR);  
+  image(flagFR,0,392);
+  tint(EN);    
+  image(flagEN,60,392); 
+    x += 5;
+    a = 3;
+
+}
+
+  if (keyIsDown(UP_ARROW)) {
+  clear();
+  noTint()  
+  background(temple); 
+  image(shadow,x+2,y+34);  
+  image(img4, x , y);
+  image(temple2, 357,1922);  
+  tint(FR);  
+  image(flagFR,0,392);
+  tint(EN);    
+  image(flagEN,60,392); 
+    y -= 5;
+    a = 4;
+    N +=5;
+}
+
+  if (keyIsDown(DOWN_ARROW)) {
+  clear();
+  noTint()  
+  background(temple); 
+  image(shadow,x+2,y+34);  
+  image(img1, x , y);
+  image(temple2, 357,1922);  
+  tint(FR);  
+  image(flagFR,0,392);
+  tint(EN);    
+  image(flagEN,60,392); 
+    y += 5;
+    a = 1;
+    N -=5;
+} 
+  
+
+ tint(255,z);
+ image(light1,410,1972);  
+  z+=Z;
+  if ( z > 250){
+  Z=-0.4; 
+  }
+  if ( z < 230){
+  Z=+0.3; 
+  }
+  
+  //limite MAP3//
+  
+  
+  
+  
+  if (x <=486) {
+ x+=5
+}
+  if (x >=780) {
+ x-=5
+}
+  if ( y<=2036) {
+ y+=5 
+ N-=5   
+}
+   if ( x>=486 && x<=588 && y>=2440) {
+ y-=5
+ N+=5    
+} 
+   if ( x>=674 && x<=780 && y>=2440) {
+ y-=5
+ N+=5    
+} 
+
  
+
+         //---MAP3 TRANSFER--/
+
+ if (y>=2460) {
+ y=2486
+ x=704
+ song.loop(); 
+ song.playMode('restart');  
+ song.play();   
+ mapping=1
+} 
+
     //-------//
 }
+
+
+    //-------//
+
 
 }
 function mousePressed() {
@@ -3412,5 +3877,13 @@ function mousePressed() {
    FR=150;
    EN=255;
   }} 
+  if (mapping==3){
+  if (mouseX >=0 && mouseX <=60 && mouseY <=y-300) {
+   FR=255;
+   EN=150;
+  }
+    if (mouseX >60 && mouseX <=120 && mouseY <=y-300) {
+   FR=150;
+   EN=255;
+  }}  
 }
-
