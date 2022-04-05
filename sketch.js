@@ -82,7 +82,7 @@ function preload() {
   song = loadSound('assets/littleroot.mp3');
   bg = loadImage('assets/plaine.gif');
   ch = loadImage("assets/chambre.png");
-  temple = loadImage('assets/temple.gif')
+  temple = loadImage('assets/temple.png')
   temple2 = loadImage('assets/temple2.gif')
   light1= loadImage('assets/templelight.png')
   sky = loadImage('assets/sky.png');
