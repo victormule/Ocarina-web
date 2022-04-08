@@ -94,6 +94,12 @@ function preload() {
   battle1 = loadImage("assets/battle1.gif");
   ladruse = loadImage("assets/la-druse.gif");
   ladruse2 = loadImage("assets/la-druse2.gif");
+  lamule = loadImage("assets/la-mule.gif");
+  lamule2 = loadImage("assets/la-mule2.gif");
+  lamule3 = loadImage("assets/la-muleA.gif");
+  lamule4 = loadImage("assets/la-muleB.gif");
+  lamule5 = loadImage("assets/la-muleC.png");
+  mshadow = loadImage("assets/Mshadow.png");
   dshadow = loadImage("assets/druseshadow.png");
   img1 = loadImage("assets/Player.gif");
   img2 = loadImage("assets/PlayerL.gif");
@@ -127,10 +133,20 @@ function preload() {
   img25 = loadImage("assets/windowskin6.png");
   img26 = loadImage("assets/LaDruse.png");
   img27 = loadImage("assets/windowskin7.png");
+  img28 = loadImage("assets/LaMule.png");
+  img29 = loadImage("assets/windowskin8.png");
   ponita = loadImage("assets/ponita.gif");
   ponita1 = loadImage("assets/ponita1.gif");
   fille = loadImage("assets/fille.gif");
   fille1 = loadImage("assets/fille1.gif");
+  bar1 = loadImage('assets/BAR1.png')
+  bar2 = loadImage('assets/BAR2.png')
+  bar3 = loadImage('assets/BAR3.png')
+  bar4 = loadImage('assets/BAR4.png')
+  bar5 = loadImage('assets/BAR5.png')
+  bar6 = loadImage('assets/BAR6.png')
+  bar7 = loadImage('assets/BAR7.png')
+  bar8 = loadImage('assets/BAR8.png')
   Img5 = loadImage("assets/Tree.png");
   flagEN = loadImage("assets/flagEN.png");
   flagFR = loadImage("assets/flagFR.png");
@@ -2725,8 +2741,9 @@ function draw() {
     
     //--End--//
   }
-
-  //------------ENDMAP1-------//
+  
+  
+ //------------MAP2------------//
 
   if (mapping == 2) {
     if (a == 1) {
@@ -2881,6 +2898,10 @@ function draw() {
     }
   }
 
+  
+  
+  
+  
   //------------MAP3------------//
 
   if (mapping == 3) {
@@ -2892,7 +2913,10 @@ function draw() {
       image(shadow, x + 2, y + 34);
       image(dshadow, 670,2140);
       image(ladruse, 670,2140);
+      image(mshadow, 570,2230);
+      image(lamule, 570,2230);
       image(img5, x, y);
+      image(lamule2, 570,2230);
       image(ladruse2, 670,2140);
       image(temple2, 357, 1922);
       tint(FR);
@@ -2908,7 +2932,10 @@ function draw() {
       image(shadow, x + 2, y + 34);
       image(dshadow, 670,2140);
       image(ladruse, 670,2140);
+      image(mshadow, 570,2230);
+      image(lamule, 570,2230);
       image(img6, x, y);
+      image(lamule2, 570,2230);
       image(ladruse2, 670,2140);
       image(temple2, 357, 1922);
       tint(FR);
@@ -2924,7 +2951,10 @@ function draw() {
       image(shadow, x + 2, y + 34);
       image(dshadow, 670,2140);
       image(ladruse, 670,2140);
+      image(mshadow, 570,2230);
+      image(lamule, 570,2230);
       image(img7, x, y);
+      image(lamule2, 570,2230);
       image(ladruse2, 670,2140);
       image(temple2, 357, 1922);
       tint(FR);
@@ -2940,7 +2970,10 @@ function draw() {
       image(shadow, x + 2, y + 34);
       image(dshadow, 670,2140);
       image(ladruse, 670,2140);
+      image(mshadow, 570,2230);
+      image(lamule, 570,2230);
       image(img8, x, y);
+      image(lamule2, 570,2230);
       image(ladruse2, 670,2140);
       image(temple2, 357, 1922);
       tint(FR);
@@ -2957,7 +2990,10 @@ function draw() {
       image(shadow, x + 2, y + 34);
       image(dshadow, 670,2140);
       image(ladruse, 670,2140);
+      image(mshadow, 570,2230);
+      image(lamule, 570,2230);
       image(img2, x, y);
+      image(lamule2, 570,2230);
       image(ladruse2, 670,2140);
       image(temple2, 357, 1922);
       tint(FR);
@@ -2976,7 +3012,10 @@ function draw() {
       image(shadow, x + 2, y + 34);
       image(dshadow, 670,2140);
       image(ladruse, 670,2140);
-      image(img3, x, y);
+      image(mshadow, 570,2230);
+      image(lamule, 570,2230);
+      image(img3, x, y)
+      image(lamule2, 570,2230);;
       image(ladruse2, 670,2140);
       image(temple2, 357, 1922);
       tint(FR);
@@ -2995,7 +3034,10 @@ function draw() {
       image(shadow, x + 2, y + 34);
       image(dshadow, 670,2140);
       image(ladruse, 670,2140);
+      image(mshadow, 570,2230);
+      image(lamule, 570,2230);
       image(img4, x, y);
+      image(lamule2, 570,2230);
       image(ladruse2, 670,2140);
       image(temple2, 357, 1922);
       tint(FR);
@@ -3015,7 +3057,10 @@ function draw() {
       image(shadow, x + 2, y + 34);
       image(dshadow, 670,2140);
       image(ladruse, 670,2140);
+      image(mshadow, 570,2230);
+      image(lamule, 570,2230);
       image(img1, x, y);
+      image(lamule2, 570,2230);
       image(ladruse2, 670,2140);
       image(temple2, 357, 1922);
       tint(FR);
@@ -3201,7 +3246,7 @@ function draw() {
     if (y >= 2118 && y <= 2214 && x >= 638 && x <= 736) {
       
       noTint();
-      image(img26, 744, y + 22);
+      image(img26, 744, y + 18);
       image(img27, 180, y + 130);
 
       fill(30, 250);
@@ -3215,6 +3260,515 @@ function draw() {
       }
     }
 
+    
+    
+    //-----LA MULE----//
+
+    if (y >= 2220 && y <= 2262 && x >= 546 && x <= 606) {
+      y -= 5;
+      N += 5;
+    }
+    if (y >= 2224 && y <= 2262 && x >= 542 && x <= 606) {
+      x -= 5;
+    }
+    if (y >= 2224 && y <= 2262 && x >= 546 && x <= 610) {
+      x += 5;
+    }
+    if (y >= 2224 && y <= 2266 && x >= 546 && x <= 606) {
+      y += 5;
+      N -= 5;
+    }
+    
+    //---------AFFICHAGE LA MULE--------//
+    
+    if (y >= 2262 && y <= 2282 && x >= 526 && x <= 626) {
+      clear();
+      noTint();
+      background(temple);
+      image(temple3, 553, 2098);
+      image(shadow, x + 2, y + 34);
+      image(dshadow, 670,2140);
+      image(ladruse, 670,2140);
+      image(mshadow, 570,2230);
+       if (a == 1) {
+      image(lamule, 570,2230);
+      image(img5, x, y);
+      image(lamule2, 570,2230);
+    }
+    if (a == 2) {
+      image(lamule, 570,2230);
+      image(img6, x, y);
+      image(lamule2, 570,2230);
+    }
+    if (a == 3) {
+      image(lamule, 570,2230);
+      image(img7, x, y);
+      image(lamule2, 570,2230);
+    }
+    if (a == 4) {
+      image(lamule, 570,2230);
+      image(img8, x, y);
+      image(lamule2, 570,2230);
+    }
+
+    if (keyIsDown(LEFT_ARROW)) {
+      
+      image(lamule, 570,2230);
+      image(img2, x, y);
+      image(lamule2, 570,2230);
+
+
+    }
+
+    if (keyIsDown(RIGHT_ARROW)) {
+      
+      image(lamule, 570,2230);
+      image(img3, x, y)
+      image(lamule2, 570,2230);
+
+
+    }
+
+    if (keyIsDown(UP_ARROW)) {
+      
+      image(lamule, 570,2230);
+      image(img4, x, y);
+      image(lamule2, 570,2230);
+
+
+    }
+
+    if (keyIsDown(DOWN_ARROW)) {
+      
+      image(lamule, 570,2230);
+      image(img1, x, y);
+      image(lamule2, 570,2230);
+
+
+    }
+      image(ladruse2, 670,2140);
+      image(temple2, 357, 1922);
+      tint(FR);
+      image(flagFR, 0, y - 316);
+      tint(EN);
+      image(flagEN, 60, y - 316);
+      
+      tint(255, z);
+      image(light1, 410, 1972);
+      z += Z;
+      if (z > 250) {
+      Z = -0.4;
+      }
+      if (z < 230) {
+      Z = +0.3;
+    }
+      noTint();
+      image(img28, 744, y + 12);
+      image(img29, 180, y + 130);
+
+      fill(30, 250);
+      if (FR == 255) {
+        text("Salut ! Moi c'est La Mule, le chef de projet.", 648, y + 226);
+        text("Je suis en charge d'un peu tout ici. ", 648, y + 252);
+        text("Nous allons sortir une démo jouable rapidement,", 648, y + 278);
+        text("je suis sur qu'elle te plaira beaucoup !", 648, y + 304);
+      }
+      if (EN == 255) {
+        text("If you become strong enough you will be", 648, y + 226);
+        text("promoted as a Samurai, a Ninja or a Monk.", 648, y + 252);
+        text("Remember that the Pokemon's strengh", 648, y + 278);
+        text("depend on his trainer's choices.", 648, y + 304);
+      }
+      
+      image(bar4, 86, y -180);
+      image(bar3, 86, y - 80);
+      image(bar4, 86, y + 20);
+      image(bar5, 86, y + 120);
+      image(bar5, 86, y + 220);
+      image(bar8, 86, y + 320);
+                 fill(255, 255);
+      if (FR == 255) {
+      text("AVANCEMENT DE LA DEMO", 204, y-250);
+      text("Mapping", 204, y-200);
+      text("Sprite", 204, y-100);
+      text("Interface", 204, y);
+      text("Ecriture de l'histoire", 204, y+100);
+      text("Event making", 204, y+200);
+      text("OST", 204, y+300);
+      }
+      if (EN == 255) {
+      text("BEGIN TO THE DEMO", 204, y-250);
+      text("Mapping", 204, y-200);
+      text("Sprite", 204, y-100);
+      text("Interface", 204, y);
+      text("Story", 204, y+100);
+      text("Event making", 204, y+200);
+      text("OST", 204, y+300);
+    }
+}
+    
+    if (y >= 2212 && y <= 2262 && x >= 546 && x <= 626) {
+      
+      clear();
+      noTint();
+      background(temple);
+      image(temple3, 553, 2098);
+      image(shadow, x + 2, y + 34);
+      image(dshadow, 670,2140);
+      image(ladruse, 670,2140);
+      image(mshadow, 570,2230);
+       if (a == 1) {
+      image(img5, x, y);
+      image(lamule3, 570,2230);
+    }
+    if (a == 2) {
+      image(img6, x, y);
+      image(lamule3, 570,2230);
+    }
+    if (a == 3) {
+      image(img7, x, y);
+      image(lamule3, 570,2230);
+    }
+    if (a == 4) {
+      image(img8, x, y);
+      image(lamule3, 570,2230);
+    }
+
+    if (keyIsDown(LEFT_ARROW)) {
+      
+      image(img2, x, y);
+      image(lamule3, 570,2230);
+    }
+
+    if (keyIsDown(RIGHT_ARROW)) {
+
+      image(img3, x, y)
+      image(lamule3, 570,2230);
+    }
+
+    if (keyIsDown(UP_ARROW)) {
+
+      image(img4, x, y);
+      image(lamule3, 570,2230);
+    }
+
+    if (keyIsDown(DOWN_ARROW)) {
+
+      image(img1, x, y);
+      image(lamule3, 570,2230);
+    }
+      
+      image(ladruse2, 670,2140);
+      image(temple2, 357, 1922);
+      tint(FR);
+      image(flagFR, 0, y - 316);
+      tint(EN);
+      image(flagEN, 60, y - 316);
+         
+      tint(255, z);
+      image(light1, 410, 1972);
+      z += Z;
+      if (z > 250) {
+      Z = -0.4;
+      }
+      if (z < 230) {
+      Z = +0.3;
+    }
+      noTint();
+      image(img28, 744, y + 12);
+      image(img29, 180, y + 130);
+
+      fill(30, 250);
+      if (FR == 255) {
+        text("Salut ! Moi c'est La Mule, le chef de projet.", 648, y + 226);
+        text("Je suis en charge d'un peu tout ici. ", 648, y + 252);
+        text("Nous allons sortir une démo jouable rapidement,", 648, y + 278);
+        text("je suis sur qu'elle te plaira beaucoup !", 648, y + 304);
+      }
+      if (EN == 255) {
+        text("If you become strong enough you will be", 648, y + 226);
+        text("promoted as a Samurai, a Ninja or a Monk.", 648, y + 252);
+        text("Remember that the Pokemon's strengh", 648, y + 278);
+        text("depend on his trainer's choices.", 648, y + 304);
+      }
+      image(bar4, 86, y -180);
+      image(bar3, 86, y - 80);
+      image(bar4, 86, y + 20);
+      image(bar5, 86, y + 120);
+      image(bar5, 86, y + 220);
+      image(bar8, 86, y + 320);
+                 fill(255, 255);
+      if (FR == 255) {
+      text("AVANCEMENT DE LA DEMO", 204, y-250);
+      text("Mapping", 204, y-200);
+      text("Sprite", 204, y-100);
+      text("Interface", 204, y);
+      text("Ecriture de l'histoire", 204, y+100);
+      text("Event making", 204, y+200);
+      text("OST", 204, y+300);
+      }
+      if (EN == 255) {
+      text("BEGIN TO THE DEMO", 204, y-250);
+      text("Mapping", 204, y-200);
+      text("Sprite", 204, y-100);
+      text("Interface", 204, y);
+      text("Story", 204, y+100);
+      text("Event making", 204, y+200);
+      text("OST", 204, y+300);
+    }
+}
+    
+    if (y >= 2212 && y <= 2262 && x >= 526 && x <= 606) {
+    
+      clear();
+      noTint();
+      background(temple);
+      image(temple3, 553, 2098);
+      image(shadow, x + 2, y + 34);
+      image(dshadow, 670,2140);
+      image(ladruse, 670,2140);
+      image(mshadow, 570,2230);
+       if (a == 1) {
+
+      image(img5, x, y);
+      image(lamule4, 570,2230);
+
+    }
+    if (a == 2) {
+
+      image(img6, x, y);
+      image(lamule4, 570,2230);
+
+    }
+    if (a == 3) {
+
+      image(img7, x, y);
+      image(lamule4, 570,2230);
+
+    }
+    if (a == 4) {
+
+      image(img8, x, y);
+      image(lamule4, 570,2230);
+
+    }
+
+    if (keyIsDown(LEFT_ARROW)) {
+
+      image(img2, x, y);
+      image(lamule4, 570,2230);
+
+
+    }
+
+    if (keyIsDown(RIGHT_ARROW)) {
+
+      image(img3, x, y)
+      image(lamule4, 570,2230);
+
+
+    }
+
+    if (keyIsDown(UP_ARROW)) {
+
+      image(img4, x, y);
+      image(lamule4, 570,2230);
+
+
+    }
+
+    if (keyIsDown(DOWN_ARROW)) {
+
+      image(img1, x, y);
+      image(lamule4, 570,2230);
+
+
+    }
+      image(ladruse2, 670,2140);
+      image(temple2, 357, 1922);
+      tint(FR);
+      image(flagFR, 0, y - 316);
+      tint(EN);
+      image(flagEN, 60, y - 316);
+          
+      tint(255, z);
+      image(light1, 410, 1972);
+      z += Z;
+      if (z > 250) {
+      Z = -0.4;
+      }
+      if (z < 230) {
+      Z = +0.3;
+      }
+      noTint();
+      image(img28, 744, y + 12);
+      image(img29, 180, y + 130);
+
+      fill(30, 250);
+      if (FR == 255) {
+        text("Salut ! Moi c'est La Mule, le chef de projet.", 648, y + 226);
+        text("Je suis en charge d'un peu tout ici. ", 648, y + 252);
+        text("Nous allons sortir une démo jouable rapidement,", 648, y + 278);
+        text("je suis sur qu'elle te plaira beaucoup !", 648, y + 304);
+      }
+      if (EN == 255) {
+        text("If you become strong enough you will be", 648, y + 226);
+        text("promoted as a Samurai, a Ninja or a Monk.", 648, y + 252);
+        text("Remember that the Pokemon's strengh", 648, y + 278);
+        text("depend on his trainer's choices.", 648, y + 304);
+      }
+      image(bar4, 86, y -180);
+      image(bar3, 86, y - 80);
+      image(bar4, 86, y + 20);
+      image(bar5, 86, y + 120);
+      image(bar5, 86, y + 220);
+      image(bar8, 86, y + 320);
+                 fill(255, 255);
+      if (FR == 255) {
+      text("AVANCEMENT DE LA DEMO", 204, y-250);
+      text("Mapping", 204, y-200);
+      text("Sprite", 204, y-100);
+      text("Interface", 204, y);
+      text("Ecriture de l'histoire", 204, y+100);
+      text("Event making", 204, y+200);
+      text("OST", 204, y+300);
+      }
+      if (EN == 255) {
+      text("BEGIN TO THE DEMO", 204, y-250);
+      text("Mapping", 204, y-200);
+      text("Sprite", 204, y-100);
+      text("Interface", 204, y);
+      text("Story", 204, y+100);
+      text("Event making", 204, y+200);
+      text("OST", 204, y+300);
+    }
+}
+    
+        if (y >= 2198 && y <= 2238 && x >= 542 && x <= 608) {
+      clear();
+      noTint();
+      background(temple);
+      image(temple3, 553, 2098);
+      image(shadow, x + 2, y + 34);
+      image(dshadow, 670,2140);
+      image(ladruse, 670,2140);
+      image(mshadow, 570,2230);
+       if (a == 1) {
+      
+      image(img5, x, y);
+      image(lamule5, 570,2230);
+
+    }
+    if (a == 2) {
+      
+      image(img6, x, y);
+      image(lamule5, 570,2230);
+
+    }
+    if (a == 3) {
+      
+      image(img7, x, y);
+      image(lamule5, 570,2230);
+
+    }
+    if (a == 4) {
+      
+      image(img8, x, y);
+      image(lamule5, 570,2230);
+
+    }
+
+    if (keyIsDown(LEFT_ARROW)) {
+      
+      image(img2, x, y);
+      image(lamule5, 570,2230);
+
+
+    }
+
+    if (keyIsDown(RIGHT_ARROW)) {
+      
+      image(img3, x, y)
+      image(lamule5, 570,2230);
+
+
+    }
+
+    if (keyIsDown(UP_ARROW)) {
+      
+      image(img4, x, y);
+      image(lamule5, 570,2230);
+
+
+    }
+
+    if (keyIsDown(DOWN_ARROW)) {
+      
+      image(img1, x, y);
+      image(lamule5, 570,2230);
+
+
+    }
+      image(ladruse2, 670,2140);
+      image(temple2, 357, 1922);
+      tint(FR);
+      image(flagFR, 0, y - 316);
+      tint(EN);
+      image(flagEN, 60, y - 316);
+          
+      tint(255, z);
+      image(light1, 410, 1972);
+      z += Z;
+      if (z > 250) {
+      Z = -0.4;
+      }
+      if (z < 230) {
+      Z = +0.3;
+      }
+      noTint();
+      image(img28, 744, y + 12);
+      image(img29, 180, y + 130);
+
+      fill(30, 250);
+      if (FR == 255) {
+        text("Salut ! Moi c'est La Mule, le chef de projet.", 648, y + 226);
+        text("Je suis en charge d'un peu tout ici. ", 648, y + 252);
+        text("Nous allons sortir une démo jouable rapidement,", 648, y + 278);
+        text("je suis sur qu'elle te plaira beaucoup !", 648, y + 304);
+      }
+      if (EN == 255) {
+        text("If you become strong enough you will be", 648, y + 226);
+        text("promoted as a Samurai, a Ninja or a Monk.", 648, y + 252);
+        text("Remember that the Pokemon's strengh", 648, y + 278);
+        text("depend on his trainer's choices.", 648, y + 304);
+      }
+      image(bar4, 86, y -180);
+      image(bar3, 86, y - 80);
+      image(bar4, 86, y + 20);
+      image(bar5, 86, y + 120);
+      image(bar5, 86, y + 220);
+      image(bar8, 86, y + 320);
+                 fill(255, 255);
+      if (FR == 255) {
+      text("AVANCEMENT DE LA DEMO", 204, y-250);
+      text("Mapping", 204, y-200);
+      text("Sprite", 204, y-100);
+      text("Interface", 204, y);
+      text("Ecriture de l'histoire", 204, y+100);
+      text("Event making", 204, y+200);
+      text("OST", 204, y+300);
+      }
+      if (EN == 255) {
+      text("BEGIN TO THE DEMO", 204, y-250);
+      text("Mapping", 204, y-200);
+      text("Sprite", 204, y-100);
+      text("Interface", 204, y);
+      text("Story", 204, y+100);
+      text("Event making", 204, y+200);
+      text("OST", 204, y+300);
+    }
+}
+    
     //---MAP3 TRANSFER--/
 
     if (y >= 2460) {
@@ -3266,3 +3820,4 @@ function mousePressed() {
     }
   }
 }
+
