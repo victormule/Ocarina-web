@@ -2866,6 +2866,11 @@ function draw() {
       text("about it, use the arrow keys to explore ", 700, 650);
       text("the vast world outside this house!", 700, 680);
     }
+    
+    function mouseClicked() {
+  // Charge le script sketch2.js lorsque l'utilisateur clique sur l'écran
+  window.location.href = "sketch2.js";
+}
 
     //---MAP 1---//
 
