@@ -157,12 +157,8 @@ function setup() {
   textFont(font);
   textSize(fontsize);
   textAlign(CENTER, CENTER);
-  button = createButton("Charger Sketch 2");
-  button.mousePressed(loadSketch2);
 }
- function loadSketch2() {
-  // Charger le script sketch2.js en utilisant p5.dom
-  loadScript("sketch2.js");
+
   
 function draw() {
   let cnv = createCanvas(960, 3400);
