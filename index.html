@@ -8,7 +8,10 @@
 
   </head>
   <body>
-    <script src="sketch.js"> </script>
-   
+    <script>
+      var scripts = ["sketch.js", "sketch2.js"];
+      var randomScript = scripts[Math.floor(Math.random() * scripts.length)];
+      document.write('<script src="' + randomScript + '"></script>');
+    </script>
   </body>
 </html>
