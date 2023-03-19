@@ -163,6 +163,8 @@ function draw() {
   let cnv = createCanvas(960, 3400);
   cnv.position(0, N, "relative");
 
+  console.log(x,y);
+  
   if (mapping == 1) {
     if (a == 1) {
       clear();
