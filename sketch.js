@@ -160,7 +160,10 @@ function setup() {
   button = createButton("Charger Sketch 2");
   button.mousePressed(loadSketch2);
 }
-
+ function loadSketch2() {
+  // Charger le script sketch2.js en utilisant p5.dom
+  loadScript("sketch2.js");
+  
 function draw() {
   let cnv = createCanvas(960, 3400);
   cnv.position(0, N, "relative");
@@ -3828,10 +3831,7 @@ function mousePressed() {
       FR = 150;
       EN = 255;
     }
- function loadSketch2() {
-  // Charger le script sketch2.js en utilisant p5.dom
-  loadScript("sketch2.js");
-  
+
   }
 
 
