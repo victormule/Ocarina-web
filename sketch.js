@@ -2867,10 +2867,7 @@ function draw() {
       text("the vast world outside this house!", 700, 680);
     }
     
-    function mouseClicked() {
-  // Charge le script sketch2.js lorsque l'utilisateur clique sur l'écran
-  window.location.href = "sketch2.js";
-}
+
 
     //---MAP 1---//
 
@@ -3808,10 +3805,12 @@ function mousePressed() {
     if (mouseX >= 0 && mouseX <= 60 && mouseY <= 436) {
       FR = 255;
       EN = 150;
+      window.location.href = "sketch2.js";
     }
     if (mouseX > 60 && mouseX <= 120 && mouseY <= 436) {
       FR = 150;
       EN = 255;
+      window.location.href = "sketch2.js";
     }
   }
   if (mapping == 3) {
