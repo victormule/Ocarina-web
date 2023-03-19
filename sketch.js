@@ -3828,10 +3828,12 @@ function mousePressed() {
       FR = 150;
       EN = 255;
     }
-  }
-function loadSketch2() {
+ function loadSketch2() {
   // Charger le script sketch2.js en utilisant p5.dom
   loadScript("sketch2.js");
+  
+  }
+
 
 }
 
