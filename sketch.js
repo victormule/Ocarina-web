@@ -3806,16 +3806,10 @@ function mousePressed() {
     if (mouseX >= 0 && mouseX <= 60 && mouseY <= 436) {
       FR = 255;
       EN = 150;
-        var script = document.createElement("script");
-  script.src = "sketch2.js";
-  document.body.appendChild(script);
     }
     if (mouseX > 60 && mouseX <= 120 && mouseY <= 436) {
       FR = 150;
       EN = 255;
-        var script = document.createElement("script");
-  script.src = "sketch2.js";
-  document.body.appendChild(script);
     }
   }
   if (mapping == 3) {
