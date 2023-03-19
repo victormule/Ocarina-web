@@ -11,7 +11,9 @@
     <script>
       var scripts = ["sketch.js", "sketch2.js"];
       var randomScript = scripts[Math.floor(Math.random() * scripts.length)];
-      document.write('<script src="' + randomScript + '"></script>');
+      var scriptTag = document.createElement("script");
+      scriptTag.src = randomScript;
+      document.body.appendChild(scriptTag);
     </script>
   </body>
 </html>
