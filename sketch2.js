@@ -172,7 +172,7 @@ function draw() {
       image(cloud2, g, u);
       image(cloud1, o, u);
       background(bg);
-      image(shadow, x + 2, y + 34);
+      image(shadow, x + 2, y + 42);
       image(img12, 300, 1600);
       image(img13, 474, 330);
       image(shadow, e + 4, f + 200);
@@ -204,7 +204,7 @@ function draw() {
       image(cloud2, g, u);
       image(cloud1, o, u);
       background(bg);
-      image(shadow, x + 2, y + 34);
+      image(shadow, x + 2, y + 42);
       image(img12, 300, 1600);
       image(img13, 474, 330);
       image(ponita1, 484, 2576);
@@ -236,7 +236,7 @@ function draw() {
       image(cloud2, g, u);
       image(cloud1, o, u);
       background(bg);
-      image(shadow, x + 2, y + 34);
+      image(shadow, x + 2, y + 42);
       image(img12, 300, 1600);
       image(img13, 474, 330);
       image(ponita1, 484, 2576);
@@ -268,7 +268,7 @@ function draw() {
       image(cloud2, g, u);
       image(cloud1, o, u);
       background(bg);
-      image(shadow, x + 2, y + 34);
+      image(shadow, x + 2, y + 42);
       image(img12, 300, 1600);
       image(img13, 474, 330);
       image(ponita1, 484, 2576);
@@ -301,7 +301,7 @@ function draw() {
       image(cloud2, g, u);
       image(cloud1, o, u);
       background(bg);
-      image(shadow, x + 2, y + 34);
+      image(shadow, x + 2, y + 42);
       image(img12, 300, 1600);
       image(img13, 474, 330);
       image(ponita1, 484, 2576);
@@ -336,7 +336,7 @@ function draw() {
       image(cloud2, g, u);
       image(cloud1, o, u);
       background(bg);
-      image(shadow, x + 2, y + 34);
+      image(shadow, x + 2, y + 42);
       image(img12, 300, 1600);
       image(img13, 474, 330);
       image(ponita1, 484, 2576);
@@ -371,7 +371,7 @@ function draw() {
       image(cloud2, g, u);
       image(cloud1, o, u);
       background(bg);
-      image(shadow, x + 2, y + 34);
+      image(shadow, x + 2, y + 42);
       image(img12, 300, 1600);
       image(img13, 474, 330);
       image(ponita1, 484, 2576);
@@ -409,7 +409,7 @@ function draw() {
       image(cloud1, o, u);
       image(sea, 0, t);
       background(bg);
-      image(shadow, x + 2, y + 34);
+      image(shadow, x + 2, y + 42);
       image(img12, 300, 1600);
       image(img13, 474, 330);
       image(battle1, 116, 2316);
