@@ -183,7 +183,7 @@ function draw() {
       image(battle1, 116, 2316);
       image(combat2, 400, 1700);
       image(kaio1, 500, 1680);
-      image(img5, x, y);
+      image(img5, x-2, y);
       image(kaio1a, 500, 1680);
       image(combat1, 400, 1700);
       image(battle, 116, 2316);
@@ -214,7 +214,7 @@ function draw() {
       image(battle1, 116, 2316);
       image(combat2, 400, 1700);
       image(kaio1, 500, 1680);
-      image(img6, x, y);
+      image(img6, x+2, y);
       image(kaio1a, 500, 1680);
       image(combat1, 400, 1700);
       image(battle, 116, 2316);
@@ -246,7 +246,7 @@ function draw() {
       image(battle1, 116, 2316);
       image(combat2, 400, 1700);
       image(kaio1, 500, 1680);
-      image(img7, x, y);
+      image(img7, x-4, y);
       image(kaio1a, 500, 1680);
       image(combat1, 400, 1700);
       image(battle, 116, 2316);
@@ -278,7 +278,7 @@ function draw() {
       image(battle1, 116, 2316);
       image(combat2, 400, 1700);
       image(kaio1, 500, 1680);
-      image(img8, x, y);
+      image(img8, x-2, y);
       image(kaio1a, 500, 1680);
       image(combat1, 400, 1700);
       image(battle, 116, 2316);
@@ -311,7 +311,7 @@ function draw() {
       image(battle1, 116, 2316);
       image(combat2, 400, 1700);
       image(kaio1, 500, 1680);
-      image(img2, x, y);
+      image(img2, x+2, y);
       image(kaio1a, 500, 1680);
       image(combat1, 400, 1700);
       image(battle, 116, 2316);
@@ -346,7 +346,7 @@ function draw() {
       image(battle1, 116, 2316);
       image(combat2, 400, 1700);
       image(kaio1, 500, 1680);
-      image(img3, x, y);
+      image(img3, x-4, y);
       image(kaio1a, 500, 1680);
       image(combat1, 400, 1700);
       image(battle, 116, 2316);
@@ -381,7 +381,7 @@ function draw() {
       image(battle1, 116, 2316);
       image(combat2, 400, 1700);
       image(kaio1, 500, 1680);
-      image(img4, x, y);
+      image(img4, x-2, y);
       image(kaio1a, 500, 1680);
       image(combat1, 400, 1700);
       image(battle, 116, 2316);
@@ -419,7 +419,7 @@ function draw() {
       image(fille1, 484, 2576);
       image(combat2, 400, 1700);
       image(kaio1, 500, 1680);
-      image(img1, x, y);
+      image(img1, x-2, y);
       image(kaio1a, 500, 1680);
       image(combat1, 400, 1700);
       image(battle, 116, 2316);
