@@ -69,6 +69,9 @@ let a = 1;
 let M = 0;
 let N = -400;
 let font;
+let pseudoInput;
+let commentInput;
+let sendButton;
 
 fontsize = 28;
 
@@ -157,13 +160,36 @@ function setup() {
   textFont(font);
   textSize(fontsize);
   textAlign(CENTER, CENTER);
+  
+  pseudoInput = createInput().size(150, 20);
+  pseudoInput.position(10, 10);
+  
+  commentInput = createInput().size(150, 80);
+  commentInput.position(10, 40);
+  
+  sendButton = createButton('Envoyer');
+  sendButton.position(10, 130);
+  sendButton.mousePressed(envoyerSaisies);
 }
-
+function envoyerSaisies() {
+  let pseudo = pseudoInput.value();
+  let commentaire = commentInput.value();
+  let heure = new Date().toLocaleString();
+  
+  let contenuFichier = [heure + " - " + pseudo + ": " + commentaire];
+  saveStrings(contenuFichier, 'saisies.txt');
+  
+  pseudoInput.value('');
+  commentInput.value('');
+}
   
 function draw() {
   let cnv = createCanvas(960, 3400);
   cnv.position(0, N, "relative");
-
+  textSize(20);
+  text('Entrez votre pseudo:', 10, 30);
+  text('Entrez votre commentaire:', 10, 80);
+  
   if (mapping == 1) {
     if (a == 1) {
       clear();
