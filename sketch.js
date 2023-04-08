@@ -174,7 +174,7 @@ function setup() {
   sendButton.position(10, 130);
   sendButton.mousePressed(envoyerSaisies);
 }
-function envoyerSaisies() {
+async function envoyerSaisies() {
   let pseudo = pseudoInput.value();
   let commentaire = commentInput.value();
   let heure = new Date().toLocaleString();
@@ -205,8 +205,6 @@ function envoyerSaisies() {
         if (response.status === 201) {
             const responseData = await response.json();
             console.log(responseData);
-            const comments = await fetchcomment();
-            displayComment(comments);
         } else {
             throw new Error("Erreur lors de la création du commentaire.");
         }
@@ -214,9 +212,6 @@ function envoyerSaisies() {
         console.error(error);
         alert("Erreur lors de la création du commentaire.");
     }
-
-  
-  
   
   pseudoInput.value('');
   commentInput.value('');
