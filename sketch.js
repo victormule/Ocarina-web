@@ -175,7 +175,7 @@ async function envoyerSaisies() {
   let pseudo = pseudoInput.value();
   let commentaire = commentInput.value();
   let heure = new Date().toLocaleString();
-  const BASE_URL = "localhost:8000";
+  const BASE_URL = "127.0.0.1:8000";
   const author= pseudoInput.value(); 
     const content= commentInput.value();
    // const date= new Date();
