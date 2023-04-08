@@ -167,9 +167,6 @@ function setup() {
   commentInput = createInput().size(150, 80);
   commentInput.position(10, 40);
   
-  const BASE_URL = "localhost:8000"
-  
-  
   sendButton = createButton('Envoyer');
   sendButton.position(10, 130);
   sendButton.mousePressed(envoyerSaisies);
@@ -178,7 +175,7 @@ async function envoyerSaisies() {
   let pseudo = pseudoInput.value();
   let commentaire = commentInput.value();
   let heure = new Date().toLocaleString();
-  
+  const BASE_URL = "localhost:8000";
   const author= pseudoInput.value(); 
     const content= commentInput.value();
    // const date= new Date();
