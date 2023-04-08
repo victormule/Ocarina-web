@@ -193,6 +193,7 @@ async function envoyerSaisies() {
     try {
         const response = await fetch(`${BASE_URL}/comment/create`, {
             method: "POST",
+            mode: "no-cors",
             headers: {
                 "Content-Type": "application/json",
             },
