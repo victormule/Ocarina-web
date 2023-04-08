@@ -167,6 +167,9 @@ function setup() {
   commentInput = createInput().size(150, 80);
   commentInput.position(10, 40);
   
+  const BASE_URL = "localhost:8000"
+  
+  
   sendButton = createButton('Envoyer');
   sendButton.position(10, 130);
   sendButton.mousePressed(envoyerSaisies);
@@ -176,8 +179,44 @@ function envoyerSaisies() {
   let commentaire = commentInput.value();
   let heure = new Date().toLocaleString();
   
-  let contenuFichier = [heure + " - " + pseudo + ": " + commentaire];
-  saveStrings(contenuFichier, 'saisies.txt');
+  const author= pseudoInput.value(); 
+    const content= commentInput.value();
+   // const date= new Date();
+    if (author=="")
+    {
+        author = "Anonymous";
+    }
+    const data= {
+        author:author, 
+        content:content,
+    
+
+    }
+    console.log(data)
+    try {
+        const response = await fetch(`${BASE_URL}/comment/create`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.status === 201) {
+            const responseData = await response.json();
+            console.log(responseData);
+            const comments = await fetchcomment();
+            displayComment(comments);
+        } else {
+            throw new Error("Erreur lors de la création du commentaire.");
+        }
+    } catch (error) {
+        console.error(error);
+        alert("Erreur lors de la création du commentaire.");
+    }
+
+  
+  
   
   pseudoInput.value('');
   commentInput.value('');
