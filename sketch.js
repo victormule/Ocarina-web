@@ -1213,7 +1213,7 @@ function envoyerSaisies() {
   let commentaire = commentInput.value();
 
   // ajouter le commentaire à la liste des commentaires
-  let nouveauCommentaire = "<b>" + pseudo + ":</b> <br>" + commentaire + "<br> <br><center>***</center>" ;
+  let nouveauCommentaire = "<b><center>" + pseudo + ":</center></b> <br>" + commentaire + "<br> <br><center>***</center>" ;
   listeCommentaires.unshift(nouveauCommentaire);
 
   // limiter la liste des commentaires à 10 éléments
