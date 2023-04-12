@@ -69,11 +69,21 @@ let a = 1;
 let M = 0;
 let N = -400;
 let font;
+let formulaire;
 let pseudoInput;
 let commentInput;
 let sendButton;
-
+let formulation;
 fontsize = 28;
+let listeCommentaires = [];
+let commentairesDiv;
+let commentaire;
+let pseudo;
+let nouveauCommentaire;
+let cachemisere;
+
+
+
 
 function preload() {
   font = loadFont("font/pkmndp.ttf");
@@ -138,6 +148,7 @@ function preload() {
   img27 = loadImage("assets/windowskin7.png");
   img28 = loadImage("assets/LaMule.png");
   img29 = loadImage("assets/windowskin8.png");
+  formulaire = loadImage("assets/windowskinA.png");
   ponita = loadImage("assets/ponita.gif");
   ponita1 = loadImage("assets/ponita1.gif");
   fille = loadImage("assets/fille.gif");
@@ -156,72 +167,22 @@ function preload() {
   frameRate(fr);
 }
 
+
 function setup() {
   textFont(font);
   textSize(fontsize);
   textAlign(CENTER, CENTER);
-  
-  pseudoInput = createInput().size(150, 20);
-  pseudoInput.position(10, 10);
-  
-  commentInput = createInput().size(150, 80);
-  commentInput.position(10, 40);
-  
-  sendButton = createButton('Envoyer');
-  sendButton.position(10, 130);
-  sendButton.mousePressed(envoyerSaisies);
+  windowResized();
 }
-async function envoyerSaisies() {
-  let pseudo = pseudoInput.value();
-  let commentaire = commentInput.value();
-  let heure = new Date().toLocaleString();
-  const BASE_URL = "http://127.0.0.1:8000";
-  const author= pseudoInput.value(); 
-    const content= commentInput.value();
-   // const date= new Date();
-    if (author=="")
-    {
-        author = "Anonymous";
-    }
-    const data= {
-        author:author, 
-        content:content,
-    
 
-    }
-    console.log(data)
-    try {
-        const response = await fetch(`${BASE_URL}/comment/create`, {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        });
 
-        if (response.status === 201) {
-            const responseData = await response.json();
-            console.log(responseData);
-        } else {
-            throw new Error("Erreur lors de la création du commentaire.");
-        }
-    } catch (error) {
-        console.error(error);
-        alert("Erreur lors de la création du commentaire.");
-    }
-  
-  pseudoInput.value('');
-  commentInput.value('');
-}
-  
 function draw() {
   let cnv = createCanvas(960, 3400);
   cnv.position(0, N, "relative");
   textSize(20);
   text('Entrez votre pseudo:', 10, 30);
   text('Entrez votre commentaire:', 10, 80);
-  
+
   if (mapping == 1) {
     if (a == 1) {
       clear();
@@ -1147,7 +1108,135 @@ function draw() {
       y += 5;
       N -= 5;
     }
+    ///panneau4 Affichage///
 
+    if (y >= 2410 && y <= 2584 && x >= 724 && x <= 790) {
+
+    
+      if (!pseudoInput) {
+
+        textFont(font);
+        textSize(fontsize);
+        textAlign(CENTER, CENTER);
+  
+        formulation = createImg("assets/windowskinA.png");
+        formulation.position(windowWidth/2 -480, windowHeight/2 +80, "absolute");
+
+        cachemisere = createImg("assets/windowskinB.png");
+        cachemisere.position(windowWidth/2 +230, windowHeight/2 +80, "absolute");
+        cachemisere.style("z-index: 1100");
+      
+        pseudoInput = createInput().size(180, 20);
+        pseudoInput.position(windowWidth/2 - 250, windowHeight/2 + 160, "absolute");
+        pseudoInput.style("font-family", "pkmndp");
+        pseudoInput.style("font-size", "16px");
+        pseudoInput.style('opacity', '0.6');
+        pseudoInput.elt.placeholder = 'Pseudo';
+  
+        commentInput = createElement('textarea').size(180, 100);
+        commentInput.position(windowWidth/2 - 250, windowHeight/2 + 194, "absolute");
+        commentInput.style("font-family", "pkmndp");
+        commentInput.style("font-size", "16px");
+        commentInput.style('opacity', '0.65');
+        commentInput.style("resize", "none");
+        commentInput.attribute("placeholder", "N'hésitez pas à laisser un commentaire ici!");
+        
+        sendButton = createButton('Envoyer');
+        sendButton.position(windowWidth/2 - 250, windowHeight/2 + 310, "absolute");
+        sendButton.style("font-family", "pkmndp");
+        sendButton.style('color', '#e9dcd1');
+        sendButton.style("border", "5px outset inset solid #9e7150");
+        sendButton.style('background-color', '#a08066');
+        sendButton.mousePressed(envoyerSaisies);
+        afficherCommentaires()
+      
+    } 
+    } else {
+      // Cacher ou supprimer le formulaire de commentaire
+      affichage = false;
+      if (pseudoInput) {
+        affichageCommentaires = false; // mettre à jour la variable booléenne
+        pseudoInput.remove();
+        commentInput.remove();
+        sendButton.remove();
+        formulation.remove();
+        cachemisere.remove();
+        pseudoInput = null;
+        commentInput = null;
+        sendButton = null;
+        formulation = null;
+        cachemisere = null;
+        suppCommentaires();
+        
+        
+      }
+      
+    }
+   
+function afficherCommentaires() {
+      // afficher les commentaires dans une div
+      let commentairesDiv = select('#commentaires');
+      commentairesDiv.html('');
+      commentairesDiv.position(windowWidth/2 - 20, windowHeight/2 + 162);
+      commentairesDiv.style("font-family", "pkmndp");
+      commentairesDiv.style("font-size", "20px");
+      commentairesDiv.style("color", "rgba(255, 255, 255, 1)");
+      commentairesDiv.style("z-index: 1000");
+      commentairesDiv.style('background-color', 'rgba(255, 255, 255, 0.0');
+      commentairesDiv.style("overflow-y", "auto");
+      commentairesDiv.style("width", "270px");
+      commentairesDiv.style("height", "170px");
+      commentairesDiv.style("word-wrap", "break-word");
+    
+      for (let i = 0; i < listeCommentaires.length; i++) {
+        let commentaire = createElement('p', listeCommentaires[i]);
+        commentaire.parent(commentairesDiv);
+      }
+    
+  }
+function suppCommentaires() {
+    // afficher les commentaires dans une div
+    let commentairesDiv = select('#commentaires');
+    commentairesDiv.html('');
+    commentairesDiv.position(windowWidth/2 - 20, windowHeight/2 + 162);
+    commentairesDiv.style("z-index: 1000");
+    commentairesDiv.style('background-color', 'rgba(255, 255, 255, 0');
+    commentairesDiv.style("overflow-y", "hidden");
+    commentairesDiv.style("width", "0px");
+    commentairesDiv.style("height", "0px");
+    commentairesDiv.style("word-wrap", "break-word");
+  
+} 
+function envoyerSaisies() {
+  // récupérer les valeurs des champs de saisie
+  let pseudo = pseudoInput.value();
+  let commentaire = commentInput.value();
+
+  // ajouter le commentaire à la liste des commentaires
+  let nouveauCommentaire = "<b>" + pseudo + ":</b> <br>" + commentaire + "<br> <br><center>***</center>" ;
+  listeCommentaires.unshift(nouveauCommentaire);
+
+  // limiter la liste des commentaires à 10 éléments
+  if (listeCommentaires.length > 10) {
+    listeCommentaires.pop();
+  }
+
+  afficherCommentaires();
+ 
+  
+  // vider les champs de saisie
+  pseudoInput.value('');
+  commentInput.value('');
+}
+
+       
+
+
+
+    // Ajuster la position des Inputs en fonction de la position de l'image formulaire
+
+    
+  
     //----//
 
     //------MAISON-------//
@@ -3849,6 +3938,104 @@ function draw() {
 
   //-------//
 }
+function windowResized() {
+
+  if (pseudoInput) {
+    pseudoInput.position(windowWidth/2 - 250, windowHeight/2 + 160, "absolute");
+    let commentairesDiv = select('#commentaires');
+     commentairesDiv.html('');commentairesDiv.position(windowWidth/2 - 20, windowHeight/2 + 162);
+     commentairesDiv.style("z-index: 1000");
+     commentairesDiv.style('background-color', 'rgba(255, 255, 255, 0');
+     commentairesDiv.style("overflow-y", "auto");
+     commentairesDiv.style("width", "270px");
+     commentairesDiv.style("height", "170px");
+     commentairesDiv.style("word-wrap", "break-word");
+   
+     for (let i = 0; i < listeCommentaires.length; i++) {
+       let commentaire = createElement('p', listeCommentaires[i]);
+       commentaire.parent(commentairesDiv);
+     }
+   
+    
+  }
+  if (commentInput) {
+    commentInput.position(windowWidth/2 - 250, windowHeight/2 + 194, "absolute");
+
+
+  }
+  if (sendButton) {
+    sendButton.position(windowWidth/2 - 250, windowHeight/2 + 310, "absolute");
+  }
+  if (formulation) {
+    formulation.position(windowWidth/2 - 480, windowHeight/2 + 80, "absolute");
+  }
+  if (cachemisere) {
+    cachemisere.position(windowWidth/2 +230, windowHeight/2 + 80, "absolute");
+  }
+
+}
+// function envoyerSaisies() {
+//   let pseudo = pseudoInput.value();
+//   let commentaire = commentInput.value();
+//   let heure = new Date().toLocaleString();
+  
+//   let contenuFichier = [heure + " - " + pseudo + ": " + commentaire];
+//   saveStrings(contenuFichier, 'saisies.txt');
+  
+//   pseudoInput.value('');
+//   commentInput.value('');
+// }
+
+//----------fonctionSaisie()2-------------//
+
+// async function envoyerSaisies() {
+//   let pseudo = pseudoInput.value();
+//   let commentaire = commentInput.value();
+//   let heure = new Date().toLocaleString();
+//   const BASE_URL = "http://127.0.0.1:8000";
+//   const author= pseudoInput.value(); 
+//     const content= commentInput.value();
+//    // const date= new Date();
+//     if (author=="")
+//     {
+//         author = "Anonymous";
+//     }
+//     const data= {
+//         author:author, 
+//         content:content,
+    
+
+//     }
+//     console.log(data)
+//     try {
+//         const response = await fetch(`${BASE_URL}/comment`, {
+//             method: "POST",
+//             mode: "no-cors",
+//             headers: {
+//                 "Content-Type": "application/json",
+//             },
+//             body: JSON.stringify(data),
+//         });
+
+//         if (response.status === 201) {
+//             const responseData = await response.json();
+//             console.log(responseData);
+//         } else {
+//             throw new Error("Erreur lors de la création du commentaire.");
+//         }
+//     } catch (error) {
+//         console.error(error);
+//         alert("Erreur lors de la création du commentaire.");
+//     }
+  
+//   pseudoInput.value('');
+//   commentInput.value('');
+// }
+
+///---------fonctionSaisie()3------------------///
+
+
+
 function mousePressed() {
   if (mapping == 1) {
     if (mouseX >= 0 && mouseX <= 60 && mouseY <= y - 300) {
@@ -3886,5 +4073,3 @@ function mousePressed() {
 
 
 }
-
-
