@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  
     <script src="p5.js"></script>
     <script src="p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
-    <style>
-      /* Ajouter ces styles pour positionner la div du module de commentaire */
-      .fb-comments {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 9999;
-      }
-    </style>
+
   </head>
-
+ 
   <body>
-  
-
+   
     <script>
-      var scripts = ["sketch.js", "sketch.js"];
+      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      var scripts;
+      if (isMobile) {
+        scripts = ["sketch2.js", "sketch2.js"];
+      } else {
+        scripts = ["sketch.js", "sketch.js"];
+      }
       var randomScript = scripts[Math.floor(Math.random() * scripts.length)];
       var scriptTag = document.createElement("script");
       scriptTag.src = randomScript;
       document.body.appendChild(scriptTag);
     </script>
-    <div id="commentaires"></div>
+   <div id="commentaires"></div>
+
   </body>
 </html>
