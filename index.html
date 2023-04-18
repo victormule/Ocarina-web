@@ -6,17 +6,19 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
     <script>
-      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      var scripts;
-      if (isMobile) {
-        scripts = ["sketch2.js", "sketch2.js"];
-      } else {
-        scripts = ["sketch.js", "sketch.js"];
-      }
-      var randomScript = scripts[Math.floor(Math.random() * scripts.length)];
-      var scriptTag = document.createElement("script");
-      scriptTag.src = randomScript;
-      document.body.appendChild(scriptTag);
+      document.addEventListener("DOMContentLoaded", function(event) {
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var scripts;
+        if (isMobile) {
+          scripts = ["sketch2.js", "sketch2.js"];
+        } else {
+          scripts = ["sketch.js", "sketch.js"];
+        }
+        var randomScript = scripts[Math.floor(Math.random() * scripts.length)];
+        var scriptTag = document.createElement("script");
+        scriptTag.src = randomScript;
+        document.body.appendChild(scriptTag);
+      });
     </script>
   </head>
   <body>
