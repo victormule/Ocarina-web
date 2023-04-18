@@ -1,3 +1,4 @@
+
 let img; // Declare variable 'img'.
 let img2;
 let img3;
@@ -7,7 +8,6 @@ let img6;
 let img7;
 let img8;
 let img9;
-let img10;
 let img11;
 let img12;
 let img13;
@@ -28,6 +28,7 @@ let flagFR;
 let FR = 255;
 let EN = 150;
 let song;
+let song2;
 let fr = 100; //starting FPS
 
 let Img5; //Tree
@@ -54,6 +55,10 @@ let kaio1a;
 let kaio2;
 let kaio3;
 let kaio4;
+let teinte;
+let teinte2;
+let teinte3;
+let currentTime;
 let mapping = 2;
 let g = -600;
 let e = -100;
@@ -81,6 +86,19 @@ let commentaire;
 let pseudo;
 let nouveauCommentaire;
 let cachemisere;
+let affichageCommentaires = false;
+let gainSlider;
+let muteButton;
+let isMuted = false;
+let sliderPosition = 1;
+let bouton;
+let scrollbarPos = 0;
+let scrollbarHeight = 200;
+let viewHeight = 400;
+let scrollbarVisible = false;
+let scrollbarImg;
+
+
 
 
 
@@ -123,7 +141,6 @@ function preload() {
   img7 = loadImage("assets/playerR.png");
   img8 = loadImage("assets/playerU.png");
   img9 = loadImage("assets/windowskin.png");
-  img10 = loadImage("assets/mouton.gif");
   img11 = loadImage("assets/moine1.gif");
   img12 = loadImage("assets/moine2.gif");
   img13 = loadImage("assets/kyoka1.png");
@@ -148,6 +165,9 @@ function preload() {
   img27 = loadImage("assets/windowskin7.png");
   img28 = loadImage("assets/LaMule.png");
   img29 = loadImage("assets/windowskin8.png");
+  teinte = loadImage("assets/teinte.png");
+  teinte2 = loadImage("assets/teinte2.png");
+  teinte3 = loadImage("assets/teinte3.png");
   formulaire = loadImage("assets/windowskinA.png");
   ponita = loadImage("assets/ponita.gif");
   ponita1 = loadImage("assets/ponita1.gif");
@@ -165,6 +185,8 @@ function preload() {
   flagEN = loadImage("assets/flagEN.png");
   flagFR = loadImage("assets/flagFR.png");
   frameRate(fr);
+  
+ 
 }
 
 
@@ -172,18 +194,93 @@ function setup() {
   textFont(font);
   textSize(fontsize);
   textAlign(CENTER, CENTER);
-  windowResized();
+  
+  // Créer un élément div
+  let div = createDiv();
+  
+  // Créer un iframe avec document.createElement
+  let iframe = document.createElement("iframe");
+  iframe.src = "https://discord.com/widget?id=936957047512121397&theme=dark";
+  iframe.width = "316";
+  iframe.height = "500";
+  iframe.allowtransparency = "true";
+  iframe.frameborder = "0";
+  iframe.sandbox = "allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts";
+
+  // Appliquer le style CSS à l'élément div
+  div.child(iframe);
+  div.style("position", "absolute");
+  div.style("top", "0");
+  div.style("left", "0");
+  div.style("z-index", "1000");
+
+  //bandeau 
+  band = createButton("");
+  band.position(windowWidth/2 - 360, windowHeight/2 -414);
+  band.style('webkitAppearance', 'none'); // enlever le style par défaut du slider
+  band.style('appearance', 'none');
+  band.style('border', 'none');
+  band.style('width', '840px');
+  band.style('height', '40px');
+  band.style('opacity','0.5');
+  band.style("z-index", "100");
+  
+ 
+
+  gainSlider = createSlider(0, 1, sliderPosition, 0.00);//volume slider
+  gainSlider.input(volume); // appeler la fonction "volume()" chaque fois que la valeur du slider change
+//gainSlider.style('background', 'red'); // changer la couleur de fond du slider
+  gainSlider.style('color', 'white'); // changer la couleur du texte du slider
+  gainSlider.style('outline', 'none'); // enlever le contour du slider
+//gainSlider.style('webkitAppearance', 'none'); // enlever le style par défaut du slider
+//gainSlider.style('appearance', 'none');
+//gainSlider.style('borderRadius', '10px'); // arrondir les coins du slider
+//gainSlider.style('backgroundImage', 'linear-gradient(to right, #ff8080, #ff80bf)'); // utiliser un dégradé pour la couleur de fond du slider
+//gainSlider.style('cursor', 'pointer'); // changer le curseur lorsqu'on survole le slider
+gainSlider.style('direction', 'rtl');
+  gainSlider.position(windowWidth/2 +315, 10);
+  gainSlider.style("z-index", "1000");
+
+  muteButton = createButton("");
+  muteButton.position(gainSlider.x + gainSlider.width - 10, gainSlider.y -10);
+  muteButton.style('webkitAppearance', 'none'); // enlever le style par défaut du slider
+  muteButton.style('appearance', 'none');
+  muteButton.style('borderRadius', '4px'); // arrondir les coins du slider
+  muteButton.style('border', 'none');
+  muteButton.style('width', '40px');
+  muteButton.style('height', '40px');
+  muteButton.style('cursor', 'pointer');
+  muteButton.style('background-image', 'url("assets/play.png")');
+  muteButton.style("z-index", "1000");
+  muteButton.mousePressed(toggleMute);
+  
+  scrollbarImg = createImg('assets/scrollbar.png');
+  scrollbarImg.position(windowWidth/2 +244, windowHeight/2 +167, "absolute");
+  scrollbarImg.style("z-index", "-100");
+
+windowResized();
 }
 
 
 function draw() {
   let cnv = createCanvas(960, 3400);
   cnv.position(0, N, "relative");
-  textSize(20);
-  text('Entrez votre pseudo:', 10, 30);
-  text('Entrez votre commentaire:', 10, 80);
+  currentTime = hour();
 
+  if (isMuted) {
+    sliderPosition = 0;
+    gainSlider.value(sliderPosition);  
+  } else {
+    sliderPosition = 1;
+    sliderPosition = gainSlider.value();
+  }
+ 
+  volume();
+  
   if (mapping == 1) {
+    
+    
+    
     if (a == 1) {
       clear();
       noTint();
@@ -210,7 +307,8 @@ function draw() {
       image(img11, 300, 1600);
       image(Img5, 0, 0);
       image(bird1, e, f);
-      image(img10, 600, 856);
+  
+      displayImage();
       tint(FR);
       image(flagFR, 0, y - 342);
       tint(EN);
@@ -242,7 +340,8 @@ function draw() {
       image(shadow, e + 4, f + 200);
       image(Img5, 0, 0);
       image(bird1, e, f);
-      image(img10, 600, 856);
+  
+      displayImage();
       tint(FR);
       image(flagFR, 0, y - 342);
       tint(EN);
@@ -274,7 +373,8 @@ function draw() {
       image(shadow, e + 4, f + 200);
       image(Img5, 0, 0);
       image(bird1, e, f);
-      image(img10, 600, 856);
+
+      displayImage();
       tint(FR);
       image(flagFR, 0, y - 342);
       tint(EN);
@@ -306,7 +406,8 @@ function draw() {
       image(shadow, e + 4, f + 200);
       image(Img5, 0, 0);
       image(bird1, e, f);
-      image(img10, 600, 856);
+ 
+      displayImage();
       tint(FR);
       image(flagFR, 0, y - 342);
       tint(EN);
@@ -339,7 +440,8 @@ function draw() {
       image(shadow, e + 4, f + 200);
       image(Img5, 0, 0);
       image(bird1, e, f);
-      image(img10, 600, 856);
+     
+      displayImage();
       tint(FR);
       image(flagFR, 0, y - 342);
       tint(EN);
@@ -374,7 +476,8 @@ function draw() {
       image(shadow, e + 4, f + 200);
       image(Img5, 0, 0);
       image(bird1, e, f);
-      image(img10, 600, 856);
+  
+      displayImage();
       tint(FR);
       image(flagFR, 0, y - 342);
       tint(EN);
@@ -409,14 +512,15 @@ function draw() {
       image(shadow, e + 4, f + 200);
       image(Img5, 0, 0);
       image(bird1, e, f);
-      image(img10, 600, 856);
+
+      displayImage();
       tint(FR);
       image(flagFR, 0, y - 342);
       tint(EN);
       image(flagEN, 60, y - 342);
       y -= 5;
-      u -= 1.5;
-      t -= 2;
+      u = y -220 - (y*2*0.33);
+      t = y-250 - (y*2*0.3);
       a = 4;
       N += 5;
     }
@@ -447,18 +551,19 @@ function draw() {
       image(shadow, e + 4, f + 200);
       image(Img5, 0, 0);
       image(bird1, e, f);
-      image(img10, 600, 856);
+
+      displayImage();
       tint(FR);
       image(flagFR, 0, y - 342);
       tint(EN);
       image(flagEN, 60, y - 342);
       y += 5;
-      u += 1.5;
-      t += 2;
+      u = y -220 - (y*2*0.33);
+      t = y -250 - (y*2*0.3);
       a = 1;
       N -= 5;
     }
-
+    
     //---CADRE LIMITE---//
     if (x <= 64) {
       x += 5;
@@ -1111,49 +1216,50 @@ function draw() {
     ///panneau4 Affichage///
 
     if (y >= 2410 && y <= 2584 && x >= 724 && x <= 790) {
-
+      
     
       if (!pseudoInput) {
-
-        textFont(font);
-        textSize(fontsize);
-        textAlign(CENTER, CENTER);
-  
+        
         formulation = createImg("assets/windowskinA.png");
         formulation.position(windowWidth/2 -480, windowHeight/2 +80, "absolute");
-
+        formulation.style("z-index", "800");
         cachemisere = createImg("assets/windowskinB.png");
         cachemisere.position(windowWidth/2 +230, windowHeight/2 +80, "absolute");
         cachemisere.style("z-index: 1100");
-      
         pseudoInput = createInput().size(180, 20);
         pseudoInput.position(windowWidth/2 - 250, windowHeight/2 + 160, "absolute");
         pseudoInput.style("font-family", "pkmndp");
         pseudoInput.style("font-size", "16px");
         pseudoInput.style('opacity', '0.6');
+        pseudoInput.style("z-index", "1000");
         pseudoInput.elt.placeholder = 'Pseudo';
-  
         commentInput = createElement('textarea').size(180, 100);
         commentInput.position(windowWidth/2 - 250, windowHeight/2 + 194, "absolute");
         commentInput.style("font-family", "pkmndp");
         commentInput.style("font-size", "16px");
         commentInput.style('opacity', '0.65');
         commentInput.style("resize", "none");
+        commentInput.style("z-index", "1000");
         commentInput.attribute("placeholder", "N'hésitez pas à laisser un commentaire ici!");
-        
         sendButton = createButton('Envoyer');
         sendButton.position(windowWidth/2 - 250, windowHeight/2 + 310, "absolute");
         sendButton.style("font-family", "pkmndp");
         sendButton.style('color', '#e9dcd1');
         sendButton.style("border", "5px outset inset solid #9e7150");
         sendButton.style('background-color', '#a08066');
+        sendButton.style("z-index", "1000");
         sendButton.mousePressed(envoyerSaisies);
         afficherCommentaires()
       
+
+        // Dessinez la barre de défilement si elle doit être visible
+        
+          scrollbarbox();
+          scrollbarImg.style("z-index", "1200");
+        
     } 
     } else {
       // Cacher ou supprimer le formulaire de commentaire
-      affichage = false;
       if (pseudoInput) {
         affichageCommentaires = false; // mettre à jour la variable booléenne
         pseudoInput.remove();
@@ -1161,77 +1267,45 @@ function draw() {
         sendButton.remove();
         formulation.remove();
         cachemisere.remove();
+        scrollbarImg.style("z-index", "-100");
+        scrollbarImg.position(windowWidth/2 +244, windowHeight/2 +167, "absolute");
         pseudoInput = null;
         commentInput = null;
         sendButton = null;
         formulation = null;
         cachemisere = null;
         suppCommentaires();
-        
-        
-      }
-      
+        }
     }
-   
-function afficherCommentaires() {
-      // afficher les commentaires dans une div
-      let commentairesDiv = select('#commentaires');
-      commentairesDiv.html('');
-      commentairesDiv.position(windowWidth/2 - 20, windowHeight/2 + 162);
-      commentairesDiv.style("font-family", "pkmndp");
-      commentairesDiv.style("font-size", "20px");
-      commentairesDiv.style("color", "rgba(255, 255, 255, 1)");
-      commentairesDiv.style("z-index: 1000");
-      commentairesDiv.style('background-color', 'rgba(255, 255, 255, 0.0');
-      commentairesDiv.style("overflow-y", "auto");
-      commentairesDiv.style("width", "270px");
-      commentairesDiv.style("height", "170px");
-      commentairesDiv.style("word-wrap", "break-word");
-    
-      for (let i = 0; i < listeCommentaires.length; i++) {
-        let commentaire = createElement('p', listeCommentaires[i]);
-        commentaire.parent(commentairesDiv);
+
+    if (!pseudoInput) {
+      affichageCommentaires = false; // mettre à jour la variable booléenne
+      suppCommentaires();
       }
-    
-  }
-function suppCommentaires() {
-    // afficher les commentaires dans une div
-    let commentairesDiv = select('#commentaires');
-    commentairesDiv.html('');
-    commentairesDiv.position(windowWidth/2 - 20, windowHeight/2 + 162);
-    commentairesDiv.style("z-index: 1000");
-    commentairesDiv.style('background-color', 'rgba(255, 255, 255, 0');
-    commentairesDiv.style("overflow-y", "hidden");
-    commentairesDiv.style("width", "0px");
-    commentairesDiv.style("height", "0px");
-    commentairesDiv.style("word-wrap", "break-word");
+
+// function envoyerSaisies() {
+//   // récupérer les valeurs des champs de saisie
+//   let pseudo = pseudoInput.value();
+//   let commentaire = commentInput.value();
+
+//   // ajouter le commentaire à la liste des commentaires
+//   let nouveauCommentaire = "<b>" + pseudo + ":</b> <br>" + commentaire + "<br> <br><center>***</center>" ;
+//   listeCommentaires.unshift(nouveauCommentaire);
+
+//   // limiter la liste des commentaires à 10 éléments
+//   if (listeCommentaires.length > 10) {
+//     listeCommentaires.pop();
+//   }
+
+//   //localStorage.setItem('commentaires', JSON.stringify(listeCommentaires));
   
-} 
-function envoyerSaisies() {
-  // récupérer les valeurs des champs de saisie
-  let pseudo = pseudoInput.value();
-  let commentaire = commentInput.value();
-
-  // ajouter le commentaire à la liste des commentaires
-  let nouveauCommentaire = "<b><center>" + pseudo + ":</center></b> <br>" + commentaire + "<br> <br><center>***</center>" ;
-  listeCommentaires.unshift(nouveauCommentaire);
-
-  // limiter la liste des commentaires à 10 éléments
-  if (listeCommentaires.length > 10) {
-    listeCommentaires.pop();
-  }
-
-  afficherCommentaires();
+//   afficherCommentaires();
  
   
-  // vider les champs de saisie
-  pseudoInput.value('');
-  commentInput.value('');
-}
-
-       
-
-
+//   // vider les champs de saisie
+//   pseudoInput.value('');
+//   commentInput.value('');
+// }
 
     // Ajuster la position des Inputs en fonction de la position de l'image formulaire
 
@@ -1518,7 +1592,6 @@ function envoyerSaisies() {
       noTint();
       image(img22, 534, y + 22);
       image(img23, 10, y + 130);
-
       fill(30, 250);
       if (FR == 255) {
         text("Tiens bon Chrysacier !", 484, y + 248);
@@ -1610,7 +1683,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -1636,7 +1709,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -1665,7 +1738,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -1691,7 +1764,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -1718,7 +1791,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -1750,7 +1823,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -1782,7 +1855,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -1814,7 +1887,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -1860,7 +1933,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -1886,7 +1959,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -1915,7 +1988,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -1941,7 +2014,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -1968,7 +2041,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2000,7 +2073,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2032,7 +2105,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2064,7 +2137,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2100,7 +2173,6 @@ function envoyerSaisies() {
         image(fille1, 484, 2576);
         image(battle1, 116, 2316);
         image(combat2, 400, 1700);
-
         image(img5, x, y);
         image(kaio3, 500, 1680);
         image(combat1, 400, 1700);
@@ -2111,7 +2183,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2137,7 +2209,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2166,7 +2238,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2192,7 +2264,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2219,7 +2291,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2251,7 +2323,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2283,7 +2355,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2315,7 +2387,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2362,7 +2434,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2389,7 +2461,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2419,7 +2491,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2446,7 +2518,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2474,7 +2546,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2507,7 +2579,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2540,7 +2612,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2573,7 +2645,7 @@ function envoyerSaisies() {
         image(shadow, e + 4, f + 200);
         image(Img5, 0, 0);
         image(bird1, e, f);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2644,7 +2716,7 @@ function envoyerSaisies() {
         image(img5, x, y);
         image(img11, 300, 1600);
         image(Img5, 0, 0);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2664,7 +2736,7 @@ function envoyerSaisies() {
         image(img6, x, y);
         image(img11, 300, 1600);
         image(Img5, 0, 0);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2684,7 +2756,7 @@ function envoyerSaisies() {
         image(img7, x, y);
         image(img11, 300, 1600);
         image(Img5, 0, 0);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2704,7 +2776,7 @@ function envoyerSaisies() {
         image(img8, x, y);
         image(img11, 300, 1600);
         image(Img5, 0, 0);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2744,7 +2816,7 @@ function envoyerSaisies() {
         image(img5, x, y);
         image(img11, 300, 1600);
         image(Img5, 0, 0);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2764,7 +2836,7 @@ function envoyerSaisies() {
         image(img6, x, y);
         image(img11, 300, 1600);
         image(Img5, 0, 0);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2784,7 +2856,7 @@ function envoyerSaisies() {
         image(img7, x, y);
         image(img11, 300, 1600);
         image(Img5, 0, 0);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2804,7 +2876,7 @@ function envoyerSaisies() {
         image(img8, x, y);
         image(img11, 300, 1600);
         image(Img5, 0, 0);
-        image(img10, 600, 856);
+        displayImage();
         tint(FR);
         image(flagFR, 0, y - 342);
         tint(EN);
@@ -2871,6 +2943,7 @@ function envoyerSaisies() {
       song.playMode("sustain");
       song.pause();
       mapping = 2;
+    
     }
 
     if (x >= 700 && x <= 720 && y >= 2460 && y <= 2476) {
@@ -2883,13 +2956,14 @@ function envoyerSaisies() {
       song2.playMode("restart");
       song2.play();
       mapping = 3;
+
     }
 
 
     
     //--End--//
   }
-  
+
   
  //------------MAP2------------//
 
@@ -3922,7 +3996,7 @@ function envoyerSaisies() {
     //---MAP3 TRANSFER--/
 
     if (y >= 2460) {
-      y = 2486;
+      y = 2485;
       x = 704;
       song2.playMode("sustain");
       song2.pause();
@@ -3938,10 +4012,188 @@ function envoyerSaisies() {
 
   //-------//
 }
-function windowResized() {
 
+//-----------------Fonction-------------------------//
+function mouseWheel(event) {
+  if (mouseX >= 460 && mouseX <= 708 && mouseY >= 2807 && mouseY <= 2964) {
+    // Mettre à jour la position de l'image de la barre de défilement en fonction de la molette de la souris
+    let targetPos = scrollbarImg.position().y + event.deltaY;
+    targetPos = constrain(targetPos, windowHeight/2 +167, windowHeight/2 +306);
+    scrollbarImg.style('transition', 'top 0.5s ease-in-out');
+    scrollbarImg.position(windowWidth/2 +244, targetPos, "absolute");
+    scrollbarHeight += event.deltaY;
+    scrollbarHeight = constrain(scrollbarHeight, 50, viewHeight);
+  }
+}
+ 
+
+
+function scrollbarbox(){
+
+  rect(width - 20, 0, 20, viewHeight);
+  scrollbarImg.style("z-index", "1200");
+  // Dessinez la barre de défilement si elle doit être visible
+  if (scrollbarVisible) {
+    scrollbarPos = constrain(scrollbarPos, 0, viewHeight - scrollbarHeight);
+    rect(width - 20, scrollbarPos, 20, scrollbarHeight);
+  }
+}
+
+
+function displayImage() {
+  // Obtenir l'heure actuelle
+  let currentTime = hour();
+
+  // Ne rien afficher s'il fait jour
+  if (currentTime >= 9 && currentTime < 18) {
+
+    return;
+  }
+
+  // Afficher l'image appropriée selon l'heure de la journée
+  if (currentTime >= 18 && currentTime < 19.5) { // de 18h à 19h30
+    image(teinte,0,0);
+  } else if (currentTime >= 19.5 || currentTime < 7) { // de 19h30 à 7h
+    image(teinte2,0,0);
+  } else if (currentTime >= 7 && currentTime < 9) { // de 7h à 9h
+    image(teinte3, 0, 0);
+  }
+}
+
+
+function volume() {
+  var sliderValue = gainSlider.value();
+  var dB = map(sliderValue, 0, 1, -60, 0); // convertir la valeur du slider en dB
+  var volumeValue = pow(10, dB/20); // convertir les dB en une valeur de volume linéaire
+  song.setVolume(volumeValue);
+  song2.setVolume(volumeValue);
+}
+
+
+function toggleMute() {
+  if (isMuted) {
+    muteButton.html("");
+    muteButton.style('background-image', 'url("assets/play.png")');
+    sliderPosition = 0.5;
+    isMuted = false;
+    if (mapping == 1) {
+      song.play(); // relance la lecture du son
+    }
+    if (mapping == 3) {
+      song2.play(); // relance la lecture du son
+    }
+
+  } else {
+    muteButton.html("");
+    muteButton.style('background-image', 'url("assets/mute.png")');
+    sliderPosition = 0;
+    isMuted = true;
+    song2.stop();
+    song.stop();
+    sliderPosition = 0.0;
+
+  }
+  gainSlider.value(sliderPosition);
+}
+
+async function afficherCommentaires() {
+  const BASE_URL = "http://127.0.0.1:8000";
+  const response = await fetch(`${BASE_URL}/comment`);
+  const commentaires = await response.json();
+  commentaires.sort((a, b) => new Date(b.date) - new Date(a.date));
+  console.log(commentaires);
+  // afficher les commentaires dans une div
+  let commentairesDiv = select('#commentaires');
+  commentairesDiv.html('');
+  commentairesDiv.position(windowWidth/2 - 20, windowHeight/2 + 162);
+  commentairesDiv.style("font-family", "pkmndp");
+  commentairesDiv.style("font-size", "20px");
+  commentairesDiv.style("color", "rgba(255, 255, 255, 1)");
+  commentairesDiv.style("z-index: 1000");
+  commentairesDiv.style('background-color', 'rgba(255, 255, 255, 0.0');
+  commentairesDiv.style("overflow-y", "auto");
+  commentairesDiv.style("width", "270px");
+  commentairesDiv.style("height", "170px");
+  commentairesDiv.style("word-wrap", "break-word");
+    // Inverser le tableau de commentaires
+const commentairesInverse = commentaires.reverse();
+
+for (let i = 0; i < commentairesInverse.length; i++) {
+const commentaire = createElement('p', `<strong style="text-align:center;display:block">${commentairesInverse[i].pseudo}</strong><br/>${commentairesInverse[i].message}<center>* * *</center>`);
+commentaire.parent(commentairesDiv);
+}
+}
+// écouteur d'événement sur le redimensionnement de la fenêtre
+// window.addEventListener('resize', () => {
+//   afficherCommentaires();
+// });
+
+
+function suppCommentaires() {
+// afficher les commentaires dans une div
+let commentairesDiv = select('#commentaires');
+commentairesDiv.html('');
+commentairesDiv.position(windowWidth/2 - 20, windowHeight/2 + 162);
+commentairesDiv.style("z-index: 1000");
+commentairesDiv.style('background-color', 'rgba(255, 255, 255, 0');
+commentairesDiv.style("overflow-y", "hidden");
+commentairesDiv.style("width", "0px");
+commentairesDiv.style("height", "0px");
+commentairesDiv.style("word-wrap", "break-word");
+
+
+} 
+
+function envoyerSaisies() {
+let author = pseudoInput.value();
+let commentaire = commentInput.value();
+const BASE_URL = "http://127.0.0.1:8000";
+if (author=="")
+{
+    author = "Anonymous";
+}
+const data= {
+    pseudo:author, 
+    message:commentaire,
+}
+console.log(data)
+try {
+    const response = fetch(`${BASE_URL}/comment/create`, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    });
+
+    if (response.status == 201) {
+        const responseData = response.json();
+        console.log(responseData);
+    } else {
+        // throw new Error("Erreur lors de la création du commentaire?");
+        afficherCommentaires();
+    }
+} catch (error) {
+    console.error(error);
+    afficherCommentaires()
+    // alert("Erreur lors de la création du commentaire.");
+}
+
+pseudoInput.value('');
+commentInput.value('');
+}
+
+
+
+
+function windowResized() {
+  gainSlider.position(windowWidth/2 +300, 10);
+  muteButton.position(windowWidth/2 +440, 0);
+  scrollbarImg.position(windowWidth/2 +244, windowHeight/2 + 167, "absolute");
   if (pseudoInput) {
     pseudoInput.position(windowWidth/2 - 250, windowHeight/2 + 160, "absolute");
+    
     let commentairesDiv = select('#commentaires');
      commentairesDiv.html('');commentairesDiv.position(windowWidth/2 - 20, windowHeight/2 + 162);
      commentairesDiv.style("z-index: 1000");
@@ -3950,12 +4202,8 @@ function windowResized() {
      commentairesDiv.style("width", "270px");
      commentairesDiv.style("height", "170px");
      commentairesDiv.style("word-wrap", "break-word");
-   
-     for (let i = 0; i < listeCommentaires.length; i++) {
-       let commentaire = createElement('p', listeCommentaires[i]);
-       commentaire.parent(commentairesDiv);
-     }
-   
+     select('#commentaires').position(windowWidth/2 - 20, windowHeight/2 + 162);
+
     
   }
   if (commentInput) {
@@ -3972,6 +4220,9 @@ function windowResized() {
   if (cachemisere) {
     cachemisere.position(windowWidth/2 +230, windowHeight/2 + 80, "absolute");
   }
+
+
+  
 
 }
 // function envoyerSaisies() {
@@ -4072,4 +4323,6 @@ function mousePressed() {
   }
 
 
+
 }
+
