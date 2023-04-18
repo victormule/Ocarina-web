@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  
     <script src="p5.js"></script>
     <script src="p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-
-
-  </head>
- 
-  <body>
-   
     <script>
       var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       var scripts;
       if (isMobile) {
-        scripts = ["sketch2.js", "sketch2.js"];
+        scripts = ["sketch3.js", "sketch4.js"];
       } else {
-        scripts = ["sketch.js", "sketch.js"];
+        scripts = ["sketch.js", "sketch2.js"];
       }
       var randomScript = scripts[Math.floor(Math.random() * scripts.length)];
       var scriptTag = document.createElement("script");
       scriptTag.src = randomScript;
       document.body.appendChild(scriptTag);
     </script>
-   <div id="commentaires"></div>
-
+    <style>
+      @media screen and (max-width: 767px) {
+        body {
+          overflow: hidden;
+          max-width: 100%;
+          max-height: 100%;
+          position: fixed;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="commentaires"></div>
   </body>
 </html>
