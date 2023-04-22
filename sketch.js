@@ -113,7 +113,7 @@ let discordOff;
 let coffreImg;
 let coffreImg2;
 let playerCoffre;
-let redim = windowWidth * 0.3;
+
 
 
 
