@@ -55,12 +55,14 @@ let fille1;
 let temple;
 let temple2;
 let light1;
+let light2;
 let kaio1;
 let kaio1a;
 let kaio2;
 let kaio3;
 let kaio4;
 let taverne;
+let taverne2;
 let teinte;
 let teinte2;
 let teinte3;
@@ -131,6 +133,7 @@ function preload() {
   temple2 = loadImage("assets/temple2.gif");
   temple3 = loadImage("assets/templefeu.gif");
   light1 = loadImage("assets/templelight.png");
+  light2 = loadImage("assets/tavernelight.png");
   sky = loadImage("assets/sky.png");
   cloud1 = loadImage("assets/cloud1.png");
   cloud2 = loadImage("assets/cloud2.png");
@@ -170,6 +173,7 @@ function preload() {
   kaio3 = loadImage("assets/kaio3.png");
   kaio4 = loadImage("assets/kaio4.png");
   taverne = loadImage("assets/taverne.png");
+  taverne2 = loadImage("assets/taverne2.gif");
   img16 = loadImage("assets/windowskin2.png");
   img17 = loadImage("assets/dameKiyoka1.gif");
   img18 = loadImage("assets/maitreKaio.gif");
@@ -3279,6 +3283,7 @@ console.log(a);
       background(taverne);
       image(shadow, x + 2, y + 34);
       image(img5, x, y);
+      image(taverne2,79,2368);
       tint(FR);
       image(flagFR, 0, y - 316);
       tint(EN);
@@ -3290,6 +3295,7 @@ console.log(a);
       background(taverne);
       image(shadow, x + 2, y + 34);
       image(img6, x, y);
+      image(taverne2,79,2368);
       tint(FR);
       image(flagFR, 0, y - 316);
       tint(EN);
@@ -3301,6 +3307,7 @@ console.log(a);
       background(taverne);
       image(shadow, x + 2, y + 34);
       image(img7, x, y);
+      image(taverne2,79,2368);
       tint(FR);
       image(flagFR, 0, y - 316);
       tint(EN);
@@ -3312,6 +3319,7 @@ console.log(a);
       background(taverne);
       image(shadow, x + 2, y + 34);
       image(img8, x, y);
+      image(taverne2,79,2368);
       tint(FR);
       image(flagFR, 0, y - 316);
       tint(EN);
@@ -3323,6 +3331,7 @@ console.log(a);
       background(taverne);
       image(shadow, x + 2, y + 34);
       image(img2, x, y);
+      image(taverne2,79,2368);
       tint(FR);
       image(flagFR, 0, y - 316);
       tint(EN);
@@ -3337,6 +3346,7 @@ console.log(a);
       background(taverne);
       image(shadow, x + 2, y + 34);
       image(img3, x, y)
+      image(taverne2,79,2368);
       tint(FR);
       image(flagFR, 0, y - 316);
       tint(EN);
@@ -3351,6 +3361,7 @@ console.log(a);
       background(taverne);
       image(shadow, x + 2, y + 34);
       image(img4, x, y);
+      image(taverne2,79,2368);
       tint(FR);
       image(flagFR, 0, y - 316);
       tint(EN);
@@ -3366,6 +3377,7 @@ console.log(a);
       background(taverne);
       image(shadow, x + 2, y + 34);
       image(img1, x, y);
+      image(taverne2,79,2368);
       tint(FR);
       image(flagFR, 0, y - 316);
       tint(EN);
@@ -3373,6 +3385,15 @@ console.log(a);
       y += 5;
       a = 1;
       N -= 5;
+    }
+    tint(255, z);
+    image(light2, 33, 2334);
+    z += Z;
+    if (z > 250) {
+      Z = -0.4;
+    }
+    if (z < 230) {
+      Z = +0.3;
     }
 
         //---MAP 4 limite---//
@@ -4686,11 +4707,21 @@ function openchest() {
   image(shadow, x + 2, y + 34);
   image(coffreImg,0, 2285);
   image(playerCoffre, x, y-4);
+  image(taverne2,79,2368);
   tint(FR);
   image(flagFR, 0, y - 316);
   tint(EN);
   image(flagEN, 60, y - 316);
 
+  tint(255, z);
+  image(light2, 33, 2334);
+  z += Z;
+  if (z > 250) {
+    Z = -0.4;
+  }
+  if (z < 230) {
+    Z = +0.3;
+  }
   song3.playMode("sustain");
   song3.pause();
   bruitage1.play();
@@ -4734,10 +4765,20 @@ function openchest() {
     image(shadow, x + 2, y + 34);
     image(coffreImg2,0, 2285);
     image(playerCoffre, x, y-4);
+    image(taverne2,79,2368);
     tint(FR);
     image(flagFR, 0, y - 316);
     tint(EN);
     image(flagEN, 60, y - 316);
+    tint(255, z);
+    image(light2, 33, 2334);
+    z += Z;
+    if (z > 250) {
+      Z = -0.4;
+    }
+    if (z < 230) {
+      Z = +0.3;
+    }
 
     song3.playMode("sustain");
     song3.pause();
@@ -4867,6 +4908,4 @@ function mousePressed() {
 
   }
 
-
 }
-
