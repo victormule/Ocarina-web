@@ -29,6 +29,11 @@ let FR = 255;
 let EN = 150;
 let song;
 let song2;
+let song3;
+let bruitage1;
+let bruitage2;
+let bruitage3;
+let bruitage4;
 let fr = 100; //starting FPS
 
 let Img5; //Tree
@@ -55,6 +60,7 @@ let kaio1a;
 let kaio2;
 let kaio3;
 let kaio4;
+let taverne;
 let teinte;
 let teinte2;
 let teinte3;
@@ -97,7 +103,17 @@ let scrollbarHeight = 200;
 let viewHeight = 400;
 let scrollbarVisible = false;
 let scrollbarImg;
-
+let millisStart = -1;
+let grandCoffre = true;
+let discordDiv;
+let discordIframe;
+let isDiscordVisible = false;
+let discordOn;
+let discordOff;
+let coffreImg;
+let coffreImg2;
+let playerCoffre;
+let redim = windowWidth * 0.3;
 
 
 
@@ -107,6 +123,8 @@ function preload() {
   font = loadFont("font/pkmndp.ttf");
   song = loadSound("assets/littleroot.mp3");
   song2 = loadSound("assets/temple-of-time-Robert-Austin.mp3");
+  //song3 = loadSound("assets/Tethys.mp3");
+  song3 = loadSound("assets/DistantRoads.mp3");
   bg = loadImage("assets/plaine.gif");
   ch = loadImage("assets/chambre.png");
   temple = loadImage("assets/temple.png");
@@ -151,6 +169,7 @@ function preload() {
   kaio2 = loadImage("assets/kaio2.png");
   kaio3 = loadImage("assets/kaio3.png");
   kaio4 = loadImage("assets/kaio4.png");
+  taverne = loadImage("assets/taverne.png");
   img16 = loadImage("assets/windowskin2.png");
   img17 = loadImage("assets/dameKiyoka1.gif");
   img18 = loadImage("assets/maitreKaio.gif");
@@ -173,6 +192,9 @@ function preload() {
   ponita1 = loadImage("assets/ponita1.gif");
   fille = loadImage("assets/fille.gif");
   fille1 = loadImage("assets/fille1.gif");
+  coffreImg = loadImage("assets/coffre.gif")
+  coffreImg2 = loadImage("assets/coffreEN.gif")
+  playerCoffre = loadImage("assets/playercoffre.gif")
   bar1 = loadImage('assets/BAR1.png')
   bar2 = loadImage('assets/BAR2.png')
   bar3 = loadImage('assets/BAR3.png')
@@ -194,25 +216,10 @@ function setup() {
   textFont(font);
   textSize(fontsize);
   textAlign(CENTER, CENTER);
-  
-  // Créer un élément div
-  let div = createDiv();
-  
-  // Créer un iframe avec document.createElement
-  let iframe = document.createElement("iframe");
-  iframe.src = "https://discord.com/widget?id=936957047512121397&theme=dark";
-  iframe.width = "316";
-  iframe.height = "500";
-  iframe.allowtransparency = "true";
-  iframe.frameborder = "0";
-  iframe.sandbox = "allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts";
-
-  // Appliquer le style CSS à l'élément div
-  div.child(iframe);
-  div.style("position", "absolute");
-  div.style("top", "0");
-  div.style("left", "0");
-  div.style("z-index", "1000");
+  bruitage1 = createAudio("assets/Door01.ogg");
+  bruitage2 = createAudio("assets/Door02.ogg");
+  bruitage3 = createAudio("assets/item.mp3");
+  bruitage4 = createAudio("assets/chest.ogg");
 
   //bandeau 
   band = createButton("");
@@ -223,7 +230,7 @@ function setup() {
   band.style('width', '840px');
   band.style('height', '40px');
   band.style('opacity','0.5');
-  band.style("z-index", "100");
+  band.style("z-index", "200");
   
  
 
@@ -237,7 +244,7 @@ function setup() {
 //gainSlider.style('borderRadius', '10px'); // arrondir les coins du slider
 //gainSlider.style('backgroundImage', 'linear-gradient(to right, #ff8080, #ff80bf)'); // utiliser un dégradé pour la couleur de fond du slider
 //gainSlider.style('cursor', 'pointer'); // changer le curseur lorsqu'on survole le slider
-gainSlider.style('direction', 'rtl');
+  gainSlider.style('direction', 'rtl');
   gainSlider.position(windowWidth/2 +315, 10);
   gainSlider.style("z-index", "1000");
 
@@ -257,6 +264,38 @@ gainSlider.style('direction', 'rtl');
   scrollbarImg = createImg('assets/scrollbar.png');
   scrollbarImg.position(windowWidth/2 +244, windowHeight/2 +167, "absolute");
   scrollbarImg.style("z-index", "-100");
+
+  discordOn = createButton("");
+  discordOn.style('webkitAppearance', 'none'); 
+  discordOn.style('appearance', 'none');
+  discordOn.style('borderRadius', '4px');
+  discordOn.style('border', 'none');
+  discordOn.style('cursor', 'pointer');
+  discordOn.style('background-image', 'url("assets/discordbtn2.png")');
+  discordOn.style('width', '0px');
+  discordOn.style('height', '0px');
+  discordOn.style("z-index", "-100");
+  discordOn.position(windowWidth/2 - 360, windowHeight/2 -414);
+  discordOn.mousePressed(toggleDiscord);
+
+  discordOff = createButton("");
+  discordOff.style('webkitAppearance', 'none'); 
+  discordOff.style('appearance', 'none');
+  discordOff.style('borderRadius', '4px');
+  discordOff.style('border', 'none');
+  discordOff.style('cursor', 'pointer');
+  discordOff.style('background-image', 'url("assets/discordbtn.png")');
+  discordOff.style('width', '0px');
+  discordOff.style('height', '0px');
+  discordOff.style("z-index", "-100");
+  discordOff.position(windowWidth/2 - 360, windowHeight/2 -414);
+  discordOff.mousePressed(toggleDiscord2);
+  // Créer un div pour le widget Discord et l'ajouter au DOM
+  discordIframe = createDiv();
+  discordIframe.position(windowWidth/2-780, 0);
+  discordIframe.style('z-index', '-1000');
+
+
 
 windowResized();
 }
@@ -279,7 +318,7 @@ function draw() {
   
   if (mapping == 1) {
     
-    
+   
     
     if (a == 1) {
       clear();
@@ -1313,6 +1352,22 @@ function draw() {
   
     //----//
 
+    //-------panneau 5------//
+    if (x >= 204 && x <= 254 && y >= 2632 && y <= 2658) {
+      x += 5;
+    }
+    if (x >= 196 && x <= 246 && y >= 2624 && y <= 2658) {
+      x -= 5;
+    }
+    if (x >= 204 && x <= 246 && y >= 2632 && y <= 2666) {
+      y += 5;
+      N -= 5;
+    }
+    if (x >= 204 && x <= 246 && y >= 2632 && y <= 2658) {
+      y -= 5;
+      N += 5;
+    }
+
     //------MAISON-------//
 
     if (x >= 240 && x <= 368 && y >= 668 && y <= 774) {
@@ -1354,6 +1409,83 @@ function draw() {
       N -= 5;
     }
 
+     //------TAVERNE-------//
+
+     if (x >= 108 && x <= 282 && y >= 2530 && y <= 2622) {
+      x += 5;
+    }
+    if (x >= 98 && x <= 274 && y >= 2530 && y <= 2622) {
+      x -= 5;
+    }
+    if (x >= 108 && x <= 274 && y >= 2530 && y <= 2630) {
+      y += 5;
+      N -= 5;
+    }
+    if (x >= 108 && x <= 274 && y >= 2522 && y <= 2622) {
+      y -= 5;
+      N += 5;
+    }
+    //---Porte taverne---//
+    if (x >= 108 && x <= 178 && y >= 2540 && y <= 2632) {
+      x += 5;
+    }
+    if (x >= 98 && x <= 170 && y >= 2540 && y <= 2632) {
+      x -= 5;
+    }
+    if (x >= 108 && x <= 170 && y >= 2540 && y <= 2640) {
+      y += 5;
+      N -= 5;
+    }
+    if (x >= 108 && x <= 170 && y >= 2532 && y <= 2632) {
+      y -= 5;
+      N += 5;
+    }
+
+    if (x >= 218 && x <= 282 && y >= 2540 && y <= 2632) {
+      x += 5;
+    }
+    if (x >= 210 && x <= 274 && y >= 2540 && y <= 2632) {
+      x -= 5;
+    }
+    if (x >= 218 && x <= 274 && y >= 2540 && y <= 2640) {
+      y += 5;
+      N -= 5;
+    }
+    if (x >= 218 && x <= 174 && y >= 2532 && y <= 2632) {
+      y -= 5;
+      N += 5;
+    }
+
+    //-------Arbre Taverne------//
+    if (x >= 230 && x <= 346 && y >= 2598 && y <= 2628) {
+      x += 5;
+    }
+    if (x >= 222 && x <= 338 && y >= 2598 && y <= 2628) {
+      x -= 5;
+    }
+    if (x >= 230 && x <= 338 && y >= 2598 && y <= 2636) {
+      y += 5;
+      N -= 5;
+    }
+    if (x >= 230 && x <= 338 && y >= 2590 && y <= 2628) {
+      y -= 5;
+      N += 5;
+    }
+    //-------Rocher Taverne------//
+    if (x >= 266 && x <= 280 && y >= 2620 && y <= 2636) {
+      x += 5;
+    }
+    if (x >= 258 && x <= 288 && y >= 2610 && y <= 2636) {
+      x -= 5;
+    }
+    if (x >= 266 && x <= 280 && y >= 2620 && y <= 2644) {
+      y += 5;
+      N -= 5;
+    }
+    if (x >= 266 && x <= 280 && y >= 2620 && y <= 2636) {
+      y -= 5;
+      N += 5;
+    }
     //------BASSIN-------//
 
     if (x >= 70 && x <= 248 && y >= 668 && y <= 864) {
@@ -2937,6 +3069,7 @@ function draw() {
 
     //---MAP TRANSFER--/
 
+    //-----transfere vers chambre------//
     if (x >= 255 && x <= 264 && y >= 680 && y <= 778) {
       y = 744;
       N = -400;
@@ -2945,7 +3078,7 @@ function draw() {
       mapping = 2;
     
     }
-
+    //-----transfere temple------//
     if (x >= 700 && x <= 720 && y >= 2460 && y <= 2476) {
       y = 2450;
       x = 634;
@@ -2959,7 +3092,20 @@ function draw() {
 
     }
 
+    //-----transfere taverne------//
+    if (x >= 178 && x <= 210 && y >=2620  && y <= 2640) {
+      y = 2614;
+      x = 192;
+      N = -2306;
+      
+      song.playMode("sustain");
+      song.pause();
+      song3.loop();
+      song3.playMode("restart");
+      song3.play();
+      mapping = 4 ;
 
+    }
     
     //--End--//
   }
@@ -3091,7 +3237,7 @@ function draw() {
     
 
 
-    //---MAP 1---//
+    //---MAP 2 limite---//
 
     if (x <= 98) {
       x += 5;
@@ -3109,7 +3255,7 @@ function draw() {
       y -= 5;
     }
 
-    //---MAP TRANSFER--/
+    //---MAP2 TRANSFER vers map 1--/
 
     if (y >= 752) {
       y = 780;
@@ -3123,7 +3269,243 @@ function draw() {
   }
 
   
-  
+  //------------MAP4------------//
+
+  if (mapping == 4) {
+console.log(a);
+    if (a == 1) {
+      clear();
+      noTint();
+      background(taverne);
+      image(shadow, x + 2, y + 34);
+      image(img5, x, y);
+      tint(FR);
+      image(flagFR, 0, y - 316);
+      tint(EN);
+      image(flagEN, 60, y - 316);
+    }
+    if (a == 2) {
+      clear();
+      noTint();
+      background(taverne);
+      image(shadow, x + 2, y + 34);
+      image(img6, x, y);
+      tint(FR);
+      image(flagFR, 0, y - 316);
+      tint(EN);
+      image(flagEN, 60, y - 316);
+    }
+    if (a == 3) {
+      clear();
+      noTint();
+      background(taverne);
+      image(shadow, x + 2, y + 34);
+      image(img7, x, y);
+      tint(FR);
+      image(flagFR, 0, y - 316);
+      tint(EN);
+      image(flagEN, 60, y - 316);
+    }
+    if (a == 4) {
+      clear();
+      noTint();
+      background(taverne);
+      image(shadow, x + 2, y + 34);
+      image(img8, x, y);
+      tint(FR);
+      image(flagFR, 0, y - 316);
+      tint(EN);
+      image(flagEN, 60, y - 316);
+    }
+    if (keyIsDown(LEFT_ARROW)) {
+      clear();
+      noTint();
+      background(taverne);
+      image(shadow, x + 2, y + 34);
+      image(img2, x, y);
+      tint(FR);
+      image(flagFR, 0, y - 316);
+      tint(EN);
+      image(flagEN, 60, y - 316);
+      x -= 5;
+      a = 2;
+    }
+
+    if (keyIsDown(RIGHT_ARROW)) {
+      clear();
+      noTint();
+      background(taverne);
+      image(shadow, x + 2, y + 34);
+      image(img3, x, y)
+      tint(FR);
+      image(flagFR, 0, y - 316);
+      tint(EN);
+      image(flagEN, 60, y - 316);
+      x += 5;
+      a = 3;
+    }
+
+    if (keyIsDown(UP_ARROW)) {
+      clear();
+      noTint();
+      background(taverne);
+      image(shadow, x + 2, y + 34);
+      image(img4, x, y);
+      tint(FR);
+      image(flagFR, 0, y - 316);
+      tint(EN);
+      image(flagEN, 60, y - 316);
+      y -= 5;
+      a = 4;
+      N += 5;
+    }
+
+    if (keyIsDown(DOWN_ARROW)) {
+      clear();
+      noTint();
+      background(taverne);
+      image(shadow, x + 2, y + 34);
+      image(img1, x, y);
+      tint(FR);
+      image(flagFR, 0, y - 316);
+      tint(EN);
+      image(flagEN, 60, y - 316);
+      y += 5;
+      a = 1;
+      N -= 5;
+    }
+
+        //---MAP 4 limite---//
+        //---mur---//
+        if (x <= 46) {
+          x += 5;
+        }
+        if (x >= 338) {
+          x -= 5;
+        }
+        if (y <= 2400) {
+          y += 5;
+          N -= 5;
+        }
+        if (x >= 40 && x <= 170 && y >= 2608) {
+          y -= 5;
+          N += 5;
+        }
+        if (x >= 220 && x <= 360 && y >= 2608) {
+          y -= 5;
+          N += 5;
+        }
+        //---meuble--//
+
+        //---(table gauche)---//
+        if (x >= 60 && x <= 140 && y >= 2522 && y <= 2572) {
+          x += 5;
+        }
+        if (x >= 52 && x <= 132 && y >= 2522 && y <= 2572) {
+          x -= 5;
+        }
+        if (x >= 60 && x <= 132 && y >= 2522 && y <= 2580) {
+          y += 5;
+          N -= 5;
+        }
+        if (x >= 60 && x <= 132 && y >= 2516 && y <= 2572) {
+          y -= 5;
+          N += 5;
+        }
+
+        //---(table droite)---//
+        if (x >= 253 && x <= 336 && y >= 2522 && y <= 2572) {
+          x += 5;
+        }
+        if (x >= 244 && x <= 328 && y >= 2522 && y <= 2572) {
+          x -= 5;
+        }
+        if (x >= 252 && x <= 328 && y >= 2522 && y <= 2580) {
+          y += 5;
+          N -= 5;
+        }
+        if (x >= 252 && x <= 328 && y >= 2516 && y <= 2572) {
+          y -= 5;
+          N += 5;
+        }
+
+        //---(comptoire)---//
+        if (x >= 66 && x <= 290 && y >= 2454 && y <= 2476) {
+          x += 5;
+        }
+        if (x >= 58 && x <= 282 && y >= 2454 && y <= 2476) {
+          x -= 5;
+        }
+        if (x >= 66 && x <= 282 && y >= 2454 && y <= 2488) {
+          y += 5;
+          N -= 5;
+        }
+        if (x >= 66 && x <= 282 && y >= 2446 && y <= 2476) {
+          y -= 5;
+          N += 5;
+        }
+        if (x >= 250 && x <= 290 && y >= 2000 && y <= 2470) {
+          x += 5;
+        }
+        //---(vase gauche)---//
+        if (x >= 0 && x <= 76 && y >= 0 && y <= 2420) {
+          x += 5;
+        }
+        if (x >= 0 && x <= 70 && y >= 0 && y <= 2420) {
+          x -= 5;
+        }
+        if (x >= 0 && x <= 70 && y >= 0 && y <= 2430) {
+          y += 5;
+          N -= 5;
+        }
+        if (x >= 0 && x <= 70 && y >= 0 && y <= 2420) {
+          y -= 5;
+          N += 5;
+        }
+
+        //---armoire et cheminée et coffre)---//
+        if (x >= 100 && x <= 476 && y >= 0 && y <= 2420) {
+          x += 5;
+        }
+        if (x >= 86 && x <= 470 && y >= 0 && y <= 2420) {
+          x -= 5;
+        }
+        if (x >= 100 && x <= 470 && y >= 0 && y <= 2430) {
+          y += 5;
+          N -= 5;
+        }
+        if (x >= 100 && x <= 470 && y >= 0 && y <= 2420) {
+          y -= 5;
+          N += 5;
+        }
+        //---MAP4 TRANSFER vers map 1--/
+
+      if (y >= 2618) {
+         y = 2645;
+         x = 190;
+         N = -2311;
+         song3.playMode("sustain");
+         song3.pause();
+         song.loop();
+         song.playMode("restart");
+         song.play();
+         mapping = 1;
+        }
+        //--transfere coffre--//
+        if (grandCoffre == true){
+       if (x >= 200 && x <= 470 && y >= 0 && y <= 2440) {   
+        mapping = 5;
+            
+          
+        }
+      }
+  }
+  //------------MAP5------------//
+
+  if (mapping == 5) {
+      openchest();
+    
+  }
   
   
   //------------MAP3------------//
@@ -3479,8 +3861,8 @@ function draw() {
         text("Je te prépare une intrigue du tonnerre !", 654, y + 284);
       }
       if (EN == 255) {
-        text("Metapod hold on !", 654, y + 248);
-        text("Maximum harden !", 654, y + 284);
+        text("Congratulations !", 654, y + 248);
+        text("You have just discovered the official Discord !", 654, y + 284);
       }
     }
 
@@ -3991,7 +4373,7 @@ function draw() {
       text("Event making", 204, y+200);
       text("OST", 204, y+300);
     }
-}
+    }
     
     //---MAP3 TRANSFER--/
 
@@ -4010,9 +4392,10 @@ function draw() {
     //-------//
   }
 
-  //-------//
-}
+ 
 
+  
+}
 //-----------------Fonction-------------------------//
 function mouseWheel(event) {
   if (mouseX >= 460 && mouseX <= 708 && mouseY >= 2807 && mouseY <= 2964) {
@@ -4067,6 +4450,7 @@ function volume() {
   var volumeValue = pow(10, dB/20); // convertir les dB en une valeur de volume linéaire
   song.setVolume(volumeValue);
   song2.setVolume(volumeValue);
+  song3.setVolume(volumeValue);
 }
 
 
@@ -4082,12 +4466,16 @@ function toggleMute() {
     if (mapping == 3) {
       song2.play(); // relance la lecture du son
     }
+    if (mapping == 4) {
+      song3.play(); // relance la lecture du son
+    }
 
   } else {
     muteButton.html("");
     muteButton.style('background-image', 'url("assets/mute.png")');
     sliderPosition = 0;
     isMuted = true;
+    song3.stop();
     song2.stop();
     song.stop();
     sliderPosition = 0.0;
@@ -4191,6 +4579,10 @@ function windowResized() {
   gainSlider.position(windowWidth/2 +300, 10);
   muteButton.position(windowWidth/2 +440, 0);
   scrollbarImg.position(windowWidth/2 +244, windowHeight/2 + 167, "absolute");
+  discordIframe.position(windowWidth/2 - 480,-34);
+  discordOn.position(windowWidth/2 - 360, 0);
+  discordOff.position(windowWidth/2 - 360, 0);
+  band.position(windowWidth/2 - 360, 0);
   if (pseudoInput) {
     pseudoInput.position(windowWidth/2 - 250, windowHeight/2 + 160, "absolute");
     
@@ -4284,7 +4676,149 @@ function windowResized() {
 // }
 
 ///---------fonctionSaisie()3------------------///
+//ouvrir coffre---//
+function openchest() {
+  if (FR == 255){
+  a = 4;
+  clear();
+  noTint();
+  background(taverne);
+  image(shadow, x + 2, y + 34);
+  image(coffreImg,0, 2285);
+  image(playerCoffre, x, y-4);
+  tint(FR);
+  image(flagFR, 0, y - 316);
+  tint(EN);
+  image(flagEN, 60, y - 316);
 
+  song3.playMode("sustain");
+  song3.pause();
+  bruitage1.play();
+  if (millisStart === -1) {
+    millisStart = millis();
+   
+  }
+  if (millis() - millisStart >= 200) {
+    bruitage4.play();
+  }
+  if (millis() - millisStart >= 1300) {
+    bruitage3.play();
+    bruitage1.pause();
+  }
+  if (millis() - millisStart >= 4500) {
+    bruitage1.pause();
+    bruitage4.pause();
+    bruitage2.play();
+  }
+  if (millis() - millisStart >= 5000) {
+    bruitage1.pause();
+    bruitage2.pause();
+    bruitage3.pause();
+    bruitage4.pause();
+    song3.play();
+    discordOn.style('width', '60px');
+    discordOn.style('height', '40px');
+    discordOn.style("z-index: 1200");
+    discordOn.position(windowWidth/2 - 360, windowHeight/2 -414);
+    grandCoffre = false;
+    a = 1;
+    mapping = 4;
+    
+  }
+  }
+  if (EN == 255){
+    a = 4;
+    clear();
+    noTint();
+    background(taverne);
+    image(shadow, x + 2, y + 34);
+    image(coffreImg2,0, 2285);
+    image(playerCoffre, x, y-4);
+    tint(FR);
+    image(flagFR, 0, y - 316);
+    tint(EN);
+    image(flagEN, 60, y - 316);
+
+    song3.playMode("sustain");
+    song3.pause();
+    bruitage1.play();
+    if (millisStart === -1) {
+      millisStart = millis();
+     
+    }
+    if (millis() - millisStart >= 200) {
+      bruitage4.play();
+    }
+    if (millis() - millisStart >= 1300) {
+      bruitage3.play();
+      bruitage1.pause();
+    }
+    if (millis() - millisStart >= 4500) {
+      bruitage1.pause();
+      bruitage4.pause();
+      bruitage2.play();
+    }
+    if (millis() - millisStart >= 5000) {
+      bruitage1.pause();
+      bruitage2.pause();
+      bruitage3.pause();
+      bruitage4.pause();
+      song3.play();
+      discordOn.style('width', '60px');
+      discordOn.style('height', '40px');
+      discordOn.style("z-index: 1200");
+      discordOn.position(windowWidth/2 - 360, windowHeight/2 -414);
+      grandCoffre = false;
+      a = 1;
+      mapping = 4;
+      
+    }
+    }
+}
+
+
+function toggleDiscord() {
+  if (!isDiscordVisible) {
+    // Créer un élément iframe et l'ajouter à la div discordIframe
+    discordIframe.html('<iframe id="discord-iframe" src="https://discord.com/widget?id=936957047512121397&theme=dark" width="300" height="300" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>');
+    // Afficher la div discordIframe
+    let iframe = document.getElementById('discord-iframe');
+    iframe.width = 960;
+    iframe.height = 260;
+    discordIframe.style('opacity', 0.8);
+    discordOn.style("z-index: -100");
+    discordOn.style('width', '0px');
+    discordOn.style('height', '0px');
+    discordOff.style("z-index: 1200");
+    discordOff.style('width', '60px');
+    discordOff.style('height', '40px');
+    discordIframe.position(windowWidth/2 - 480,-36);
+    discordIframe.style('z-index', '100');
+    band.style('opacity','1');
+    isDiscordVisible = true;
+  }
+}
+
+function toggleDiscord2() {
+  if (isDiscordVisible) {
+    // Créer un élément iframe et l'ajouter à la div discordIframe
+    discordIframe.html('<iframe id="discord-iframe" src="https://discord.com/widget?id=936957047512121397&theme=dark" width="300" height="300" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>');
+    // Afficher la div discordIframe
+    let iframe = document.getElementById('discord-iframe');
+    iframe.width = 0;
+    iframe.height = 0;
+    discordOff.style("z-index: -100");
+    discordOff.style('width', '0px');
+    discordOff.style('height', '0px');
+    discordOn.style('width', '60px');
+    discordOn.style('height', '40px');
+    discordOn.style("z-index: 1200");
+    discordIframe.position(windowWidth/2 - 480,-36);
+    discordIframe.style('z-index', '-1000');
+    band.style('opacity','0.5');
+    isDiscordVisible = false;
+  }
+}
 
 
 function mousePressed() {
@@ -4321,7 +4855,17 @@ function mousePressed() {
     }
 
   }
+  if (mapping == 4) {
+    if (mouseX >= 0 && mouseX <= 60 && mouseY <= y - 270) {
+      FR = 255;
+      EN = 150;
+    }
+    if (mouseX > 60 && mouseX <= 120 && mouseY <= y - 270) {
+      FR = 150;
+      EN = 255;
+    }
 
+  }
 
 
 }
