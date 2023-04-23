@@ -279,7 +279,7 @@ function setup() {
   discordOn.style('width', '0px');
   discordOn.style('height', '0px');
   discordOn.style("z-index", "-100");
-  discordOn.position(windowWidth/2 - 360, windowHeight/2 -414);
+  discordOn.position(windowWidth/2 - 360, 0);
   discordOn.mousePressed(toggleDiscord);
 
   discordOff = createButton("");
@@ -292,7 +292,7 @@ function setup() {
   discordOff.style('width', '0px');
   discordOff.style('height', '0px');
   discordOff.style("z-index", "-100");
-  discordOff.position(windowWidth/2 - 360, windowHeight/2 -414);
+  discordOff.position(windowWidth/2 - 360, 0);
   discordOff.mousePressed(toggleDiscord2);
   // Créer un div pour le widget Discord et l'ajouter au DOM
   discordIframe = createDiv();
@@ -4750,7 +4750,7 @@ function openchest() {
     discordOn.style('width', '60px');
     discordOn.style('height', '40px');
     discordOn.style("z-index: 1200");
-    discordOn.position(windowWidth/2 - 360, windowHeight/2 -414);
+    discordOn.position(windowWidth/2 - 360, 0);
     grandCoffre = false;
     a = 1;
     mapping = 4;
@@ -4808,7 +4808,7 @@ function openchest() {
       discordOn.style('width', '60px');
       discordOn.style('height', '40px');
       discordOn.style("z-index: 1200");
-      discordOn.position(windowWidth/2 - 360, windowHeight/2 -414);
+      discordOn.position(windowWidth/2 - 360, 0);
       grandCoffre = false;
       a = 1;
       mapping = 4;
@@ -4908,4 +4908,7 @@ function mousePressed() {
 
   }
 
+
 }
+
+
